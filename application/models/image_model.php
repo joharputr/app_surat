@@ -7,6 +7,8 @@ class Image_model extends CI_Model
     public $id_gambar;
     public $gambar;
     public $surat_id;
+    public $nama;
+    public $tgl_surat;
 
 
   public function rules()
@@ -43,8 +45,10 @@ class Image_model extends CI_Model
         $post = $this->input->post();
         $query = $this->db->query("SELECT * from gambar");
         $total= $query->num_rows();
-        $total +=1;            
+        $total += 1;            
         $this->id_gambar = "$total";
+        $this->tgl_surat = $post["tgl_surat"];
+        $this->nama = $post["nama"];
         $this->gambar = $this->_uploadImage();
         $this->surat_id = "1";
         $this->db->insert($this->_table, $this);
@@ -52,20 +56,23 @@ class Image_model extends CI_Model
     }
 
 
-
-
-    // public function update()
-    // {
-    //     $post = $this->input->post();
-    //     $this->id_gambar = $post["id"];
-    //     $this->id = $post["keperluan"];
-    //     if (!empty($_FILES["gambar"]["name"])) {
-    //         $this->gambar = $this->_uploadImage();
-    //     } else {
-    //         $this->gambar = $post["old_image"];
-    //     }
-    //     $this->db->update($this->_table, $this, array('id_gambar' => $post['id']));
-    // }
+ public function update()
+    {
+        $post = $this->input->post();
+          $this->id_gambar = $post["id"];
+        $this->nama = $post["nama"];
+        $this->tgl_surat = $post["tgl_surat"];
+        
+        
+        if (!empty($_FILES["gambar"])) {
+            $this->gambar = $this->_uploadImage();
+        } else {
+            $this->gambar = $post["old_image"];
+        }
+    
+        $this->db->update($this->_table, $this, array('id_gambar' => $post['id']));
+        redirect('admin/disposisi');
+    }
 
     public function delete($id)
     {
@@ -76,7 +83,7 @@ class Image_model extends CI_Model
     private function _uploadImage()
     {
     $config['upload_path']          = './upload/files/';
-    $config['allowed_types']        = 'gif|jpg|png';
+    $config['allowed_types']        = 'gif|jpg|png|pdf';
     $config['file_name']            = $this->id_gambar;
     $config['overwrite']            = true;
     $config['max_size']             = 1024; // 1MB
@@ -105,11 +112,12 @@ class Image_model extends CI_Model
     }
 }
 
+
     public function disposisi()
     {
         return $this->db->get('gambar');
     }
-        public function tampil_disposisi()
+       public function tampil_disposisi()
     {
         return $this->db->get('gambar');
     }

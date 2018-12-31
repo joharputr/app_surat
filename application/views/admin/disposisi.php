@@ -21,15 +21,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">
-                 <a href="<?php echo site_url('admin/add') ?>"><i class="fas fa-plus"></i> Add New</a>
-                    <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
-                    <button class="btn btn-sm btn-success btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-print"></i>Print Data</button>
-                     
-            
-            <!-- bagian print -->
-                     <!--  <a href="./admin/print_surat_keluar.php?surat_id=<? ?>" target="_blank"><button class="btn btn-sm btn-warning btn-flat"><i class="fa fa-print"></i> Cetak Data Surat Keluar </button></a> -->
-                     
-
+                  <a href="<?php echo base_url(); ?>admin/add" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
 
                      </h3>
                   
@@ -41,8 +33,10 @@
                     <thead>
                       <tr>
                         <th>no</th>
-                
-                        <th>gambar</th>
+                      <th> nama</th>
+                        
+                        <th> tanggal</th>
+                      <th>gambar</th>
                
                            <th>aksi</th>
                     
@@ -56,16 +50,18 @@
                         ?>
                       <tr>
                       <td><?php echo $no++ ?></td>
+                        <td> <div style="width: 100px;"><?php echo $lihat->nama?></td>
+                        <td> <div style="width: 100px;"><?php echo tgl_indo($lihat->tgl_surat)?></td>
                   
                       <td>  <img src="<?php echo base_url('upload/files/'.$lihat->gambar) ?>" width="64" /></td> </div>
                     
                      
                         <td  align="center">
-                          <div class="btn-group" role="group" style="width: 200px;">
+                          <div class="btn-group" role="group">
                           
                               
                       <a href="<?php echo base_url(); ?>admin/delete/<?php echo $lihat->id_gambar ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
-                     
+                      <a href="<?php echo base_url(); ?>admin/edit/<?php echo $lihat->id_gambar ?>" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> edit</a>
                         </td>                     
                       </tr>
                       <?php endforeach ?>

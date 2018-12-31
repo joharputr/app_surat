@@ -95,14 +95,16 @@
                 <i class="fa fa-user"></i> <span>disposisi</span> 
               </a>
             </li>
+              <li class="<?php if($page == 'email'){echo 'active';} ?>">
+              <a href="<?php echo base_url(); ?>admin/email">
+                <i class="fa fa-user"></i> <span>email</span> 
+              </a>
+            </li>
            
           </ul>
         </section>
         <!-- /.sidebar -->
       </aside>
-
-
-
 
       <?php $this->load->view('admin/'.$page); ?>
     </div><!-- ./wrapper -->

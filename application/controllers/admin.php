@@ -1,13 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
+	 public $ret;
 
 	function __construct(){
 		parent::__construct();
-		// $this->load->helper(array('url','form'));
-		// $this->load->model('model_admin');
 		 $this->load->model('model_admin');
 		 $this->load->model('image_model');
+	//	  $this->load->library('upload');
 		 $this->load->library('form_validation');
 	}
 
@@ -22,11 +22,17 @@ class Admin extends CI_Controller {
 		$a['manage_user']	= $this->model_admin->tampil_manage_user()->num_rows();
 		$a['disposisi']	= $this->image_model->tampil_disposisi()->num_rows();
 
+
 		$a['page']	= "home";
 		
 		$this->load->view('admin/index', $a);
 	}	
-
+	function email(){
+	
+		$a['page']	= "email";
+		
+		$this->load->view('admin/index', $a);
+	}
 	function disposisi(){
 		$a['data']	= $this->image_model->tampil_disposisi()->result_object();
 		$a['page']	= 'disposisi';
@@ -316,10 +322,6 @@ class Admin extends CI_Controller {
 
 
 
-
-//  
-
-
 		function tambah_disposisi(){
 		$a['page']	= "tambah_disposisi";
 		
@@ -328,42 +330,12 @@ class Admin extends CI_Controller {
 	}
 		
 	
-	// function edit_disposisi($id){
-	// 	$a['editdata']	= $this->db->get_where('tb_surat_keluar',array('surat_id'=>$id))->result_object();		
-	// 	$a['page']	= 'edit_surat_keluar';
-		
-	// 	$this->load->view('admin/index', $a);
-	// }
 
-	// function update_disposisi(){
-	// 	$id_gambar = $this->input->post('id_gambar');
-	// 	$gambar = $this->input->post('gambar');
-	// 	$surat_id = $this->input->post('surat_id');
-	
-	// 	$object = array(
-	// 			'id_gambar' => $id_gambar,
-	// 			'gambar' => $gambar,
-	// 			'surat_id' => $surat_id
-				
-	// 		);
-	// 	$this->db->where('id_gambar', $id);
-	// 	$this->db->update('gambar', $object); 
-
-	// 	$post = $this->input->post();
- //        $this->id_gambar = $post['id'];
- //        $this->id = $post['keperluan'];
- //        if (!empty($_FILES['gambar']['name'])) {
- //            $this->gambar = $this->_uploadImage();
- //        } else {
- //            $this->gambar = $post['old_image'];
- //        }
- //        $this->db->update($this->_table, $this, array('id_gambar' => $post['id']));
-
-	
-	// 	redirect('admin/disposisi','refresh');
-	// }
 	  public function add()
     {
+    	$a['page']	= "tambah_disposisi";
+		
+		$this->load->view('admin/index', $a);
         $gambar = $this->image_model;
         $validation = $this->form_validation;
         $validation->set_rules($gambar->rules());
@@ -371,26 +343,30 @@ class Admin extends CI_Controller {
         if ($validation->run()) {
             $gambar->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
-        $this->load->view('admin/tambah_disposisi');
-        
+        }   
     }
-    // public function edit($id = null)
-    // {
-    //     if (!isset($id)) redirect('admin/disposisi');
+
+ public function edit($id = null)
+    {
+    		
+
+        if (!isset($id)) redirect('admin/disposisi');
        
-    //     $gambar = $this->image_model;
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($gambar->rules());
-    //     if ($validation->run()) {
-    //         $gambar->update();
-    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
-    //     }
-    //     $data['gambar'] = $gambar->getById($id);
-    //     if (!$data['gambar']) show_404();
-        
-    //     $this->load->view('admin/product/edit_form', $data);
-    // }
+        $gambar = $this->image_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($gambar->rules());
+        if ($validation->run()) {
+            $gambar->update();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+        $data["gambar"] = $gambar->getById($id);
+        if (!$data["gambar"]) show_404();
+
+        $data['page']	= "edit_disposisi";
+		
+        $this->load->view("admin/index", $data);
+    }
+
     public function delete($id=null)
     {
         if (!isset($id)) show_404();
@@ -400,9 +376,101 @@ class Admin extends CI_Controller {
         }
     }
 
+ public function sendEmail()
+ {
+	$this->load->helper(array('form', 'url'));
+			$this->load->library('upload');
+		//	$this->load->library('email');
+			
+$email_config = Array(
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => '465',
+            'smtp_user' => 'joharputraadek@gmail.com',
+            'smtp_pass' => 'adekjelek1',
+            'mailtype'  => 'html',
+            'starttls'  => true,
+            'newline'   => "\r\n"
+        );
+ 		
+        $this->load->library('email', $email_config);
 
+        $this->email->from('joharputraadek@gmail.com', 'invoice');
+   		$this->email->to($this->input->post('email_id')); // change 
+       $this->email->subject($this->input->post('subject'));
+       $this->email->message($this->input->post('body'));
+      
+   //  $attched_file= $_SERVER["DOCUMENT_ROOT"]."/upload/".$file_name;
+     // $this->email->attach($attched_file);
+     /*   $file_name = $this->upload_file();
+        $this->email->attach($file_name);
+     
+        $this->email->send();*/
+        	$this->upload->initialize(array(
+            "upload_path"   => "./upload",
+			"allowed_types" => "*"
+			));
+			
+			//Perform upload.
+			if($this->upload->do_multi_upload("lampiran"))
+				{
+				
+				$lamp = $this->upload->get_multi_upload_data();
+				foreach ($lamp as $key=>$value)
+				{
+					$this->email->attach($value['full_path']);
+				}
+			}else
+			{
+				echo $this->upload->display_errors();	
+			}
+			
+			if($this->email->send())
+			{
+				echo "berhasil mengirim email";
+			}else
+			{
+				echo "gagal mengirim email";
+			}
 
-
+ 
+ 	redirect('admin/email','refresh');
+}
 
 }
 
+
+ /*function upload_file()
+ {
+  $config['upload_path'] = './upload';
+  $config['allowed_types'] = 'doc|docx|pdf|gif|jpg|png|pdf';
+  $this->load->library('upload', $config);
+  if($this->upload->do_upload('resume'))
+  {
+   $file =  $this->upload->data();   
+  }
+  else
+  {
+   return $this->upload->display_errors();
+  }
+ }*/
+
+/*
+function upload_file()
+ {
+  $config['upload_path'] = './upload';
+  $config['allowed_types'] = 'doc|docx|pdf|gif|jpg|png|pdf';
+  $config ['full_path'] = 'C:/xampp/htdocs/upload/2.pjpg';
+  $this->load->library('upload', $config);
+  if($this->upload->do_upload('resume'))
+  {
+   $file =  $this->upload->data();   
+  }
+  else
+  {
+   return $this->upload->display_errors();
+  }
+  $pathToUploadedFile = $ret['full_path'];
+  $this->email->attach($pathToUploadedFile);
+ }
+*/

@@ -78,6 +78,19 @@
                 <a href="<?php echo base_url(); ?>admin/disposisi" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
+     <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green" style="height: 130px; margin-right: -10px;">
+                <div class="inner">
+               
+                  <p> Email</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <a href="<?php echo base_url(); ?>admin/email" class="small-box-footer" style="margin-top: 50px;">More info <i class="fa fa-arrow-circle-right" ></i></a>
+              </div>
+            </div><!-- ./col -->
 
 
         </section><!-- /.content -->

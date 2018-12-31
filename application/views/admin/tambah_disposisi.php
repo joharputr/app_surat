@@ -24,7 +24,7 @@
           <section class="content">
             <div class="box box-info">
               <div class="box-header with-border">
-                <h3 class="box-title">Form Data Tambah Surat Keluar</h3>
+                <h3 class="box-title">Form Data Tambah Disposisi</h3>
               </div>
               <div class="box-body">
                 <!-- form start -->
@@ -35,6 +35,14 @@
                 <input type="file" name="gambar" />
                 
               </div>
+                <div class="form-group">
+                    <label for="surat">Tanggal Surat</label>
+                      <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" placeholder="Tanggal Surat"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">nama</label>
+                      <input type="text" class="form-control" name="nama" placeholder="nama"/>
+                  </div>
               <input class="btn btn-success" type="submit" name="btn" value="Save" />
             </form>
 
