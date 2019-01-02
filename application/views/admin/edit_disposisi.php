@@ -7,7 +7,7 @@
           <section class="content-header">
             <h1>
               Edit
-              <small>Disposisi Surat</small>
+              <small>Disposisi Gambar</small>
             </h1>
             <ol class="breadcrumb">
               <li><i class="fa fa-dashboard"></i> Home</a></li>
@@ -53,7 +53,7 @@
 
               <input type="hidden" name="id" value="<?php echo $gambar->id_gambar?>" />
 
-              <div class="form-group">
+                 <div class="form-group">
                 <label for="name">Nama</label>
                 <input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
                  type="text" name="nama" placeholder="nama" value="<?php echo $gambar->nama ?>" />
@@ -62,10 +62,13 @@
                 </div>
               </div>
 
-            
+               <div class="form-group">
+                   <label for="exampleInputEmail1">Tanggal Surat</label>
+                    <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" value="<?php echo $gambar->tgl_surat ?>"/>
+               </div>
 
               <div class="form-group">
-                <label for="name">Photo</label>
+                <label for="name">Gambar</label>
                 <input class="form-control-file <?php echo form_error('gambar') ? 'is-invalid':'' ?>"
                  type="file" name="gambar" />
                 <input type="hidden" name="old_image" value="<?php echo $gambar->gambar ?>" />
@@ -73,30 +76,22 @@
                   <?php echo form_error('gambar') ?>
                 </div>
               </div>
-            <div class="form-group">
-                    <label for="exampleInputEmail1">Tanggal Surat</label>
-                      <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" value="<?php echo $gambar->tgl_surat ?>"/>
-                  </div>
-
-            
-
+              
+              <a href="<?php echo base_url(); ?>admin/disposisi" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
               <input class="btn btn-success" type="submit" name="btn" value="Save" />
-            </form>
+          </form>
 
           </div>
 
           <div class="card-footer small text-muted">
             * required fields
           </div>
-
-
-        </div>
- 
+    
       </div>
+    </div>
       <!-- /.content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
             
-          </section><!-- /.content -->
-        </div>
+  </section><!-- /.content -->
+</div>

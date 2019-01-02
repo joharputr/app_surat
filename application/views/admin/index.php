@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pengarsipan Surat BMKG</title>
-     <link rel="shortcut icon" type="image/x-icon" href="https://cdn.bmkg.go.id/Web/bmkg-icon.png" />
+     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url() ?>logo_BMKG.png "/>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -30,7 +30,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="hold-transition skin-green sidebar-mini">
+  <body class="hold-transition skin-purple sidebar-mini">
     <div class="wrapper">
 
       <header class="main-header">
@@ -92,12 +92,12 @@
              </li>
               <li class="<?php if($page == 'disposisi'){echo 'active';} ?>">
               <a href="<?php echo base_url(); ?>admin/disposisi">
-                <i class="fa fa-user"></i> <span>disposisi</span> 
+                <i class="fa fa-image"></i> <span>Disposisi</span> 
               </a>
             </li>
               <li class="<?php if($page == 'email'){echo 'active';} ?>">
               <a href="<?php echo base_url(); ?>admin/email">
-                <i class="fa fa-user"></i> <span>email</span> 
+                <i class="fa fa-paper-plane-o"></i> <span>Email</span> 
               </a>
             </li>
            
@@ -109,6 +109,9 @@
       <?php $this->load->view('admin/'.$page); ?>
     </div><!-- ./wrapper -->
 
+
+
+      
     <!-- jQuery 2.1.4 -->
     <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

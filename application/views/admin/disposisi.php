@@ -4,12 +4,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Surat Keluar
+            Disposisi Gambar
             <small>Control panel</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="index"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Surat Keluar</li>
+            <li class="active">Disposisi</li>
           </ol>
         </section>
 
@@ -32,51 +32,37 @@
                   <table id="example1" class="table table-bordered table-hover dataTable" >
                     <thead>
                       <tr>
-                        <th>no</th>
-                      <th> nama</th>
-                        
-                        <th> tanggal</th>
-                      <th>gambar</th>
-               
-                           <th>aksi</th>
-                    
-                 
-                      
+                       <th> No</th>
+                        <th> Nama</th>
+                        <th> Tanggal Surat</th>
+                        <th> Gambar</th>
+                        <th> Aksi</th>
                     </thead>
-                    <tbody>
-                        <?php  
-                        $no = 1;
-                        foreach ($gambar as $lihat):
-                        ?>
-                      <tr>
-                      <td><?php echo $no++ ?></td>
-                        <td> <div style="width: 100px;"><?php echo $lihat->nama?></td>
-                        <td> <div style="width: 100px;"><?php echo tgl_indo($lihat->tgl_surat)?></td>
-                  
-                      <td>  <img src="<?php echo base_url('upload/files/'.$lihat->gambar) ?>" width="64" /></td> </div>
-                    
-                     
+                      <tbody>
+                          <?php  
+                          $no = 1;
+                          foreach ($gambar as $lihat):
+                          ?>
+                        <tr>
+                          <td><?php echo $no++ ?></td>
+                            <td> <div style="width: 100px;"><?php echo $lihat->nama?></td>
+                            <td> <div style="width: 100px;"><?php echo tgl_indo($lihat->tgl_surat)?></td>
+                      
+                          <td>  <img src="<?php echo base_url('upload/files/'.$lihat->gambar) ?>" width="64" ></td> </div>
+
                         <td  align="center">
-                          <div class="btn-group" role="group">
-                          
-                              
-                      <a href="<?php echo base_url(); ?>admin/delete/<?php echo $lihat->id_gambar ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
-                      <a href="<?php echo base_url(); ?>admin/edit/<?php echo $lihat->id_gambar ?>" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> edit</a>
+                        <div class="btn-group" role="group">
+                           <a href="<?php echo base_url(); ?>admin/delete/<?php echo $lihat->id_gambar ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
+                           <a href="<?php echo base_url(); ?>admin/edit/<?php echo $lihat->id_gambar ?>" class="btn btn-sm btn-success btn-flat"><i class="fa fa-edit"></i> Edit</a>
                         </td>                     
                       </tr>
                       <?php endforeach ?>
                     </tbody>
                   </table>
-                  
                 </div><!-- /.box-body -->
                 </div>
              </div>
           </div>
-          
-         
-
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
-
-
-</div>
+  </div>

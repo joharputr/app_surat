@@ -94,43 +94,12 @@
                             <a href="print_disposisi?surat_id=<?php  echo $lihat->surat_id; ?>" target="_blank">
                                 <button class="btn btn-sm btn-light btn-flat" ><i class="fa fa-print"></i> Print</button></a>
 
-                                
-                            <!--   <br> <br>
-                             <td>  <form action="upload.php" method="post" enctype="multipart/form-data">
-                                  Pilih file: <input type="file" name="berkas" />
-                                    <input type="submit" name="upload" value="upload" />
-                              </form>   
-                              <td> -->
-
-                             <!--  <?php
-
-                                  // // ambil data file
-                                  // $namaFile = $_FILES['berkas']['name'];
-                                  // $namaSementara = $_FILES['berkas']['tmp_name'];
-
-                                  // // tentukan lokasi file akan dipindahkan
-                                  // $dirUpload = "terupload/";
-
-                                  // // pindahkan file
-                                  // $terupload = move_uploaded_file($namaSementara, $dirUpload.$namaFile);
-
-                                  // if ($terupload) {
-                                  //     echo "Upload berhasil!<br/>";
-                                  //     echo "Link: <a href='".$dirUpload.$namaFile."'>".$namaFile."</a>";
-                                  // } else {
-                                  //     echo "Upload Gagal!";
-                                  // }
-
-                                  ?> -->
-                                                <!-- print disposisi -->
-                            <!-- <a href="./print/print_disposisi.php?surat_id=<?=$lihat->surat_id; ?>" target="_blank"><button class="btn btn-sm btn-warning btn-flat"><i class="fa fa-print"></i> Cetak Disposisi </button></a> -->
-
-                            
 
 <!-- modal lihat disposisi -->
-                    <div id="printThis<?php echo $lihat->surat_id; ?>">
+            <div id="printThis<?php echo $lihat->surat_id; ?>">
               <div id="lihatlaporan<?php echo $lihat->surat_id; ?>" class="modal fade" role="dialog">
                 <div class="modal-dialog" style="width: 80%">
+                 
                  <!-- Modal content-->
                  <div class="modal-content">
                   <div class="modal-header">
@@ -146,26 +115,25 @@
                           <div class="col-sm-2" style="text-align: center;">
                             <img src="<?php echo base_url() ?>logo_BMKG.png" style="width: 60%; height: auto;">
                           </div>
-                          <div class="col-sm-10" style="text-align: center;">
-                            BADAN METEOROLOGI KLIMATOLOGI DAN GEOFISIKA <br>
-                            <strong style="font-size: 150%">STASIUN KLIMATOLOGI MLATI YOGYAKARTA</strong><br>
-                            Jl. Kabupaten Km. 5,5 Duwet Sendangadi, Mlati, Sleman, D.I. Yogyakarta<br>
-                            Telp : (0274) 2880152 ; Fax: (0247) 2880151 ; email: staklim.yogya@gmail.com
-                            <br><br>
-                          </div>
+                            <div class="col-sm-10" style="text-align: center;">
+                              BADAN METEOROLOGI KLIMATOLOGI DAN GEOFISIKA <br>
+                              <strong style="font-size: 150%">STASIUN KLIMATOLOGI MLATI YOGYAKARTA</strong><br>
+                              Jl. Kabupaten Km. 5,5 Duwet Sendangadi, Mlati, Sleman, D.I. Yogyakarta<br>
+                              Telp : (0274) 2880152 ; Fax: (0247) 2880151 ; email: staklim.yogya@gmail.com
+                              <br><br>
+                            </div>
                         </div>
-                        <div class="row" style="background-color: black; height: 4px;"></div> <br> <br>
+                            <div class="row" style="background-color: black; height: 4px;"></div> <br> <br>
+                               <div>
+                                <table style="border: 3px solid; font-family: arial, sans-serif; border-collapse: collapse;" align="right">
+                                  <tr>
+                                    <th >KODE ARSIP : </th>
+                                    <th style="border: 3px solid"><?php echo $lihat->kode_arsip; ?> </th> 
+                                    <th> <?php echo $lihat->no_agenda; ?>   </th>
+                                  </tr>
+                                </table>
+                            </div> 
 
-                         <div>
-                          <table style="border: 3px solid; font-family: arial, sans-serif; border-collapse: collapse;" align="right">
-                            <tr>
-                            <th >KODE ARSIP : </th>
-                            <th style="border: 3px solid"><?php echo $lihat->kode_arsip; ?> </th> 
-                            <th> <?php echo $lihat->no_agenda; ?>   </th>
-                          </tr>
-                          </table>
-                        </div>
-                       
                         <div class="row" style="text-align: center;  "> <br>
                           <br><h3><strong>LEMBAR DISPOSISI </strong> </h3>
                           <br>
@@ -173,56 +141,52 @@
 
                         <div class="row">
                           <br>
-                          <style>
-
-                              th, tr, td{
-                                border: 3px solid;
-                                text-align: left;
-                                padding: 5px;
-                              }
-
-                              
-                              </style>
-
+                            <style>
+                                th, tr, td{
+                                  border: 3px solid;
+                                  text-align: left;
+                                  padding: 5px;
+                                }
+                            </style>
 
                          <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
-                          <tr >
-                            <th> Surat Dari </th>
-                            <td><?php echo $lihat->pengirim; ?> </td> 
-                            <th> Diterima Tanggal </th>
-                            <td> <?php echo tgl_indo($lihat->tgl_terima); ?>   </td>
-                          </tr>
+                            <tr >
+                              <th> Surat Dari </th>
+                              <td><?php echo $lihat->pengirim; ?> </td> 
+                              <th> Diterima Tanggal </th>
+                              <td> <?php echo tgl_indo($lihat->tgl_terima); ?>   </td>
+                            </tr>
 
-                           <tr>
-                            <th>No Surat </th>
-                            <td><?php echo $lihat->no_surat; ?> </td> 
-                            <th> No Agenda  </th>
-                            <td> <?php echo $lihat->no_agenda; ?>   </td>
-                          </tr>
+                             <tr>
+                              <th>No Surat </th>
+                              <td><?php echo $lihat->no_surat; ?> </td> 
+                              <th> No Agenda  </th>
+                              <td> <?php echo $lihat->no_agenda; ?>   </td>
+                            </tr>
 
-                           <tr>
-                            <th>Tanggal Surat </th>
-                            <td><?php echo tgl_indo($lihat->tgl_surat); ?> </td> 
-                            <th> Diteruskan Kepada   </th>
-                            <td> <?php echo $lihat->penjabat_disposisi ?>   </td>
-                          </tr>
+                             <tr>
+                              <th>Tanggal Surat </th>
+                              <td><?php echo tgl_indo($lihat->tgl_surat); ?> </td> 
+                              <th> Diteruskan Kepada   </th>
+                              <td> <?php echo $lihat->penjabat_disposisi ?>   </td>
+                            </tr>
 
-                           <tr>
-                            <th>Lampiran </th>
-                            <td><?php echo $lihat->lampiran; ?> </td> 
-                            <th>Sifat Surat </th>
-                            <td><?php echo $lihat->sifat_surat; ?> </td> 
-                          </tr>
+                             <tr>
+                              <th>Lampiran </th>
+                              <td><?php echo $lihat->lampiran; ?> </td> 
+                              <th>Sifat Surat </th>
+                              <td><?php echo $lihat->sifat_surat; ?> </td> 
+                            </tr>
 
-                          <tr>
-                              <th >Perihal : </th> 
-                              <td colspan="3" ><?php echo $lihat->perihal; ?></td> 
-                          </tr>  
+                            <tr>
+                                <th >Perihal : </th> 
+                                <td colspan="3" ><?php echo $lihat->perihal; ?></td> 
+                            </tr>  
 
-                          <tr>
-                              <th colspan="4">Diserahkan Kepada : </th> 
-                          </tr>
-                           
+                            <tr>
+                                <th colspan="4">Diserahkan Kepada : </th> 
+                            </tr>
+                             
 
                             <tr>
                               <td height="50" colspan="4"  align=left valign=top> 
@@ -239,39 +203,18 @@
                                   <input style="margin-left:225px; width:30px" type="checkbox" value="Petugas SAIBA" name="disposisi[]" >Petugas SAIBA
                                   <input style="margin-left:130px; width:30px" type="checkbox" value="Petugas BMN" name="disposisi[]" >Petugas BMN
                               </td>
-                            </tr>
+                            </tr> <br>
 
-                            <br>
-
-
-                         
                            <tr>
                               <th colspan="4">Disposisi: </th> 
-
                           </tr>
 
                           <tr>
-
                               <td height="300" colspan="4" align=left valign=top><?php echo $lihat->informasi_disposisi; ?></td> 
-
-                          </tr>  
-                          
-
-                          </table> <br>
-
-
-                      <!--     Diserahkan Kepada :<br><span class="margin-left: 10 px; width: 100%;"> </span>
-                          <textarea style="background-color: white" readonly class="form-control" rows = "5"><?php echo $lihat->disposisi; ?></textarea> <br>
-
-                           Perihal :<br><span class="margin-left: 10 px; width: 100%;"> </span>
-                          <textarea style="background-color: white" readonly class="form-control" rows = "5"><?php echo $lihat->perihal; ?></textarea> <br>
-                           
-                           Disposisi :<br><span class="margin-left: 10 px; width: 100%; heigth: 100%"> </span>
-                          <textarea style="background-color: white" readonly class="form-control" rows = "5"><?php echo $lihat->informasi_disposisi; ?> </textarea> 
-
-                                  -->
-                          </div>
+                          </tr> 
+                         </table> <br>
                         </div>
+                       </div>
                       </div>
                     </div>
                   </div>
@@ -279,21 +222,18 @@
               </div>
             </div>
           </div>
-
-        
-
-                  </td>                  		
-                    	</tr>
-                    	 <?php endforeach; ?>
-                    </tbody>
-                  </table>
-                  </div>
-                </div><!-- /.box-body -->
-              </div>
-             </div>
-          </div>
-         </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+             </td>                  		
+                </tr>
+                   <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div><!-- /.box-body -->
+    </div>
+  </div>
+</div>
+</section><!-- /.content -->
+</div><!-- /.content-wrapper -->
 
 
 

@@ -20,7 +20,7 @@
             
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-green">
+              <div class="small-box bg-red">
                 <div class="inner">
                   <h3><?php echo $jenis; ?></h3>
                   <p>Surat Masuk</p>
@@ -35,7 +35,7 @@
              <div class="row">
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-aqua">
+              <div class="small-box bg-maroon">
                 <div class="inner">
                   <h3><?php echo $surat_keluar ?></h3>
                   <p>Surat Keluar</p>
@@ -50,7 +50,7 @@
 
           <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-red">
+              <div class="small-box bg-green">
                 <div class="inner">
                   <h3><?php echo $manage_user; ?></h3>
                   <p>User</p>
@@ -62,36 +62,34 @@
               </div>
             </div><!-- ./col -->
 
-
-            
             </div><!-- ./col -->
                  <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-green">
+              <div class="small-box bg-blue">
                 <div class="inner">
                   <h3><?php echo $disposisi; ?></h3>
                   <p> Disposisi</p>
                 </div>
                 <div class="icon">
-                  <i class="fa fa-inbox"></i>
+                  <i class="fa fa-image"></i>
                 </div>
                 <a href="<?php echo base_url(); ?>admin/disposisi" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
+
             </div><!-- ./col -->
-     <div class="col-lg-3 col-xs-6">
+              <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-green" style="height: 130px; margin-right: -10px;">
-                <div class="inner">
-               
+                <div class="small-box bg-aqua" style="height: 130px; margin-right: -10px;">
+                  <div class="inner">
                   <p> Email</p>
                 </div>
                 <div class="icon">
-                  <i class="fa fa-envelope"></i>
+                  <i class="fa fa-paper-plane-o"></i>
                 </div>
-                <a href="<?php echo base_url(); ?>admin/email" class="small-box-footer" style="margin-top: 50px;">More info <i class="fa fa-arrow-circle-right" ></i></a>
+                <a href="<?php echo base_url(); ?>admin/email" class="small-box-footer" style="margin-top: 52px;">More info <i class="fa fa-arrow-circle-right" ></i></a>
               </div>
+
+
             </div><!-- ./col -->
-
-
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->

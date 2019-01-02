@@ -24,37 +24,35 @@
           <section class="content">
             <div class="box box-info">
               <div class="box-header with-border">
-                <h3 class="box-title">Form Data Tambah Disposisi</h3>
+                <h3 class="box-title">Form Data Tambah Gambar Disposisi</h3>
               </div>
               <div class="box-body">
                 <!-- form start -->
                
              <form action="<?php base_url('admin/add/') ?>" method="post" enctype="multipart/form-data" >
-               <div class="form-group">
-                <label for="name">gambar</label>
-                <input type="file" name="gambar" />
-                
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Nama</label>
+                  <input type="text" class="form-control" name="nama" placeholder="nama"/>
+               </div>
+
+              <div class="form-group">
+                  <label for="surat">Tanggal Surat</label>
+                  <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" placeholder="Tanggal Surat"/>
               </div>
-                <div class="form-group">
-                    <label for="surat">Tanggal Surat</label>
-                      <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" placeholder="Tanggal Surat"/>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">nama</label>
-                      <input type="text" class="form-control" name="nama" placeholder="nama"/>
-                  </div>
+              
+               <div class="form-group">
+                <label for="name">Gambar</label>
+                <input type="file" name="gambar" />
+              </div>   
+
+              <a href="<?php echo base_url(); ?>admin/disposisi" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
               <input class="btn btn-success" type="submit" name="btn" value="Save" />
             </form>
 
-</div>
-
-           
-            <!--   
-                  <a href="<?php echo base_url(); ?>admin/disposisi" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
-                  <button type="submit" name="simpan" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button> -->
-                <?php echo form_close(); ?>
+          </div>
+           <?php echo form_close(); ?>
                 
-              </div><!-- /.box-body -->
-            </div><!-- /.box -->
-          </section><!-- /.content -->
-        </div>
+       </div><!-- /.box-body -->
+     </div><!-- /.box -->
+    </section><!-- /.content -->
+  </div>
