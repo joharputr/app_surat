@@ -34,7 +34,7 @@
                       <tr>
                        <th> No</th>
                         <th> Nama</th>
-                        <th> Tanggal Surat</th>
+                        <th> Tanggal</th>
                         <th> Gambar</th>
                         <th> Aksi</th>
                     </thead>

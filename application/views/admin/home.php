@@ -68,7 +68,7 @@
               <div class="small-box bg-blue">
                 <div class="inner">
                   <h3><?php echo $disposisi; ?></h3>
-                  <p> Disposisi</p>
+                  <p> Image</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-image"></i>

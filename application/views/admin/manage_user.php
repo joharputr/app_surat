@@ -20,7 +20,7 @@
           		<div class="box">
                 <div class="box-header">
                   <h3 class="box-title">
-                  	<a href="<?php echo base_url(); ?>admin/tambah_user" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-edit"></i> Tambah</a>
+                  	<a href="<?php echo base_url(); ?>admin/tambah_user" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah</a>
                   </h3>
                   <div class="box-tools">
                   	<!--

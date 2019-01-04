@@ -28,7 +28,7 @@
               </div>
               <div class="box-body">
                 <!-- form start -->
-                <?php echo form_open('admin/update_jenis'); ?>
+                <?php echo form_open_multipart('admin/update_jenis'); ?>
                 <?php  
                 foreach ($editdata as $data):
                 ?>
@@ -44,8 +44,8 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Kode Arsip</label>
                      
-<form id="formname" name="formname" method="post" action="submitform.asp" >
-
+<!-- <form id="formname" name="formname" method="post" action="submitform.asp" >
+ -->
 <!-- <table width="50%" border="0" cellspacing="0" cellpadding="5"> -->
   <tr>
    
@@ -664,7 +664,8 @@ $cat.on("change",function(){
                     <label for="exampleInputEmail1">Penjabat Pendisposisi</label>
                       <input type="text" class="form-control" name="penjabat_disposisi" value="<?php echo $data->penjabat_disposisi ?>" />
                   </div>
-                  <!-- <div class="form-group">
+                  
+                  <div class="form-group">
                     <label for="exampleInputEmail1" name="disposisi[]">Disposisi</label> <br>
                       <input type="checkbox" value="Tata Usaha" name="disposisi[]" >Tata Usaha
                       <input type="checkbox" value="Kapok Datin" name="disposisi[]" class="checkbox-inline" >Kapok Datin
@@ -680,7 +681,7 @@ $cat.on("change",function(){
                       <input type="checkbox" value="Petugas BMN" name="disposisi[]" class="checkbox-inline">Petugas BMN
                       
                         
-                  </div> -->
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Surat Asli/Copy</label>
                       <select name="asli_copy" required="required" class="form-control">
@@ -702,6 +703,12 @@ $cat.on("change",function(){
                     <label for="exampleInputEmail1">Informasi Disposisi</label>
                     <textarea name="informasi_disposisi" class="form-control" cols="30" rows="10"> <?php echo $data->informasi_disposisi ?> </textarea>
                   </div>
+
+                  <div class="form-group">
+                    <label for="name">Gambar</label>
+                    <input type="file" name="gambar" />
+                  </div>   
+
 
 
                   <input type="hidden" name="id" value="<?php echo $data->surat_id ?>">

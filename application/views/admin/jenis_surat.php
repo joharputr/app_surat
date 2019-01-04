@@ -59,7 +59,14 @@
                         <th>Disposisi</th>
                         <th>Surat Asli/copy</th>
                         <th>Informasi Disposisi</th>
+                        <th>Gambar</th>
                         <th>Aksi</th> 
+
+                      <!--   <th> No</th>
+                        <th> Nama</th>
+                        <th> Tanggal Surat</th>
+                        <th> Gambar</th>
+                        <th> Aksi</th> -->
                       
                      </tr>
                     </thead>
@@ -83,9 +90,12 @@
                         <td> <div style="width: 100px;"><?php echo ucfirst($lihat->lampiran) ?></td> 
                         <td> <div style="width: 100px;"><?php echo ucfirst($lihat->sifat_surat) ?></td> 
                         <td> <div style="width: 200px;"><?php echo ucfirst($lihat->penjabat_disposisi) ?></td> 
-                        <td> <i>(ceklis manual)</i> </td> </div>
+                        <td> <div style="width: 200px;"><?php echo ucfirst($lihat->disposisi) ?></td> </div>
                         <td> <div style="width: 130px;"><?php echo ucwords($lihat->asli_copy) ?></td>  
-                        <td> <div style="width: 350px;"> <?php echo ucwords($lihat->informasi_disposisi) ?></td> </div>  
+                        <td> <div style="width: 350px;"> <?php echo ucwords($lihat->informasi_disposisi) ?></td> </div>
+                        <td>  <a href="<?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?> </a> </td> </div>
+                       
+                     
                         <td align="center">
                           <div class="btn-group" role="group" style="width: 350px;">
                             <a href="<?php echo base_url(); ?>admin/edit_jenis/<?php echo $lihat->surat_id ?>" class="btn btn-sm btn-success btn-flat"><i class="fa fa-edit"></i> Edit</a>
@@ -225,6 +235,25 @@
              </td>                  		
                 </tr>
                    <?php endforeach; ?>
+
+                   <!--    <?php  
+                          $no = 1;
+                          foreach ($gambar as $lihat):
+                          ?>
+                        <tr>
+                          <td><?php echo $no++ ?></td>
+                            <td> <div style="width: 100px;"><?php echo $lihat->nama?></td>
+                            <td> <div style="width: 100px;"><?php echo tgl_indo($lihat->tgl_surat)?></td>
+                      
+                          <td>  <img src="<?php echo base_url('upload/files/'.$lihat->gambar) ?>" width="64" ></td> </div>
+
+                        <td  align="center">
+                        <div class="btn-group" role="group">
+                           <a href="<?php echo base_url(); ?>admin/delete/<?php echo $lihat->id_gambar ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
+                           <a href="<?php echo base_url(); ?>admin/edit/<?php echo $lihat->id_gambar ?>" class="btn btn-sm btn-success btn-flat"><i class="fa fa-edit"></i> Edit</a>
+                        </td>                     
+                      </tr>
+                      <?php endforeach ?> -->
             </tbody>
           </table>
         </div>

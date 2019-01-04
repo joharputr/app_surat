@@ -21,7 +21,7 @@
           		<div class="box">
                 <div class="box-header">
                   <h3 class="box-title">
-                  	<a href="<?php echo base_url(); ?>admin/tambah_surat_keluar" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-edit"></i> Tambah</a>
+                  	<a href="<?php echo base_url(); ?>admin/tambah_surat_keluar" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah</a>
                     <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
                    <a href="print_surat_keluar" target="_blank">
                                 <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> Print</button></a>
@@ -50,6 +50,7 @@
                         <th>Perihal</th>
                         <th>Surat Asli/copy</th>
                         <th>Keterangan</th>
+                        <th> Gambar</th>
                         <th>Aksi</th>
                     </thead>
                     <tbody>
@@ -67,6 +68,7 @@
                       <td> <div style="width: 400px;"><?php echo ucfirst($lihat->perihal) ?></td> </div>
                       <td><div style="width: 150px;"><?php echo ucwords($lihat->asli_copy) ?></td>  
                       <td> <div style="width: 350px;"> <?php echo ucwords($lihat->keterangan) ?></td>  </div>
+                      <td>  <a href="<?php echo base_url('upload/files/keluar/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/keluar/'.$lihat->gambar) ?> </a> </td> </div>
                         <td  align="center">
                           <div class="btn-group" role="group" style="width: 200px;">
                             <a href="<?php echo base_url(); ?>admin/edit_surat_keluar/<?php echo $lihat->surat_id ?>" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-edit"></i> Edit</a>

@@ -3,17 +3,17 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-          <section class="content-header">
+           <section class="content-header">
             <h1>
               Tambah
-              <small>Jenis Surat</small>
+              <small>Surat Masuk</small>
             </h1>
             <ol class="breadcrumb">
-              <li><i class="fa fa-dashboard"></i> Home</option></li>
-              <li><option href="<?php echo base_url(); ?>admin/jenis_surat">Jenis Surat</option></li>
+              <li><i class="fa fa-dashboard"></i> Home</a></li>
+              <li><a href="<?php echo base_url(); ?>admin/jenis_surat">Surat Masuk</a></li>
               <li class="active">Tambah</li>
               <!--
-              <li><option >Layout</option></li>
+              <li><a href="#">Layout</a></li>
               <li class="active">Top Navigation</li>
               -->
             </ol>

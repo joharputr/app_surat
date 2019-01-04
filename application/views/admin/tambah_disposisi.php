@@ -30,14 +30,15 @@
                 <!-- form start -->
                
              <form action="<?php base_url('admin/add/') ?>" method="post" enctype="multipart/form-data" >
-              <div class="form-group">
+             
+               <div class="form-group">
                   <label for="exampleInputEmail1">Nama</label>
                   <input type="text" class="form-control" name="nama" placeholder="nama"/>
                </div>
 
               <div class="form-group">
-                  <label for="surat">Tanggal Surat</label>
-                  <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" placeholder="Tanggal Surat"/>
+                  <label for="surat">Tanggal </label>
+                  <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" placeholder="Tanggal Kegiatan"/>
               </div>
               
                <div class="form-group">

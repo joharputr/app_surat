@@ -1,7 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
-	 public $ret;
+	  private $_table = "tb_surat_keluar";
+	   private $_table2 = "tb_jenis_surat";
+
 
 	function __construct(){
 		parent::__construct();
@@ -45,6 +47,7 @@ class Admin extends CI_Controller {
 	function jenis_surat(){
 		$a['data']	= $this->model_admin->tampil_jenis()->result_object();
 		$a['page']	= "jenis_surat";
+		 $a['gambar'] = $this->image_model->getAll();
 		
 		$this->load->view('admin/index', $a);
 	}
@@ -99,38 +102,60 @@ class Admin extends CI_Controller {
 	}
 
 	function update_jenis(){
-		$id = $this->input->post('id');
+		// $id = $this->input->post('id');
 		
-		$no_agenda = $this->input->post('no_agenda');
-		$tgl_terima= $this->input->post('tgl_terima');
-		$kode_arsip = $this->input->post('kode_arsip');	
-		$no_surat = $this->input->post('no_surat');
-		$tgl_surat= $this->input->post('tgl_surat');
-		$pengirim = $this->input->post('pengirim');
-		$perihal = $this->input->post('perihal');
-		$lampiran= $this->input->post('lampiran');
-		$sifat_surat= $this->input->post('sifat_surat');
-		$penjabat_disposisi= $this->input->post('penjabat_disposisi');
-		$disposisi= $this->input->post('disposisi');
-		$asli_copy = $this->input->post('asli_copy');
-		$informasi_disposisi = $this->input->post('informasi_disposisi');
-		$object = array(
-				'no_agenda' => $no_agenda,
-				'kode_arsip' => $kode_arsip,
-				'tgl_terima' => $tgl_terima,
-				'no_surat' => $no_surat,
-				'tgl_surat' => $tgl_surat,
-				'pengirim' => $pengirim,
-				'perihal' => $perihal,
-				'lampiran' => $lampiran,
-				'sifat_surat' => $sifat_surat,
-				'penjabat_disposisi' => $penjabat_disposisi,
-				'disposisi' => $disposisi,
-				'asli_copy' => $asli_copy,
-				'informasi_disposisi' => $informasi_disposisi
-			);
-		$this->db->where('surat_id', $id);
-		$this->db->update('tb_jenis_surat', $object); 
+		// $no_agenda = $this->input->post('no_agenda');
+		// $tgl_terima= $this->input->post('tgl_terima');
+		// $kode_arsip = $this->input->post('kode_arsip');	
+		// $no_surat = $this->input->post('no_surat');
+		// $tgl_surat= $this->input->post('tgl_surat');
+		// $pengirim = $this->input->post('pengirim');
+		// $perihal = $this->input->post('perihal');
+		// $lampiran= $this->input->post('lampiran');
+		// $sifat_surat= $this->input->post('sifat_surat');
+		// $penjabat_disposisi= $this->input->post('penjabat_disposisi');
+		// $disposisi= implode(', ', $this->input->post('disposisi'));
+		// $asli_copy = $this->input->post('asli_copy');
+		// $informasi_disposisi = $this->input->post('informasi_disposisi');
+		// $object = array(
+		// 		'no_agenda' => $no_agenda,
+		// 		'kode_arsip' => $kode_arsip,
+		// 		'tgl_terima' => $tgl_terima,
+		// 		'no_surat' => $no_surat,
+		// 		'tgl_surat' => $tgl_surat,
+		// 		'pengirim' => $pengirim,
+		// 		'perihal' => $perihal,
+		// 		'lampiran' => $lampiran,
+		// 		'sifat_surat' => $sifat_surat,
+		// 		'penjabat_disposisi' => $penjabat_disposisi,
+		// 		'disposisi' => $disposisi,
+		// 		'asli_copy' => $asli_copy,
+		// 		'informasi_disposisi' => $informasi_disposisi
+		// 	);
+		// $this->db->where('surat_id', $id);
+		// $this->db->update('tb_jenis_surat', $object); 
+
+		$post = $this->input->post();
+    	     	$this->surat_id = $post["id"];
+        		$this->no_agenda = $post["no_agenda"];
+        		$this->tgl_terima = $post["tgl_terima"];
+        		$this->kode_arsip = $post["kode_arsip"];
+        		$this->no_surat = $post["no_surat"];
+        		$this->tgl_surat = $post["tgl_surat"];
+        		$this->pengirim = $post["pengirim"];
+        		$this->perihal = $post["perihal"];
+        		$this->lampiran = $post["lampiran"];
+        		$this->sifat_surat = $post["sifat_surat"];
+        		$this->penjabat_disposisi = $post["penjabat_disposisi"];
+        		$this->disposisi= implode(', ', $post['disposisi']);
+        		$this->asli_copy = $post["asli_copy"];
+        		$this->informasi_disposisi = $post["informasi_disposisi"];
+
+		$this->gambar = $this->_uploadImage2();
+        
+    
+        $this->db->update($this->_table2, $this, array('surat_id' => $post['id']));
+
 
 		redirect('admin/jenis_surat','refresh');
 	}
@@ -189,7 +214,7 @@ class Admin extends CI_Controller {
 	}
 
 	function update_surat_keluar(){
-		$id = $this->input->post('id');
+	/*	$id = $this->input->post('id');
 		$no_agenda = $this->input->post('no_agenda');
 		$tgl_surat= $this->input->post('tgl_surat');
 		$kode_arsip = $this->input->post('kode_arsip');	
@@ -198,6 +223,8 @@ class Admin extends CI_Controller {
 		$perihal = $this->input->post('perihal');
 		$asli_copy = $this->input->post('asli_copy');
 		$keterangan = $this->input->post('keterangan');
+		$gambar = $this->_uploadImage();
+		
 		$object = array(
 				'no_agenda' => $no_agenda,
 				'kode_arsip' => $kode_arsip,
@@ -206,15 +233,79 @@ class Admin extends CI_Controller {
 				'tujuan' => $tujuan,
 				'perihal' => $perihal,
 				'asli_copy' => $asli_copy,
+				'gambar' => $this->_uploadImage(),
 				'keterangan' => $keterangan
-			);
-		$this->db->where('surat_id', $id);
-		$this->db->update('tb_surat_keluar', $object); 
+			);*/
 
+
+		$post = $this->input->post();
+    	     	$this->surat_id = $post["id"];
+        		$this->no_agenda = $post["no_agenda"];
+        		$this->tgl_surat = $post["tgl_surat"];
+        		$this->kode_arsip = $post["kode_arsip"];
+        		$this->no_surat = $post["no_surat"];
+        		$this->tujuan = $post["tujuan"];
+        		$this->perihal = $post["perihal"];
+        		$this->asli_copy = $post["asli_copy"];
+        		$this->keterangan = $post["keterangan"];
+        
+            $this->gambar = $this->_uploadImage();
+        
+    
+        $this->db->update($this->_table, $this, array('surat_id' => $post['id']));
+
+
+/*
+		$this->db->where('surat_id', $id);
+	//	$this->db->update('tb_surat_keluar', $object); 
+		   $this->db->update($this->_table, $this, array('surat_id' => $post['id']));
+*/
 		redirect('admin/surat_keluar','refresh');
 	}
 
+    private function _uploadImage()
+    {
+    $config['upload_path']          = './upload/files/keluar/';
+    $config['allowed_types']        = 'gif|jpg|png|pdf';
+    $config['file_name']            = $this->surat_id;
+    $config['overwrite']            = true;
+    $config['max_size']             = 1024; // 1MB
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+    $this->load->library('upload', $config);
 
+    if ($this->upload->do_upload('gambar')) {
+        return $this->upload->data('file_name');
+    }
+    
+    else {
+         return 'default.jpg';
+    }
+        
+  
+    }
+
+    private function _uploadImage2()
+    {
+    $config['upload_path']          = './upload/files/masuk/';
+    $config['allowed_types']        = 'gif|jpg|png|pdf';
+    $config['file_name']            = $this->surat_id;
+    $config['overwrite']            = true;
+    $config['max_size']             = 1024; // 1MB
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
+    $this->load->library('upload', $config);
+
+    if ($this->upload->do_upload('gambar')) {
+        return $this->upload->data('file_name');
+    }
+    
+    else {
+         return 'default.jpg';
+    }
+        
+  
+    }
 	function hapus_surat_keluar($id){
 		
 		$this->model_admin->hapus_surat_keluar($id);

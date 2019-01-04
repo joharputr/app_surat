@@ -92,7 +92,7 @@
              </li>
               <li class="<?php if($page == 'disposisi'){echo 'active';} ?>">
               <a href="<?php echo base_url(); ?>admin/disposisi">
-                <i class="fa fa-image"></i> <span>Disposisi</span> 
+                <i class="fa fa-image"></i> <span>Image</span> 
               </a>
             </li>
               <li class="<?php if($page == 'email'){echo 'active';} ?>">
