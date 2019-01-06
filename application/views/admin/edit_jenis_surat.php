@@ -50,7 +50,7 @@
   <tr>
    
     <td >
-      <select name="kode_arsip" id="category1" class="form-control">
+      <select name="kode_arsip" id="category1" class="form-control" >
         <option value="">Kategori</option>
         <option value="PR">PERENCANAAN (PR) </option>
         <option value="KP">KEPEGAWAIAN (KP) </option>
@@ -66,12 +66,13 @@
         <option value="ME">METEOROLOGI (ME) </option>
         <option value="LJ">INSTRUMENTASI KALIBRASI REKAYASA DAN JARINGAN KOMUNIKASI (LJ) </option>
       </select>
+
     </td>
   </tr>
   <tr>
   
     <td>
-      <select disabled="disabled"  id="category2" name="kode_arsip" class="form-control">
+      <select disabled="disabled"  id="category2" name="kode_arsip" class="form-control" style="margin-top: 5px;">
         <option value>Kategori 2</option>
          <option value="PR.00">===============================================</option>
 <!-- PERENCANAAN -->

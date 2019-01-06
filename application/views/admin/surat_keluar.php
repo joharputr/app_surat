@@ -1,4 +1,4 @@
-
+<!--  -->
 <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -23,8 +23,16 @@
                   <h3 class="box-title">
                   	<a href="<?php echo base_url(); ?>admin/tambah_surat_keluar" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah</a>
                     <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
+                 
                    <a href="print_surat_keluar" target="_blank">
                                 <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> Print</button></a>
+                                <a href="export" target="_blank">
+                                <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> export to excel</button></a>
+                                <a href="export_sql_surat_keluar" target="_blank">
+                                <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> export SQL </button></a>
+                                
+                                 <a href="delete_all_surat_keluar" onclick="javascript: return confirm('Anda yakin akan menghapus semua data surat keluar ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus semua data </a>
+                               
              
             
             <!-- bagian print -->

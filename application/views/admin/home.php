@@ -50,7 +50,7 @@
 
           <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-green">
+              <div class="small-box bg-green"  style="margin-left: 14px;">
                 <div class="inner">
                   <h3><?php echo $manage_user; ?></h3>
                   <p>User</p>
@@ -58,7 +58,7 @@
                 <div class="icon">
                   <i class="fa fa-user"></i>
                 </div>
-                <a href="<?php echo base_url(); ?>admin/manage_user" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?php echo base_url(); ?>admin/manage_user" class="small-box-footer"  >More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
 

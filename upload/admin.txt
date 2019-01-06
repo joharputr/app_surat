@@ -1,0 +1,49 @@
+	function update_surat_keluar(){
+	/*	$id = $this->input->post('id');
+		$no_agenda = $this->input->post('no_agenda');
+		$tgl_surat= $this->input->post('tgl_surat');
+		$kode_arsip = $this->input->post('kode_arsip');	
+		$no_surat = $this->input->post('no_surat');
+		$tujuan = $this->input->post('tujuan');
+		$perihal = $this->input->post('perihal');
+		$asli_copy = $this->input->post('asli_copy');
+		$keterangan = $this->input->post('keterangan');
+		$gambar = $this->_uploadImage();
+		
+		$object = array(
+				'no_agenda' => $no_agenda,
+				'kode_arsip' => $kode_arsip,
+				'tgl_surat' => $tgl_surat,
+				'no_surat' => $no_surat,
+				'tujuan' => $tujuan,
+				'perihal' => $perihal,
+				'asli_copy' => $asli_copy,
+				'gambar' => $this->_uploadImage(),
+				'keterangan' => $keterangan
+			);*/
+
+
+		$post = $this->input->post();
+    	     	$this->surat_id = $post["id"];
+        		$this->no_agenda = $post["no_agenda"];
+        		$this->tgl_surat = $post["tgl_surat"];
+        		$this->kode_arsip = $post["kode_arsip"];
+        		$this->no_surat = $post["no_surat"];
+        		$this->tujuan = $post["tujuan"];
+        		$this->perihal = $post["perihal"];
+        		$this->asli_copy = $post["asli_copy"];
+        		$this->keterangan = $post["keterangan"];
+        
+            $this->gambar = $this->_uploadImage();
+        
+    
+        $this->db->update($this->_table, $this, array('surat_id' => $post['id']));
+
+
+/*
+		$this->db->where('surat_id', $id);
+	//	$this->db->update('tb_surat_keluar', $object); 
+		   $this->db->update($this->_table, $this, array('surat_id' => $post['id']));
+*/
+		redirect('admin/surat_keluar','refresh');
+	}

@@ -12,6 +12,14 @@ class Model_admin extends CI_Model {
 	{
 		return $this->db->get("tb_surat_keluar");
 	}
+		public function export_surat_keluar()
+	{
+		return $this->db->get("tb_surat_keluar")->result();
+	}
+	public function export_jenis()
+	{
+		return $this->db->get('tb_jenis_surat')->result();
+	}
 
 	public function tampil_manage_user()
 	{
