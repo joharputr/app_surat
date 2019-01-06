@@ -65,7 +65,7 @@
                         <th>Disposisi</th>
                         <th>Surat Asli/copy</th>
                         <th>Informasi Disposisi</th>
-                        <th>Gambar</th>
+                        <th>File Scan</th>
                         <th>Aksi</th> 
 
                       <!--   <th> No</th>
@@ -265,9 +265,12 @@
         </div>
       </div><!-- /.box-body -->
     </div>
+
   </div>
+  <span>* jika ingin mengubah data(edit) dimohon mengisi kembali file scan, kode arsip dan disposisi</span>
 </div>
 </section><!-- /.content -->
+
 </div><!-- /.content-wrapper -->
 
 

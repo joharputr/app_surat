@@ -38,7 +38,7 @@
                       </div>
                       <div class="form-group">
                          <label>Upload File</label>
-                         <input type="file" name="lampiran[]" accept=".doc,.docx, .pdf, .jpg" required /> <br>
+                         <input type="file" name="lampiran[]" accept=".doc,.docx, .pdf, .jpg"  /> <br>
                          <button type="submit" name="sendEmail" value="sendEmail" class="btn btn-sm btn-success btn-flat">Submit</button>
                     </form>
                    </div>

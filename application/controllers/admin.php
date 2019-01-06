@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
 		
 		$a['manage_user']	= $this->model_admin->tampil_manage_user()->num_rows();
 		$a['disposisi']	= $this->image_model->tampil_disposisi()->num_rows();
-		$a['siswa'] = $this->model_admin->export_surat_keluar();
+	//	$a['siswa'] = $this->model_admin->export_surat_keluar();
 		//$this->load->view('view',$a);
 
 		$a['page']	= "home";
