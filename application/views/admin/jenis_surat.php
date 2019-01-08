@@ -12,6 +12,8 @@
           </ol>
         </section>
 
+
+
         <!-- Main content -->
         <section class="content">
           
@@ -23,28 +25,15 @@
                   	<a href="<?php echo base_url(); ?>admin/tambah_jenis" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
                      <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
                      <a href="print_surat_masuk" target="_blank">
-                     <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> Print</button></a>
+                     <button class="btn btn-sm btn-success btn-flat" ><i class="fa fa-print"></i> Print</button></a>
                      <a href="export_jenis_surat" target="_blank">
-                     <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> export to excel</button></a>
+                     <button class="btn btn-sm btn-info btn-flat" ><i class="fa fa-print"></i> Export to Excel</button></a>
                      <a href="export_sql_jenis" target="_blank">
-                     <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> backup sql</button></a>
-                      <a href="delete_all_jenis" onclick="javascript: return confirm('Anda yakin akan menghapus semua data surat masuk ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus semua data </a>
-                    
-                <!-- bagian print -->
-                     <!-- <a href="./admin/print_surat_masuk.php?surat_id=<? ?>" target="_blank"><button class="btn btn-sm btn-danger btn-flat"><i class="fa fa-print"></i> Cetak Data Surat Masuk </button></a> -->
-
-
+                     <button class="btn btn-sm btn-warning btn-flat" ><i class="fa fa-print"></i> Backup SQL</button></a>
+                      <a href="delete_all_jenis" onclick="javascript: return confirm('Anda yakin akan menghapus semua data surat masuk ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus Semua Data </a>
                   </h3>
-                 <!--  <div class="box-tools">
-                  	
-                    <div class="input-group" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
-                      <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                    
-                  </div> -->
+
+
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                 
@@ -76,7 +65,7 @@
                       
                      </tr>
                     </thead>
-
+                      
                     <tbody>
 
                       	<?php  
@@ -241,26 +230,6 @@
              </td>                  		
                 </tr>
                    <?php endforeach; ?>
-
-                   <!--    <?php  
-                          $no = 1;
-                          foreach ($gambar as $lihat):
-                          ?>
-                        <tr>
-                          <td><?php echo $no++ ?></td>
-                            <td> <div style="width: 100px;"><?php echo $lihat->nama?></td>
-                            <td> <div style="width: 100px;"><?php echo tgl_indo($lihat->tgl_surat)?></td>
-                      
-                          <td>  <img src="<?php echo base_url('upload/files/'.$lihat->gambar) ?>" width="64" ></td> </div>
-
-                        <td  align="center">
-                        <div class="btn-group" role="group">
-                           <a href="<?php echo base_url(); ?>admin/delete/<?php echo $lihat->id_gambar ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
-                           <a href="<?php echo base_url(); ?>admin/edit/<?php echo $lihat->id_gambar ?>" class="btn btn-sm btn-success btn-flat"><i class="fa fa-edit"></i> Edit</a>
-                        </td>                     
-                      </tr>
-                      <?php endforeach ?> -->
-            </tbody>
           </table>
         </div>
       </div><!-- /.box-body -->
@@ -318,7 +287,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
         
 
         <tr >
-           <th style="background-color: yellow; text-align: center;" > No  </th>
+          <!--  <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: #ADFF2F; text-align: center;"> Tanggal Diterima </th>
            <th style="background-color: yellow; text-align: center;"> Kode Arsip </th>
@@ -334,7 +303,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
     $no=1;
     foreach ($data as $lihat){
         echo "<tr>
-           <td > ".$lihat['surat_id']."</td>
+          
            <td > ".$lihat['no_agenda']."</td>
            <td> ".tgl_indo($lihat['tgl_terima'])." </td>
            <td > ".$lihat['kode_arsip']." </td>

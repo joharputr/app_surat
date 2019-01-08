@@ -41,6 +41,10 @@
                     <label for="exampleInputEmail1">Tanggal Diterima</label>
                       <input type="text" class="form-control" name="tgl_terima" id="tgl_terima" data-date-format="yyyy-mm-dd" value="<?php echo $data->tgl_terima ?>"/>
                   </div>
+                   <!--  <div class="form-group">
+                    <label for="exampleInputEmail1">kode surat</label>
+                      <input type="text" class="form-control"  name="kode_arsip1" value="<?php echo $data->kode_arsip ?>" />
+                  </div>  -->
                   <div class="form-group">
                     <label for="exampleInputEmail1">Kode Arsip</label>
                      

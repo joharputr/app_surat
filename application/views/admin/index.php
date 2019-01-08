@@ -42,10 +42,10 @@
           <span class="logo-lg">Arsip Surat BMKG</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
+        <nav class="navbar navbar-static-top" role="navigation"> <!-- membuat garis atas -->
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Toggle navigation</span> <!-- menampilkan tiga garis -->
           </a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">             

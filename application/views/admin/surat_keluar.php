@@ -25,13 +25,13 @@
                     <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
                  
                    <a href="print_surat_keluar" target="_blank">
-                                <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> Print</button></a>
+                                <button class="btn btn-sm btn-success btn-flat" ><i class="fa fa-print"></i> Print</button></a>
                                 <a href="export" target="_blank">
-                                <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> export to excel</button></a>
+                                <button class="btn btn-sm btn-info btn-flat" ><i class="fa fa-print"></i> Export to Excel</button></a>
                                 <a href="export_sql_surat_keluar" target="_blank">
-                                <button class="btn btn-sm btn-danger btn-flat" ><i class="fa fa-print"></i> export SQL </button></a>
+                                <button class="btn btn-sm btn-warning btn-flat" ><i class="fa fa-print"></i> Export SQL </button></a>
                                 
-                                 <a href="delete_all_surat_keluar" onclick="javascript: return confirm('Anda yakin akan menghapus semua data surat keluar ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus semua data </a>
+                                 <a href="delete_all_surat_keluar" onclick="javascript: return confirm('Anda yakin akan menghapus semua data surat keluar ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus Semua Data </a>
                                
              
             
@@ -93,7 +93,8 @@
              </div>
           </div>
           
-         
+          <span>* jika ingin mengubah data(edit) dimohon mengisi kembali file scan dan kode arsip</span>
+
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
@@ -151,7 +152,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_surat_keluar ORDER BY surat_id 
 <form action="" method="post">
     <table table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
         <tr >
-           <th style="background-color: yellow; text-align: center;" > No  </th>
+         <!--   <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: yellow; text-align: center;"> Tanggal Surat </th>
            <th style="background-color: yellow; text-align: center;"> Kode Arsip </th>
@@ -166,7 +167,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_surat_keluar ORDER BY surat_id 
     $no=1;
     foreach ($data as $lihat){
         echo "<tr>
-           <td > ".$lihat['surat_id']."</td>
+         
            <td width=30px>".$lihat['no_agenda']."</td>
            <td > ".tgl_indo($lihat['tgl_surat'])."  </td>
            <td > ".$lihat['kode_arsip']."  </td>

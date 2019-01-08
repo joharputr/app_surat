@@ -54,7 +54,7 @@ $(document).ready(function(){
                             Jabatan &emsp;&nbsp;: <?php echo $laporan->tanggal_laporan; ?><br>
                             Unit Organisasi &emsp;&emsp;&emsp;: <?php echo $laporan->tanggal_mulai; ?><br>
 
-                            Dengan ini memberikan tugas kepada : <br>
+                            Dengan ini memberikan tugas kepada :
 
                             Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?php echo $laporan->jenis_alat; ?><br>
                             NIP &emsp; &emsp;&nbsp;: <?php echo $laporan->nama_alat; ?><br>

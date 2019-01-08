@@ -143,6 +143,7 @@ class Admin extends CI_Controller {
         		$this->no_agenda = $post["no_agenda"];
         		$this->tgl_terima = $post["tgl_terima"];
         		$this->kode_arsip = $post["kode_arsip"];
+        		//$this->kode_arsip = $post["kode_arsip1"];
         		$this->no_surat = $post["no_surat"];
         		$this->tgl_surat = $post["tgl_surat"];
         		$this->pengirim = $post["pengirim"];
@@ -905,4 +906,41 @@ public function delete_all_jenis()
 	redirect('admin/jenis_surat');
      }
 }
+
+
+function insert_buat_surat(){
+		
+		$nama1 = $this->input->post('nama1');
+		$nama2= $this->input->post('nama2');
+		$nip1 = $this->input->post('nip1');	
+		$nip2 = $this->input->post('nip2');
+		$pangkat1 = $this->input->post('pangkat1');
+		$pangkat2 = $this->input->post('pangkat2');
+		$jabatan1 = $this->input->post('jabatan1');
+		$jabatan2= $this->input->post('jabatan2');
+		$unit= $this->input->post('unit');
+		$tugas= $this->input->post('tugas');
+		$waktu= $this->input->post('waktu');
+		$tempat= $this->input->post('tempat');
+		$tanggal= $this->input->post('tanggal');
+		$object = array(
+				'nama1' => $nama1,
+				'nama2' => $nama2,
+				'nip1' => $nip1,
+				'nip2' => $nip2,
+				'pangkat1' => $pangkat1,
+				'pangkat2' => $pangkat2,
+				'jabatan1' => $jabatan1,
+				'jabatan2' => $jabatan2,
+				'unit' => $unit,
+				'tugas' => $tugas,
+				'waktu' => $waktu,
+				'tempat' => $tempat,
+				'tanggal' => $tanggal
+				
+			);
+		$this->db->insert('tb_surat_keluar', $object);
+
+		redirect('admin/surat_keluar','refresh');
+	}
 
