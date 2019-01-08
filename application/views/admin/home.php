@@ -89,6 +89,20 @@
                 <a href="<?php echo base_url(); ?>admin/email" class="small-box-footer" style="margin-top: 52px;">More info <i class="fa fa-arrow-circle-right" ></i></a>
               </div>
 
+                </div><!-- ./col -->
+             <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <div class="small-box bg-aqua" style="height: 130px; margin-right: -10px;">
+                  <div class="inner">
+                  <p> buat_surat</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-paper-plane-o"></i>
+                </div>
+                <a href="<?php echo base_url(); ?>admin/buat_surat" class="small-box-footer" style="margin-top: 52px;">More info <i class="fa fa-arrow-circle-right" ></i></a>
+              </div>
+
+
 
             </div><!-- ./col -->
         </section><!-- /.content -->

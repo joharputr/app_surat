@@ -34,41 +34,40 @@ $(document).ready(function(){
                             <br>
                             <hr width="100%" noshade style="border-top: 2px solid #000;">
                           </div>
-                        </div> <br>
-
-
-                         
-                        <div class="row" style="text-align: center;  "> <br>
-                          <br><h3><strong>SURAT PERINTAH TUGAS </strong> </h3>
+                        </div> 
+                      
+                        <div class="row" style="text-align: center;  "> 
+                          <h3><strong>SURAT PERINTAH TUGAS </strong> </h3>
                           <h3><strong>Nomor :  </strong> </h3>
                           <br>
                         </div>
 
                         <div class="row">
 
-                           <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 col-xl-12">
+                           <div style="padding-left: 100px; font-size: 150%">
                             <br>
-                            Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?php echo $laporan->jenis_alat; ?><br>
-                            NIP &emsp; &emsp;&nbsp;: <?php echo $laporan->nama_alat; ?><br>
-                            Pangkat/Gol &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;: <?php echo $laporan->lokasi; ?><br>
-                            Jabatan &emsp;&nbsp;: <?php echo $laporan->tanggal_laporan; ?><br>
-                            Unit Organisasi &emsp;&emsp;&emsp;: <?php echo $laporan->tanggal_mulai; ?><br>
+                            Yang bertanda tangan di bawah ini : <br>
+                            Nama &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pengirim; ?><br>
+                            NIP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;<?php echo $lihat->pengirim; ?><br>
+                            Pangkat/Gol &nbsp;&nbsp;&nbsp;: &nbsp;<?php echo $lihat->pengirim; ?><br>
+                            Jabatan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <?php echo $lihat->pengirim; ?><br>
+                            Unit Organisasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;<?php echo $lihat->pengirim; ?><br><br>
 
-                            Dengan ini memberikan tugas kepada :
+                            Dengan ini memberikan tugas kepada : <br>
 
-                            Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <?php echo $laporan->jenis_alat; ?><br>
-                            NIP &emsp; &emsp;&nbsp;: <?php echo $laporan->nama_alat; ?><br>
-                            Pangkat/Gol &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;: <?php echo $laporan->lokasi; ?><br>
-                            Jabatan &emsp;&nbsp;: <?php echo $laporan->tanggal_laporan; ?><br>
+                            Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;<?php echo $lihat->pengirim; ?><br>
+                            NIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<?php echo $lihat->pengirim; ?><br>
+                            Pangkat/Gol &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <?php echo $lihat->pengirim; ?><br>
+                            Jabatan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<?php echo $lihat->pengirim; ?><br> <br>
                            
-                            Demikian, untuk dilaksanakan sebagaimana mestinya.
+                            Demikian, untuk dilaksanakan sebagaimana mestinya. 
 
                            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 col-xl-6" align="center" style="float: right;">
                               <br>
-                                Sleman, <?php echo $laporan->jenis_alat; ?> <br><br><br>
-                                <u><?php  echo $laporan->nama_teknisi; ?></u><br>
-                                <u><?php  echo $laporan->nama_teknisi; ?></u><br>
-                                <u><?php  echo $laporan->nama_teknisi; ?></u><br>
+                                Sleman, <?php echo $lihat->pengirim; ?> <br><br><br>
+                                <u><?php echo $lihat->pengirim; ?></u><br>
+                                <u><?php echo $lihat->pengirim; ?></u><br>
+                                <u><?php echo $lihat->pengirim; ?></u><br>
                           </div>     
 
                             <br></div>

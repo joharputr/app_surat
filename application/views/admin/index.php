@@ -100,6 +100,13 @@
                 <i class="fa fa-paper-plane-o"></i> <span>Email</span> 
               </a>
             </li>
+
+             <li class="<?php if($page == 'email'){echo 'active';} ?>">
+              <a href="<?php echo base_url(); ?>admin/buat_surat">
+                <i class="fa fa-paper-plane-o"></i> <span>Buat Surat</span> 
+              </a>
+            </li>
+           
            
           </ul>
         </section>
