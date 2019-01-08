@@ -7,6 +7,11 @@ class Model_admin extends CI_Model {
 	{
 		return $this->db->get('tb_jenis_surat');
 	}
+	public function tampil_buat_surat()
+	{
+		return $this->db->get('buat_surat');
+	}
+
 
 	public function tampil_surat_keluar()
 	{
