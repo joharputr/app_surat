@@ -43,7 +43,7 @@
                       <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" value="<?php echo $data->tgl_surat ?>"/>
                   </div>
                    <div class="form-group">
-                    <label for="exampleInputEmail1">Kode Arsip</label>
+                    <label for="exampleInputEmail1">Kode Arsip (Otomatis)</label>
                      
 <form id="formname" name="formname" method="post" action="submitform.asp" >
 
@@ -601,6 +601,11 @@ $cat.on("change",function(){
     $subcat.prop("disabled",false);
 });
 </script>
+                  
+                   <div class="form-group">
+                    <label for="exampleInputEmail1">Kode Arsip (Manual)</label>
+                      <input type="text" class="form-control" name="kode_arsip2" value="<?php echo $data->kode_arsip2 ?>"/>
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">No Surat</label>
                       <input type="text" class="form-control" name="no_surat" value="<?php echo $data->no_surat ?>"/>

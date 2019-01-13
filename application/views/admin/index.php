@@ -101,9 +101,9 @@
               </a>
             </li>
 
-             <li class="<?php if($page == 'email'){echo 'active';} ?>">
+             <li class="<?php if($page == 'buat_surat'){echo 'active';} ?>">
               <a href="<?php echo base_url(); ?>admin/buat_surat">
-                <i class="fa fa-paper-plane-o"></i> <span>Buat Surat</span> 
+                <i class="fa fa-pencil"></i> <span>Buat Surat</span> 
               </a>
             </li>
            

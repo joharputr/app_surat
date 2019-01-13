@@ -23,7 +23,7 @@
           <section class="content">
             <div class="box box-info">
               <div class="box-header with-border">
-                <h3 class="box-title">Form Data Tambah Jenis Surat</h3>
+                <h3 class="box-title">Form Data Tambah Surat Masuk</h3>
               </div>
               <div class="box-body">
                 <!-- form start -->
@@ -39,7 +39,7 @@
                       <input type="text" class="form-control" name="tgl_terima" id="tgl_terima" data-date-format="yyyy-mm-dd" placeholder="Tanggal Diterima"/>
                   </div>
                      <div class="form-group">
-             <label for="exampleInputEmail1">kode  arsip</label>
+             <label for="exampleInputEmail1">Kode Arsip (Otomatis)</label>
             
 
 <form id="formname" name="formname" method="post" action="submitform.asp" >
@@ -597,6 +597,10 @@ $cat.on("change",function(){
 });
 </script>
 
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">Kode Arsip (Manual) </label>
+                      <input type="text" class="form-control" name="kode_arsip2" placeholder="Kode Arsip (Manual)"/>
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">No Surat</label>
                       <input type="text" class="form-control" name="no_surat" placeholder="No Surat"/>

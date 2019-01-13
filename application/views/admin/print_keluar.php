@@ -14,10 +14,10 @@ $(document).ready(function(){
 
   <?php  foreach ($data as $lihat): ?>
 
- <!-- lihat laporan --> 
+ <!-- print spt --> 
                
                  
-              <div class="modal-body" > 
+              <div class="modal-body" style="font-family: arial, sans-serif;"> 
                     <div class="row">
                       <div class="col-lg-12" style="padding-left: 5%; padding-right: 5%">
                         <div class="row">
@@ -37,70 +37,56 @@ $(document).ready(function(){
                         </div> 
                       
                         <div class="row" style="text-align: center;  "> 
-                          <h3><strong>SURAT PERINTAH TUGAS </strong> </h3>
-                          <h3><strong>Nomor :  </strong> </h3>
-                          <br>
+                          <h3>SURAT PERINTAH TUGAS  </h3>
+                         <div style="margin-top: -15px;"><h3 >Nomor : <?php echo $lihat->no_surat; ?>  </h3> 
+                          <br></div>
                         </div>
 
                         <div class="row">
 
-                           <div style="padding-left: 100px; font-size: 150%">
+                           <div style="font-family:  arial, sans-serif; padding-left: 100px; font-size: 16px; text-align:justify;">
                             <br>
                             Yang bertanda tangan di bawah ini : <br>
-                            Nama &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pengirim; ?><br>
-                            NIP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;<?php echo $lihat->pengirim; ?><br>
-                            Pangkat/Gol &nbsp;&nbsp;&nbsp;: &nbsp;<?php echo $lihat->pengirim; ?><br>
-                            Jabatan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <?php echo $lihat->pengirim; ?><br>
-                            Unit Organisasi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;<?php echo $lihat->pengirim; ?><br><br>
+                            Nama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->nama1; ?><br>
+                            NIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->nip1; ?><br>
+                            Pangkat/Gol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pangkat1; ?><br>
+                            Jabatan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->jabatan1; ?><br>
+                            Unit Organisasi&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->unit; ?><br><br>
 
                             Dengan ini memberikan tugas kepada : <br>
 
-                            Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;<?php echo $lihat->pengirim; ?><br>
-                            NIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<?php echo $lihat->pengirim; ?><br>
-                            Pangkat/Gol &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; <?php echo $lihat->pengirim; ?><br>
-                            Jabatan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<?php echo $lihat->pengirim; ?><br> <br>
+                            Nama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->nama2; ?><br>
+                            NIP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp; <?php echo $lihat->nip2; ?><br>
+                            Pangkat/Gol&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pangkat2; ?><br>
+                            Jabatan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->jabatan2; ?><br> <br>
+
+
+                             Untuk melaksanakan : <br>
+
+                            Tugas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->tugas; ?><br>
+                            Selama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->waktu; ?><br>
+                            Lokasi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->lokasi; ?><br>
+                            Tanggal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->tanggal; ?><br>                           
                            
                             Demikian, untuk dilaksanakan sebagaimana mestinya. 
 
-                           <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 col-xl-6" align="center" style="float: right;">
+
+
+                           <div  style="float: right;">
                               <br>
-                                Sleman, <?php echo $lihat->pengirim; ?> <br><br><br>
-                                <u><?php echo $lihat->pengirim; ?></u><br>
-                                <u><?php echo $lihat->pengirim; ?></u><br>
-                                <u><?php echo $lihat->pengirim; ?></u><br>
+                                  Sleman, &nbsp;<?php
+                                  date_default_timezone_set("Asia/Jakarta");
+                                  echo "" . tgl_indo(date("Y-m-d"));
+                                  ?> <br> <?php echo $lihat->plh; ?><br>
+                                   <br><br><br>
+
+                                <?php echo $lihat->nama1; ?><br>
+                                
+                      
                           </div>     
 
                             <br></div>
                         </div>
-                                            Yang bertanda tangan di bawah ini :
-                                            Nama : <?php echo $lihat->pengirim; ?>
-                                NIP : <?php echo $lihat->pengirim; ?>
-                                Pangkat/Gol.ruang : <?php echo $lihat->pengirim; ?>
-                                Jabatan : <?php echo $lihat->pengirim; ?>
-                                Unit Organisasi : Stasiun Klimatologi Kelas IV Mlati
-
-
-                                Dengan ini memberikan tugas kepada :
-
-                                Nama : <?php echo $lihat->pengirim; ?>
-                                NIP : <?php echo $lihat->pengirim; ?>
-                                Pangkat/Gol.ruang :<?php echo $lihat->pengirim; ?>
-                                Jabatan : <?php echo $lihat->pengirim; ?>
-
-                                Untuk melaksanakan :
-                                Tugas : <?php echo $lihat->pengirim; ?>
-                                Selama : <?php echo $lihat->pengirim; ?>
-                                Lokasi : <?php echo $lihat->pengirim; ?>
-                                Tanggal : <?php echo $lihat->pengirim; ?>
-
-
-                               
-                                Sleman, 4 Januari 2019
-                                Kepala,
-
-                                Agus Sudaryatno, S.Kom, MM
-                                NIP 196101201980031001
-
                           </div>
                         </div>
                       </div>

@@ -52,7 +52,8 @@
                         <th>No</th>
                         <th>No. Agenda</th>
                         <th>Tanggal Surat</th>
-                        <th>Kode Arsip</th>
+                          <th>Kode Arsip (otomatis)</th>
+                         <th>Kode Arsip (Manual)</th>
                         <th>No Surat</th>
                         <th>Tujuan</th>
                         <th>Perihal</th>
@@ -71,6 +72,7 @@
                     	<td><div style="width: 100px;"><?php echo $lihat->no_agenda?></td>
                       <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
                     	<td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
+                        <td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip2) ?></td> 
                       <td><div style="width: 150px;"><?php echo ucwords($lihat->no_surat) ?></td> 
                       <td> <div style="width: 100px;">  <?php echo ucfirst($lihat->tujuan) ?></td> 
                       <td> <div style="width: 400px;"><?php echo ucfirst($lihat->perihal) ?></td> </div>
@@ -155,7 +157,8 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_surat_keluar ORDER BY surat_id 
          <!--   <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: yellow; text-align: center;"> Tanggal Surat </th>
-           <th style="background-color: yellow; text-align: center;"> Kode Arsip </th>
+           <th style="background-color: yellow; text-align: center;"> Kode Arsip (Otomatis) </th>
+            <th style="background-color: yellow; text-align: center;"> Kode Arsip (Manual )</th>
            <th style="background-color: yellow; text-align: center;"> No Surat </th>
            <th style="background-color: yellow; text-align: center;"> Tujuan </th>
            <th style="background-color: yellow; text-align: center;">Perihal  </th>
@@ -171,6 +174,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_surat_keluar ORDER BY surat_id 
            <td width=30px>".$lihat['no_agenda']."</td>
            <td > ".tgl_indo($lihat['tgl_surat'])."  </td>
            <td > ".$lihat['kode_arsip']."  </td>
+           <td > ".$lihat['kode_arsip2']."  </td>
            <td >".$lihat['no_surat']."</td> 
            <td >".$lihat['tujuan']." </td> 
            <td > ".$lihat['perihal']."  </td>

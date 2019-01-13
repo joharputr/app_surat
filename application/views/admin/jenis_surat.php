@@ -23,7 +23,7 @@
                 <div class="box-header">
                   <h3 class="box-title">
                   	<a href="<?php echo base_url(); ?>admin/tambah_jenis" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
-                     <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
+                     <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan12"><i class="fa fa-eye"></i> Lihat Data</button>
                      <a href="print_surat_masuk" target="_blank">
                      <button class="btn btn-sm btn-success btn-flat" ><i class="fa fa-print"></i> Print</button></a>
                      <a href="export_jenis_surat" target="_blank">
@@ -43,7 +43,8 @@
                         <th>No</th>
                         <th>No. Agenda</th>
                         <th>Tanggal Diterima</th>
-                        <th>Kode Arsip</th>
+                        <th>Kode Arsip (otomatis)</th>
+                         <th>Kode Arsip (Manual)</th>
                         <th>No Surat</th>
                         <th>Tanggal Surat</th>
                         <th>Pengirim</th>
@@ -78,6 +79,7 @@
                     		<td> <div style="width: 100px;"><?php echo $lihat->no_agenda?></td>
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_terima) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
+                          <td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip2) ?></td> 
                         <td>  <div style="width: 200px;"> <?php echo ucwords($lihat->no_surat) ?></td>
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucfirst($lihat->pengirim) ?></td> 
@@ -113,7 +115,7 @@
 
  <!-- lihat disposisi --> 
                
-                  <div class="modal-body" > 
+                  <div class="modal-body"> 
                     <div class="row">
                       <div class="col-lg-12" style="padding-left: 10%; padding-right: 10%">
                         <div class="row">
@@ -129,32 +131,52 @@
                             </div>
                         </div>
                             <div class="row" style="background-color: black; height: 4px;"></div> <br> <br>
-                               <div>
-                                <table style="border: 3px solid; font-family: arial, sans-serif; border-collapse: collapse;" align="right">
-                                  <tr>
-                                    <th >KODE ARSIP : </th>
-                                    <th style="border: 3px solid"><?php echo $lihat->kode_arsip; ?> </th> 
-                                    <th> <?php echo $lihat->no_agenda; ?>   </th>
-                                  </tr>
-                                </table>
-                            </div> 
-
-                        <div class="row" style="text-align: center;  "> <br>
-                          <br><h3><strong>LEMBAR DISPOSISI </strong> </h3>
-                          <br>
-                        </div>
 
                         <div class="row">
                           <br>
                             <style>
                                 th, tr, td{
-                                  border: 3px solid;
+                                  border: 1px solid;
                                   text-align: left;
-                                  padding: 5px;
-                                }
+                                 }
                             </style>
 
                          <table style="font-family: arial, sans-serif; border-collapse: collapse; width: 100%;">
+                           <tr>
+                                <th colspan="4" style="text-align: center">LEMBAR DISPOSISI </th> 
+                          </tr>
+
+                           <tr>
+                                <th colspan="4" > <pre style="border: 0px; background-color: white; font-family: arial, sans-serif;"> Nomor Agenda          :  <?php echo $lihat->no_agenda; ?>  </pre> </th> 
+                          </tr>
+
+                          <tr>
+                                <th colspan="4" > <pre style="border: 0px; background-color: white; font-family: arial, sans-serif;" > Tingkat Keamanan     : <?php echo $lihat->sifat_surat; ?>  </pre></th> 
+                          </tr>
+
+                          <tr>
+                                <th colspan="4" > <pre style="border: 0px; background-color: white; font-family: arial, sans-serif;"> Tanggal Penerimaan    : <?php echo tgl_indo($lihat->tgl_terima); ?> </pre> </th> 
+                          </tr>
+
+                          <tr>
+                                <th colspan="4" > <pre style="border: 0px; background-color: white; font-family: arial, sans-serif;"> Nomor Surat         : <?php echo $lihat->no_surat; ?> </pre> </th> 
+                          </tr>
+
+                          <tr>
+                                <th colspan="4" > <pre style="border: 0px; background-color: white; font-family: arial, sans-serif;"> Tanggal Surat       : <?php echo tgl_indo($lihat->tgl_surat); ?> </pre> </th> 
+                          </tr>
+
+                          <tr>
+                                <th colspan="4" > <pre style="border: 0px; background-color: white; font-family: arial, sans-serif;"> Asal Surat           : <?php echo $lihat->pengirim; ?> </pre> </th> 
+                          </tr>
+
+                          <tr>
+                                <th colspan="4" ><pre style="border: 0px; background-color: white; font-family: arial, sans-serif;"> Perihal              : <?php echo $lihat->perihal; ?> </pre> </th> 
+                          </tr>
+                           
+
+
+
                             <tr >
                               <th> Surat Dari </th>
                               <td><?php echo $lihat->pengirim; ?> </td> 
@@ -258,7 +280,7 @@ $koneksi = mysqli_connect($host, $user, $password, $database);
 <?php
 $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id DESC");
 ?>
- <div id="lihatlaporan2" class="modal fade" role="dialog">
+ <div id="lihatlaporan12" class="modal fade" role="dialog">
      <div class="modal-dialog" style="width: 80%">
                  <!-- Modal content-->
        <div class="modal-content">
@@ -290,7 +312,8 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
           <!--  <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: #ADFF2F; text-align: center;"> Tanggal Diterima </th>
-           <th style="background-color: yellow; text-align: center;"> Kode Arsip </th>
+           <th style="background-color: yellow; text-align: center;"> Kode Arsip (Otomatis) </th>
+            <th style="background-color: yellow; text-align: center;"> Kode Arsip (Manual)</th>
            <th style="background-color: #ADFF2F; text-align: center;"> No Surat </th>
            <th style="background-color: yellow; text-align: center;"> Tanggal Surat </th>
            <th style="background-color: #ADFF2F; text-align: center;"> Pengirim </th>
@@ -307,6 +330,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
            <td > ".$lihat['no_agenda']."</td>
            <td> ".tgl_indo($lihat['tgl_terima'])." </td>
            <td > ".$lihat['kode_arsip']." </td>
+           <td > ".$lihat['kode_arsip2']." </td>
            <td >".$lihat['no_surat']."</td> 
            <td> ".tgl_indo($lihat['tgl_surat'])."  </td>
            <td>".$lihat['pengirim']." </td> 

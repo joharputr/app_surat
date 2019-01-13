@@ -7,11 +7,11 @@
           <section class="content-header">
             <h1>
               Edit
-              <small>Jenis Surat</small>
+              <small>Surat Masuk</small>
             </h1>
             <ol class="breadcrumb">
               <li><i class="fa fa-dashboard"></i> Home</a></li>
-              <li><a href="<?php echo base_url(); ?>admin/jenis_surat">Jenis Surat</a></li>
+              <li><a href="<?php echo base_url(); ?>admin/jenis_surat">Surat Masuk</a></li>
               <li class="active">Edit</li>
               <!--
               <li><a href="#">Layout</a></li>
@@ -24,7 +24,7 @@
           <section class="content">
             <div class="box box-info">
               <div class="box-header with-border">
-                <h3 class="box-title">Form Data Edit Jenis Surat</h3>
+                <h3 class="box-title">Form Data Edit Surat Masuk</h3>
               </div>
               <div class="box-body">
                 <!-- form start -->
@@ -46,7 +46,7 @@
                       <input type="text" class="form-control"  name="kode_arsip1" value="<?php echo $data->kode_arsip ?>" />
                   </div>  -->
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Kode Arsip</label>
+                    <label for="exampleInputEmail1">Kode Arsip (Otomatis)</label>
                      
 <!-- <form id="formname" name="formname" method="post" action="submitform.asp" >
  -->
@@ -605,6 +605,10 @@ $cat.on("change",function(){
     $subcat.prop("disabled",false);
 });
 </script>
+                   <div class="form-group">
+                    <label for="exampleInputEmail1">Kode Arsip (Manual)</label>
+                      <input type="text" class="form-control" name="kode_arsip2" value="<?php echo $data->kode_arsip2 ?>"/>
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">No Surat</label>
                       <input type="text" class="form-control" name="no_surat" value="<?php echo $data->no_surat ?>"/>

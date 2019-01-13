@@ -3,6 +3,7 @@
 class Admin extends CI_Controller {
 	  private $_table = "tb_surat_keluar";
 	   private $_table2 = "tb_jenis_surat";
+	    private $_table3 = "buat_surat";
 
              
 
@@ -73,6 +74,7 @@ class Admin extends CI_Controller {
 		$no_agenda = $this->input->post('no_agenda');
 		$tgl_terima= $this->input->post('tgl_terima');
 		$kode_arsip = $this->input->post('kode_arsip');	
+		$kode_arsip2 = $this->input->post('kode_arsip2');	
 		$no_surat = $this->input->post('no_surat');
 		$tgl_surat= $this->input->post('tgl_surat');
 		$pengirim = $this->input->post('pengirim');
@@ -87,6 +89,7 @@ class Admin extends CI_Controller {
 		$object = array(
 				'no_agenda' => $no_agenda,
 				'kode_arsip' => $kode_arsip,
+				'kode_arsip2' => $kode_arsip2,
 				'tgl_terima' => $tgl_terima,
 				'no_surat' => $no_surat,
 				'tgl_surat' => $tgl_surat,
@@ -150,7 +153,7 @@ class Admin extends CI_Controller {
         		$this->no_agenda = $post["no_agenda"];
         		$this->tgl_terima = $post["tgl_terima"];
         		$this->kode_arsip = $post["kode_arsip"];
-        		//$this->kode_arsip = $post["kode_arsip1"];
+        		$this->kode_arsip2 = $post["kode_arsip2"];
         		$this->no_surat = $post["no_surat"];
         		$this->tgl_surat = $post["tgl_surat"];
         		$this->pengirim = $post["pengirim"];
@@ -197,6 +200,7 @@ class Admin extends CI_Controller {
 		$no_agenda = $this->input->post('no_agenda');
 		$tgl_surat= $this->input->post('tgl_surat');
 		$kode_arsip = $this->input->post('kode_arsip');	
+		$kode_arsip2 = $this->input->post('kode_arsip2');	
 		$no_surat = $this->input->post('no_surat');
 		$tujuan = $this->input->post('tujuan');
 		$perihal = $this->input->post('perihal');
@@ -205,6 +209,7 @@ class Admin extends CI_Controller {
 		$object = array(
 				'no_agenda' => $no_agenda,
 				'kode_arsip' => $kode_arsip,
+				'kode_arsip2' => $kode_arsip2,
 				'tgl_surat' => $tgl_surat,
 				'no_surat' => $no_surat,
 				'tujuan' => $tujuan,
@@ -254,6 +259,7 @@ class Admin extends CI_Controller {
         		$this->no_agenda = $post["no_agenda"];
         		$this->tgl_surat = $post["tgl_surat"];
         		$this->kode_arsip = $post["kode_arsip"];
+        		$this->kode_arsip2 = $post["kode_arsip2"];
         		$this->no_surat = $post["no_surat"];
         		$this->tujuan = $post["tujuan"];
         		$this->perihal = $post["perihal"];
@@ -677,7 +683,7 @@ $email_config = Array(
 		$write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
 		ob_end_clean();
 		header('Content-type: application/vnd.ms-excel');
-header('Content-Disposition: attachment; filename="payroll.xlsx"');
+header('Content-Disposition: attachment; filename="Surat Keluar.xlsx"');
 		$write->save('php://output');
 	}
 public function export_sql_surat_keluar()
@@ -769,12 +775,12 @@ public function export_jenis_surat(){
 		$excel->setActiveSheetIndex(0)->setCellValue('G3', "PENGIRIM"); 
 		$excel->setActiveSheetIndex(0)->setCellValue('H3', "PERIHAL"); 
 		$excel->setActiveSheetIndex(0)->setCellValue('I3', "LAMPIRAN"); 
-		$excel->setActiveSheetIndex(0)->setCellValue('K3', "SIFAT SURAT");
-		$excel->setActiveSheetIndex(0)->setCellValue('L3', "PEJABAT PENDISPOSISI");
-		$excel->setActiveSheetIndex(0)->setCellValue('M3', "DISPOSISI");
-		$excel->setActiveSheetIndex(0)->setCellValue('N3', "SURAT ASLI/COPY");
-		$excel->setActiveSheetIndex(0)->setCellValue('O3', "INFORMASI DISPOSISI");
-		$excel->setActiveSheetIndex(0)->setCellValue('P3', "GAMBAR");
+		$excel->setActiveSheetIndex(0)->setCellValue('J3', "SIFAT SURAT");
+		$excel->setActiveSheetIndex(0)->setCellValue('K3', "PEJABAT PENDISPOSISI");
+		$excel->setActiveSheetIndex(0)->setCellValue('L3', "DISPOSISI");
+		$excel->setActiveSheetIndex(0)->setCellValue('M3', "SURAT ASLI/COPY");
+		$excel->setActiveSheetIndex(0)->setCellValue('N3', "INFORMASI DISPOSISI");
+		$excel->setActiveSheetIndex(0)->setCellValue('O3', "GAMBAR");
 							  // Set kolom E3 dengan tulisan "ALAMAT"
 
 		// Apply style header yang telah kita buat tadi ke masing-masing kolom header
@@ -793,7 +799,7 @@ public function export_jenis_surat(){
 		$excel->getActiveSheet()->getStyle('M3')->applyFromArray($style_col);
 		$excel->getActiveSheet()->getStyle('N3')->applyFromArray($style_col);
 		$excel->getActiveSheet()->getStyle('O3')->applyFromArray($style_col);
-		$excel->getActiveSheet()->getStyle('P3')->applyFromArray($style_col);
+		
 
 
 		// Panggil function view yang ada di SiswaModel untuk menampilkan semua data siswanya
@@ -812,12 +818,11 @@ public function export_jenis_surat(){
 			$excel->setActiveSheetIndex(0)->setCellValue('H'.$numrow, $data->perihal);
 			$excel->setActiveSheetIndex(0)->setCellValue('I'.$numrow, $data->lampiran);
 			$excel->setActiveSheetIndex(0)->setCellValue('J'.$numrow, $data->sifat_surat);
-			$excel->setActiveSheetIndex(0)->setCellValue('K'.$numrow, $data->sifat_surat);
-			$excel->setActiveSheetIndex(0)->setCellValue('L'.$numrow, $data->penjabat_disposisi);
-			$excel->setActiveSheetIndex(0)->setCellValue('M'.$numrow, $data->disposisi);
-			$excel->setActiveSheetIndex(0)->setCellValue('N'.$numrow, $data->asli_copy);
-			$excel->setActiveSheetIndex(0)->setCellValue('O'.$numrow, $data->informasi_disposisi);
-			$excel->setActiveSheetIndex(0)->setCellValue('P'.$numrow, $data->gambar);
+			$excel->setActiveSheetIndex(0)->setCellValue('K'.$numrow, $data->penjabat_disposisi);
+			$excel->setActiveSheetIndex(0)->setCellValue('L'.$numrow, $data->disposisi);
+			$excel->setActiveSheetIndex(0)->setCellValue('M'.$numrow, $data->asli_copy);
+			$excel->setActiveSheetIndex(0)->setCellValue('N'.$numrow, $data->informasi_disposisi);
+			$excel->setActiveSheetIndex(0)->setCellValue('O'.$numrow, $data->gambar);
 
 
 			
@@ -837,7 +842,7 @@ public function export_jenis_surat(){
 			$excel->getActiveSheet()->getStyle('M'.$numrow)->applyFromArray($style_row);
 			$excel->getActiveSheet()->getStyle('N'.$numrow)->applyFromArray($style_row);
 			$excel->getActiveSheet()->getStyle('O'.$numrow)->applyFromArray($style_row);
-			$excel->getActiveSheet()->getStyle('P'.$numrow)->applyFromArray($style_row);
+			
 
 			
 			$no++; // Tambah 1 setiap kali looping
@@ -860,7 +865,7 @@ public function export_jenis_surat(){
 		$excel->getActiveSheet()->getColumnDimension('M')->setWidth(30);
 		$excel->getActiveSheet()->getColumnDimension('N')->setWidth(30);
 		$excel->getActiveSheet()->getColumnDimension('O')->setWidth(30);
-		$excel->getActiveSheet()->getColumnDimension('P')->setWidth(30);
+		
 		
 		// Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
 		$excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
@@ -880,7 +885,7 @@ public function export_jenis_surat(){
 		$write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
 		ob_end_clean();
 		header('Content-type: application/vnd.ms-excel');
-header('Content-Disposition: attachment; filename="payroll.xlsx"');
+header('Content-Disposition: attachment; filename="Surat Masuk.xlsx"');
 		$write->save('php://output');
 	}
 	public function export_sql_jenis()
@@ -912,11 +917,17 @@ public function delete_all_jenis()
 	$this->db->empty_table('tb_jenis_surat'); 
 	redirect('admin/jenis_surat');
      }
-}
 
+
+function tambah_buat(){
+		$a['page']	= "tambah_buat_surat";
+		
+		$this->load->view('admin/index', $a);
+	}
 
 function insert_buat_surat(){
 		
+		$no_surat = $this->input->post('no_surat');
 		$nama1 = $this->input->post('nama1');
 		$nama2= $this->input->post('nama2');
 		$nip1 = $this->input->post('nip1');	
@@ -928,9 +939,13 @@ function insert_buat_surat(){
 		$unit= $this->input->post('unit');
 		$tugas= $this->input->post('tugas');
 		$waktu= $this->input->post('waktu');
-		$tempat= $this->input->post('tempat');
+		$lokasi= $this->input->post('lokasi');
 		$tanggal= $this->input->post('tanggal');
+		$plh= $this->input->post('plh');
+		$keterangan= $this->input->post('keterangan');
+
 		$object = array(
+				'no_surat' => $no_surat,
 				'nama1' => $nama1,
 				'nama2' => $nama2,
 				'nip1' => $nip1,
@@ -942,12 +957,289 @@ function insert_buat_surat(){
 				'unit' => $unit,
 				'tugas' => $tugas,
 				'waktu' => $waktu,
-				'tempat' => $tempat,
-				'tanggal' => $tanggal
-				
+				'lokasi' => $lokasi,
+				'tanggal' => $tanggal,
+				'plh' => $plh,
+				'keterangan' => $keterangan
 			);
-		$this->db->insert('tb_surat_keluar', $object);
+		$this->db->insert('buat_surat', $object);
 
-		redirect('admin/surat_keluar','refresh');
+		redirect('admin/buat_surat','refresh');
 	}
 
+	function print_buat(){
+		if($this->input->get('id')){
+			$id = $this->input->get('id');
+			$data['data'] = $this->model_admin->getWhere('buat_surat', array('id' => $id));
+
+			$this->load->view('admin/print_keluar', $data);
+		}
+		
+	}
+
+	function print_buat2(){
+		if($this->input->get('id')){
+			$id = $this->input->get('id');
+			$data['data'] = $this->model_admin->getWhere('buat_surat', array('id' => $id));
+
+			$this->load->view('admin/print_keterangan', $data);
+		}
+		
+	}
+
+	function hapus_buat($id){
+		
+		$this->model_admin->hapus_buat($id);
+		redirect('admin/buat_surat','refresh');
+	}
+
+		function edit_buat($id){
+		$a['editdata']	= $this->db->get_where('buat_surat',array('id'=>$id))->result_object();		
+		$a['page']	= "edit_buat";
+		
+		$this->load->view('admin/index', $a);
+	}
+
+	function update_buat(){
+	
+		$post = $this->input->post();
+    	     	$this->id = $post["id"];
+    	     	$this->no_surat = $post["no_surat"];
+        		$this->nama1 = $post["nama1"];
+        		$this->nama2 = $post["nama2"];
+        		$this->nip1 = $post["nip1"];
+        		$this->nip2 = $post["nip2"];
+        		$this->pangkat1 = $post["pangkat1"];
+        		$this->pangkat2 = $post["pangkat2"];
+        		$this->jabatan1 = $post["jabatan1"];
+        		$this->jabatan2 = $post["jabatan2"];
+        		$this->unit = $post["unit"];
+        		$this->tugas = $post["tugas"];
+        		$this->waktu = $post["waktu"];
+        		$this->lokasi = $post["lokasi"];
+        		$this->tanggal = $post["tanggal"];
+        		$this->plh = $post["plh"];
+        		$this->keterangan = $post["keterangan"];
+        		
+        $this->db->update($this->_table3, $this, array('id' => $post['id']));
+
+		redirect('admin/buat_surat','refresh');
+	}
+
+	public function delete_all_surat_buat()
+	{
+	$this->db->empty_table('buat_surat'); 
+	redirect('admin/buat_surat');
+     }
+
+
+    
+	public function export_sql_buat()
+	{
+		$this->load->dbutil();
+
+$prefs = array(     
+    'format'      => 'zip',             
+    'filename'    => 'buat_surat.sql'
+    );
+
+
+$backup =& $this->dbutil->backup($prefs); 
+
+$db_name = 'backup-on-'. date("Y-m-d-H-i-s") .'.zip';
+$save = 'upload/'.$db_name;
+
+$this->load->helper('file');
+write_file($save, $backup); 
+
+
+$this->load->helper('download');
+force_download($db_name, $backup);
+	}
+
+	public function export_buat_surat(){
+		// Load plugin PHPExcel nya
+		include APPPATH.'third_party/PHPExcel/PHPExcel.php';
+		
+		// Panggil class PHPExcel nya
+		$excel = new PHPExcel();
+
+		// Settingan awal fil excel
+		$excel->getProperties()->setCreator('My Notes Code')
+							   ->setLastModifiedBy('My Notes Code')
+							   ->setTitle("Data Siswa")
+							   ->setSubject("Siswa")
+							   ->setDescription("Laporan Semua Data Siswa")
+							   ->setKeywords("DATA PEMBUATAN SURAT KELUAR");
+
+		// Buat sebuah variabel untuk menampung pengaturan style dari header tabel
+		$style_col = array(
+			'font' => array('bold' => true), // Set font nya jadi bold
+			'alignment' => array(
+				'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER, // Set text jadi ditengah secara horizontal (center)
+				'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER // Set text jadi di tengah secara vertical (middle)
+			),
+			'borders' => array(
+				'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+				'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+				'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+				'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+			)
+		);
+
+		// Buat sebuah variabel untuk menampung pengaturan style dari isi tabel
+		$style_row = array(
+			'alignment' => array(
+				'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER // Set text jadi di tengah secara vertical (middle)
+			),
+			'borders' => array(
+				'top' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border top dengan garis tipis
+				'right' => array('style'  => PHPExcel_Style_Border::BORDER_THIN),  // Set border right dengan garis tipis
+				'bottom' => array('style'  => PHPExcel_Style_Border::BORDER_THIN), // Set border bottom dengan garis tipis
+				'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
+			)
+		);
+
+		$excel->setActiveSheetIndex(0)->setCellValue('A1', "DATA PEMBUATAN SURAT KELUAR"); // Set kolom A1 dengan tulisan "DATA SISWA"
+		$excel->getActiveSheet()->mergeCells('A1:J1'); // Set Merge Cell pada kolom A1 sampai E1
+		$excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(TRUE); // Set bold kolom A1
+		$excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(15); // Set font size 15 untuk kolom A1
+		$excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // Set text center untuk kolom A1
+
+		// Buat header tabel nya pada baris ke 3
+		$excel->setActiveSheetIndex(0)->setCellValue('A3', "No Surat");
+		$excel->setActiveSheetIndex(0)->setCellValue('B3', "Nama Penanda Tangan"); // Set kolom A3 dengan tulisan "NO"
+		$excel->setActiveSheetIndex(0)->setCellValue('C3', "NIP Penanda Tangan"); // Set kolom B3 dengan tulisan "NIS"
+		$excel->setActiveSheetIndex(0)->setCellValue('D3', "Pangkat/Gol.ruang Penanda Tangan"); // Set kolom C3 dengan tulisan "NAMA"
+		$excel->setActiveSheetIndex(0)->setCellValue('E3', "Jabatan Penanda Tangan"); // Set kolom D3 dengan tulisan "JENIS KELAMIN"
+		$excel->setActiveSheetIndex(0)->setCellValue('F3', "Unit Organisasi"); 
+		$excel->setActiveSheetIndex(0)->setCellValue('G3', "Nama Penerima");
+		$excel->setActiveSheetIndex(0)->setCellValue('H3', "NIP Penerima"); 
+		$excel->setActiveSheetIndex(0)->setCellValue('I3', "Pangkat/Gol.ruang Penerima"); 
+		$excel->setActiveSheetIndex(0)->setCellValue('J3', "Jabatan Penerima"); 
+		$excel->setActiveSheetIndex(0)->setCellValue('K3', "Tugas");
+		$excel->setActiveSheetIndex(0)->setCellValue('L3', "Selama");
+		$excel->setActiveSheetIndex(0)->setCellValue('M3', "Lokasi");
+		$excel->setActiveSheetIndex(0)->setCellValue('N3', "Tanggal");
+		$excel->setActiveSheetIndex(0)->setCellValue('O3', "Kepala / PLH");
+		$excel->setActiveSheetIndex(0)->setCellValue('P3', "Keterangan");
+		
+							  // Set kolom E3 dengan tulisan "ALAMAT"
+
+		// Apply style header yang telah kita buat tadi ke masing-masing kolom header
+		$excel->getActiveSheet()->getStyle('A3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('B3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('C3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('D3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('E3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('F3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('G3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('H3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('I3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('J3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('K3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('L3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('M3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('N3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('O3')->applyFromArray($style_col);
+		$excel->getActiveSheet()->getStyle('P3')->applyFromArray($style_col);
+	
+	
+
+
+		// Panggil function view yang ada di SiswaModel untuk menampilkan semua data siswanya
+		$siswa = $this->model_admin->export_jenis();
+
+		$no = 1; // Untuk penomoran tabel, di awal set dengan 1
+		$numrow = 4; // Set baris pertama untuk isi tabel adalah baris ke 4
+		foreach($siswa as $data){ // Lakukan looping pada variabel siswa
+			$excel->setActiveSheetIndex(0)->setCellValue('A'.$numrow, $no);
+			$excel->setActiveSheetIndex(0)->setCellValue('B'.$numrow, $no_surat);
+			$excel->setActiveSheetIndex(0)->setCellValue('C'.$numrow, $data->nama1);
+			$excel->setActiveSheetIndex(0)->setCellValue('D'.$numrow, $data->nip1);
+			$excel->setActiveSheetIndex(0)->setCellValue('E'.$numrow, $data->pangkat1);
+			$excel->setActiveSheetIndex(0)->setCellValue('F'.$numrow, $data->jabatan1);
+			$excel->setActiveSheetIndex(0)->setCellValue('G'.$numrow, $data->unit);
+			$excel->setActiveSheetIndex(0)->setCellValue('H'.$numrow, $data->nama2);
+			$excel->setActiveSheetIndex(0)->setCellValue('I'.$numrow, $data->nip2);
+			$excel->setActiveSheetIndex(0)->setCellValue('J'.$numrow, $data->pangkat2);
+			$excel->setActiveSheetIndex(0)->setCellValue('K'.$numrow, $data->jabatan2);
+			$excel->setActiveSheetIndex(0)->setCellValue('L'.$numrow, $data->tugas);
+			$excel->setActiveSheetIndex(0)->setCellValue('M'.$numrow, $data->selama);
+			$excel->setActiveSheetIndex(0)->setCellValue('N'.$numrow, $data->lokasi);
+			$excel->setActiveSheetIndex(0)->setCellValue('O'.$numrow, $data->tanggal);
+			$excel->setActiveSheetIndex(0)->setCellValue('P'.$numrow, $data->plh);
+			$excel->setActiveSheetIndex(0)->setCellValue('Q'.$numrow, $data->keterangan);
+			
+
+
+			
+			// Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
+			$excel->getActiveSheet()->getStyle('A'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('B'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('C'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('D'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('E'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('F'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('G'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('H'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('I'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('J'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('K'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('L'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('M'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('N'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('O'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('P'.$numrow)->applyFromArray($style_row);
+			$excel->getActiveSheet()->getStyle('Q'.$numrow)->applyFromArray($style_row);
+			
+			
+
+			
+			$no++; // Tambah 1 setiap kali looping
+			$numrow++; // Tambah 1 setiap kali looping
+		}
+
+		// Set width kolom
+		$excel->getActiveSheet()->getColumnDimension('A')->setWidth(30); // Set width kolom A
+		$excel->getActiveSheet()->getColumnDimension('B')->setWidth(30); // Set width kolom B
+		$excel->getActiveSheet()->getColumnDimension('C')->setWidth(40); // Set width kolom C
+		$excel->getActiveSheet()->getColumnDimension('D')->setWidth(40); // Set width kolom D
+		$excel->getActiveSheet()->getColumnDimension('E')->setWidth(30); // Set width kolom E
+		$excel->getActiveSheet()->getColumnDimension('F')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('G')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('H')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('I')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('J')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('K')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('L')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('M')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('N')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('O')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('P')->setWidth(30);
+		$excel->getActiveSheet()->getColumnDimension('Q')->setWidth(30);
+
+		
+		// Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
+		$excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
+
+		// Set orientasi kertas jadi LANDSCAPE
+		$excel->getActiveSheet()->getPageSetup()->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
+
+		// Set judul file excel nya
+		$excel->getActiveSheet(0)->setTitle("Laporan Data Pembuatan Surat");
+		$excel->setActiveSheetIndex(0);
+
+		// Proses file excel
+		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment; filename="Data Siswa.xlsx"'); // Set nama file excel nya
+		header('Cache-Control: max-age=0');
+
+		$write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+		ob_end_clean();
+		header('Content-type: application/vnd.ms-excel');
+header('Content-Disposition: attachment; filename="pembuatan surat.xlsx"');
+		$write->save('php://output');
+	}
+
+}
