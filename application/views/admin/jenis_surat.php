@@ -23,6 +23,7 @@
                 <div class="box-header">
                   <h3 class="box-title">
                   	<a href="<?php echo base_url(); ?>admin/tambah_jenis" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="<?php echo base_url(); ?>admin/tambah_jenis1" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah(manual)</a>
                      <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan12"><i class="fa fa-eye"></i> Lihat Data</button>
                      <a href="print_surat_masuk" target="_blank">
                      <button class="btn btn-sm btn-success btn-flat" ><i class="fa fa-print"></i> Print</button></a>
@@ -43,8 +44,8 @@
                         <th>No</th>
                         <th>No. Agenda</th>
                         <th>Tanggal Diterima</th>
-                        <th>Kode Arsip (otomatis)</th>
-                         <th>Kode Arsip (Manual)</th>
+                        <th>Kode Arsip </th>
+                  
                         <th>No Surat</th>
                         <th>Tanggal Surat</th>
                         <th>Pengirim</th>
@@ -79,7 +80,7 @@
                     		<td> <div style="width: 100px;"><?php echo $lihat->no_agenda?></td>
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_terima) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
-                          <td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip2) ?></td> 
+                
                         <td>  <div style="width: 200px;"> <?php echo ucwords($lihat->no_surat) ?></td>
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucfirst($lihat->pengirim) ?></td> 
