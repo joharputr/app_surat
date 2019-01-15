@@ -13,10 +13,8 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
-          
-          <!-- Small boxes (Stat box) -->
-         
+        <section class="content" style="background-image: url(../logo_BMKG.png);  background-repeat: no-repeat; background-position: center;background-attachment: fixed; padding-bottom: 500px;">
+      
             
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->

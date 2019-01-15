@@ -91,7 +91,7 @@
                         <td> <div style="width: 200px;"><?php echo ucfirst($lihat->disposisi) ?></td> </div>
                         <td> <div style="width: 130px;"><?php echo ucwords($lihat->asli_copy) ?></td>  
                         <td> <div style="width: 350px;"> <?php echo ucwords($lihat->informasi_disposisi) ?></td> </div>
-                        <td>  <a href="<?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?> </a> </td> </div>
+                        <td>  <a href="<?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/'.$lihat->gambar) ?> </a> </td> </div>
                        
                      
                         <td align="center">
@@ -347,7 +347,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
            <td > ".$lihat['no_agenda']."</td>
            <td> ".tgl_indo($lihat['tgl_terima'])." </td>
            <td > ".$lihat['kode_arsip']." </td>
-           <td > ".$lihat['kode_arsip2']." </td>
+      
            <td >".$lihat['no_surat']."</td> 
            <td> ".tgl_indo($lihat['tgl_surat'])."  </td>
            <td>".$lihat['pengirim']." </td> 

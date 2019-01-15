@@ -68,18 +68,13 @@ class Admin extends CI_Controller {
 		
 		$this->load->view('admin/index', $a);
 	}
-		function tambah_jenis1(){
-		$a['page']	= "tambah_jenis_surat2";
-		
-		$this->load->view('admin/index', $a);
-	}
 
 	function insert_jenis(){
 		
 		$no_agenda = $this->input->post('no_agenda');
 		$tgl_terima= $this->input->post('tgl_terima');
 		$kode_arsip = $this->input->post('kode_arsip');	
-//kode_arsip2 = $this->input->post('kode_arsip2');	
+	//	$kode_arsip2 = $this->input->post('kode_arsip2');	
 		$no_surat = $this->input->post('no_surat');
 		$tgl_surat= $this->input->post('tgl_surat');
 		$pengirim = $this->input->post('pengirim');
@@ -158,7 +153,7 @@ class Admin extends CI_Controller {
         		$this->no_agenda = $post["no_agenda"];
         		$this->tgl_terima = $post["tgl_terima"];
         		$this->kode_arsip = $post["kode_arsip"];
-        		$this->kode_arsip2 = $post["kode_arsip2"];
+        	//	$this->kode_arsip2 = $post["kode_arsip2"];
         		$this->no_surat = $post["no_surat"];
         		$this->tgl_surat = $post["tgl_surat"];
         		$this->pengirim = $post["pengirim"];
@@ -170,7 +165,7 @@ class Admin extends CI_Controller {
         		$this->asli_copy = $post["asli_copy"];
         		$this->informasi_disposisi = $post["informasi_disposisi"];
 
-		$this->gambar = $this->_uploadImage2();
+		$this->gambar = $this->_uploadImage3();
         
     
         $this->db->update($this->_table2, $this, array('surat_id' => $post['id']));
@@ -205,7 +200,7 @@ class Admin extends CI_Controller {
 		$no_agenda = $this->input->post('no_agenda');
 		$tgl_surat= $this->input->post('tgl_surat');
 		$kode_arsip = $this->input->post('kode_arsip');	
-		$kode_arsip2 = $this->input->post('kode_arsip2');	
+		//$kode_arsip2 = $this->input->post('kode_arsip2');	
 		$no_surat = $this->input->post('no_surat');
 		$tujuan = $this->input->post('tujuan');
 		$perihal = $this->input->post('perihal');
@@ -214,7 +209,7 @@ class Admin extends CI_Controller {
 		$object = array(
 				'no_agenda' => $no_agenda,
 				'kode_arsip' => $kode_arsip,
-				'kode_arsip2' => $kode_arsip2,
+			//	'kode_arsip2' => $kode_arsip2,
 				'tgl_surat' => $tgl_surat,
 				'no_surat' => $no_surat,
 				'tujuan' => $tujuan,
@@ -264,7 +259,7 @@ class Admin extends CI_Controller {
         		$this->no_agenda = $post["no_agenda"];
         		$this->tgl_surat = $post["tgl_surat"];
         		$this->kode_arsip = $post["kode_arsip"];
-        		$this->kode_arsip2 = $post["kode_arsip2"];
+       // 		$this->kode_arsip2 = $post["kode_arsip2"];
         		$this->no_surat = $post["no_surat"];
         		$this->tujuan = $post["tujuan"];
         		$this->perihal = $post["perihal"];
@@ -287,7 +282,7 @@ class Admin extends CI_Controller {
 
     private function _uploadImage()
     {
-    $config['upload_path']          = './upload/files/keluar/';
+    $config['upload_path']          = './upload/files/';
     $config['allowed_types']        = 'gif|jpg|png|pdf';
     $config['file_name']            = $this->surat_id;
     $config['overwrite']            = true;
@@ -307,7 +302,7 @@ class Admin extends CI_Controller {
   
     }
 
-    private function _uploadImage2()
+    private function _uploadImage3()
     {
     $config['upload_path']          = './upload/files/masuk/';
     $config['allowed_types']        = 'gif|jpg|png|pdf';
@@ -328,6 +323,8 @@ class Admin extends CI_Controller {
         
   
     }
+
+    
 	function hapus_surat_keluar($id){
 		
 		$this->model_admin->hapus_surat_keluar($id);
@@ -1068,6 +1065,7 @@ force_download($db_name, $backup);
 		
 		// Panggil class PHPExcel nya
 		$excel = new PHPExcel();
+
 		// Settingan awal fil excel
 		$excel->getProperties()->setCreator('My Notes Code')
 							   ->setLastModifiedBy('My Notes Code')
@@ -1075,6 +1073,7 @@ force_download($db_name, $backup);
 							   ->setSubject("Siswa")
 							   ->setDescription("Laporan Semua Data Siswa")
 							   ->setKeywords("DATA PEMBUATAN SURAT KELUAR");
+
 		// Buat sebuah variabel untuk menampung pengaturan style dari header tabel
 		$style_col = array(
 			'font' => array('bold' => true), // Set font nya jadi bold
@@ -1089,6 +1088,7 @@ force_download($db_name, $backup);
 				'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
 			)
 		);
+
 		// Buat sebuah variabel untuk menampung pengaturan style dari isi tabel
 		$style_row = array(
 			'alignment' => array(
@@ -1101,11 +1101,13 @@ force_download($db_name, $backup);
 				'left' => array('style'  => PHPExcel_Style_Border::BORDER_THIN) // Set border left dengan garis tipis
 			)
 		);
+
 		$excel->setActiveSheetIndex(0)->setCellValue('A1', "DATA PEMBUATAN SURAT KELUAR"); // Set kolom A1 dengan tulisan "DATA SISWA"
 		$excel->getActiveSheet()->mergeCells('A1:J1'); // Set Merge Cell pada kolom A1 sampai E1
 		$excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(TRUE); // Set bold kolom A1
 		$excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(15); // Set font size 15 untuk kolom A1
 		$excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER); // Set text center untuk kolom A1
+
 		// Buat header tabel nya pada baris ke 3
 		$excel->setActiveSheetIndex(0)->setCellValue('A3', "No Surat");
 		$excel->setActiveSheetIndex(0)->setCellValue('B3', "Nama Penanda Tangan"); // Set kolom A3 dengan tulisan "NO"
@@ -1125,6 +1127,7 @@ force_download($db_name, $backup);
 		$excel->setActiveSheetIndex(0)->setCellValue('P3', "Keterangan");
 		
 							  // Set kolom E3 dengan tulisan "ALAMAT"
+
 		// Apply style header yang telah kita buat tadi ke masing-masing kolom header
 		$excel->getActiveSheet()->getStyle('A3')->applyFromArray($style_col);
 		$excel->getActiveSheet()->getStyle('B3')->applyFromArray($style_col);
@@ -1144,8 +1147,11 @@ force_download($db_name, $backup);
 		$excel->getActiveSheet()->getStyle('P3')->applyFromArray($style_col);
 	
 	
+
+
 		// Panggil function view yang ada di SiswaModel untuk menampilkan semua data siswanya
 		$siswa = $this->model_admin->export_buat();
+
 		$no = 1; // Untuk penomoran tabel, di awal set dengan 1
 		$numrow = 4; // Set baris pertama untuk isi tabel adalah baris ke 4
 		foreach($siswa as $data){ // Lakukan looping pada variabel siswa
@@ -1167,6 +1173,8 @@ force_download($db_name, $backup);
 			$excel->setActiveSheetIndex(0)->setCellValue('P'.$numrow, $data->plh);
 			$excel->setActiveSheetIndex(0)->setCellValue('Q'.$numrow, $data->keterangan);
 			
+
+
 			
 			// Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
 			$excel->getActiveSheet()->getStyle('A'.$numrow)->applyFromArray($style_row);
@@ -1188,10 +1196,12 @@ force_download($db_name, $backup);
 			$excel->getActiveSheet()->getStyle('Q'.$numrow)->applyFromArray($style_row);
 			
 			
+
 			
 			$no++; // Tambah 1 setiap kali looping
 			$numrow++; // Tambah 1 setiap kali looping
 		}
+
 		// Set width kolom
 		$excel->getActiveSheet()->getColumnDimension('A')->setWidth(30); // Set width kolom A
 		$excel->getActiveSheet()->getColumnDimension('B')->setWidth(30); // Set width kolom B
@@ -1210,22 +1220,28 @@ force_download($db_name, $backup);
 		$excel->getActiveSheet()->getColumnDimension('O')->setWidth(30);
 		$excel->getActiveSheet()->getColumnDimension('P')->setWidth(30);
 		$excel->getActiveSheet()->getColumnDimension('Q')->setWidth(30);
+
 		
 		// Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
 		$excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);
+
 		// Set orientasi kertas jadi LANDSCAPE
 		$excel->getActiveSheet()->getPageSetup()->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
+
 		// Set judul file excel nya
 		$excel->getActiveSheet(0)->setTitle("Laporan Data Pembuatan Surat");
 		$excel->setActiveSheetIndex(0);
+
 		// Proses file excel
 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 		header('Content-Disposition: attachment; filename="Data Siswa.xlsx"'); // Set nama file excel nya
 		header('Cache-Control: max-age=0');
+
 		$write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
 		ob_end_clean();
 		header('Content-type: application/vnd.ms-excel');
 header('Content-Disposition: attachment; filename="pembuatan surat.xlsx"');
 		$write->save('php://output');
 	}
+
 }
