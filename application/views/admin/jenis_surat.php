@@ -116,15 +116,14 @@
  <!-- lihat disposisi --> 
                
                       
-           <div class="modal-body" > 
+          <div class="modal-body" > 
               <div class="row">
                   <div class="col-lg-12" style="padding-left: 5%; padding-right: 5%">
                       <br>
                           <style>
                               tr, td{
                                 border: 1px solid;
-                                padding-left: 10px;
-                               text-align: left;
+                               
                               }
                               th {
                                 font-size: 16px;
@@ -152,31 +151,31 @@
                           </tr>
 
                            <tr >
-                                <th colspan="4" style="padding-left: 80px;" > Nomor Agenda          :  <?php echo $lihat->no_agenda; ?>   </th> 
+                                <th colspan="4" style="padding-left: 80px;" > Nomor Agenda &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;  <?php echo $lihat->no_agenda; ?>   </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Tingkat Keamanan     : <?php echo $lihat->sifat_surat; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Tingkat Keamanan &nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->sifat_surat; ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Tanggal Penerimaan    : <?php echo tgl_indo($lihat->tgl_terima); ?>  </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Tanggal Penerimaan &nbsp; : &nbsp; <?php echo tgl_indo($lihat->tgl_terima); ?>  </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Nomor Surat         : <?php echo $lihat->no_surat; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Nomor Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->no_surat; ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Tanggal Surat       : <?php echo tgl_indo($lihat->tgl_surat); ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Tanggal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo tgl_indo($lihat->tgl_surat); ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Asal Surat           : <?php echo $lihat->pengirim; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Asal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pengirim; ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Perihal              : <?php echo $lihat->perihal; ?> </> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->perihal; ?> </> </th> 
                           </tr>
 
                           <tr>
@@ -199,40 +198,40 @@
 
                             <tr>
                               <td  colspan="4"  align=left valign=top> 
-                                  <input style="margin-left:100px ; width:30px" type="checkbox" value="KBSD" name="disposisi[]" >Tindak Lanjut (v)
-                                  <input style="margin-left:100px ; width:30px" type="checkbox" value="KBPB" name="disposisi[]" >Diketahui (o)  </td>
+                                  <input style="margin-left:200px ; width:30px" type="checkbox" value="KBSD" name="disposisi[]" >Tindak Lanjut (v)
+                                  <input style="margin-left:200px ; width:30px" type="checkbox" value="KBPB" name="disposisi[]" >Diketahui (o)  </td>
                            </tr>
                           <tr>
                               <td height="50" colspan="4"  align=left valign=top> 
                                   <input style="width:30px" type="checkbox" value="Harap Mewakili" name="disposisi[]" >Harap Mewakili
-                                  <input style="margin-left:180px; width:30px" type="checkbox" value="Untuk Diteruskan" name="disposisi[]"  > Untuk Diteruskan <br>
+                                  <input style="margin-left:179px; width:30px" type="checkbox" value="Untuk Diteruskan" name="disposisi[]"  > Untuk Diteruskan <br>
                                   
                                   <input style="width:30px" type="checkbox" value="Hadir Mendampingi" name="disposisi[]" >Hadir Mendampingi 
-                                  <input style="margin-left:151px; width:30px" type="checkbox" value="Untuk Diselesaikan" name="disposisi[]"> Untuk Diselesaikan <br>
+                                  <input style="margin-left:152px; width:30px" type="checkbox" value="Untuk Diselesaikan" name="disposisi[]"> Untuk Diselesaikan <br>
                                   
                                   <input style="width:30px"type="checkbox" value="Segera Ditindaklanjuti" name="disposisi[]" >Segera Ditindaklanjuti
-                                  <input style="margin-left: 134px ; width:30px" type="checkbox" value="Untuk Dipelajari" name="disposisi[]" >Untuk Dipelajari <br>
+                                  <input style="margin-left: 137px ; width:30px" type="checkbox" value="Untuk Dipelajari" name="disposisi[]" >Untuk Dipelajari <br>
 
                                   <input style="width:30px" type="checkbox" value="Mohon tanggapan/saran/masukan" name="disposisi[]" >Mohon tanggapan/saran/masukan
-                                  <input style="margin-left:47px; width:30px" type="checkbox" value="Untuk Diketahui" name="disposisi[]"  > Untuk Diketahui <br> 
+                                  <input style="margin-left:60px; width:30px" type="checkbox" value="Untuk Diketahui" name="disposisi[]"  > Untuk Diketahui <br> 
                                  
                                   <input style="width:30px" type="checkbox" value="Fasilitas Sesuai ketetapan berlaku" name="disposisi[]" >Fasilitas Sesuai ketetapan berlaku 
-                                  <input style="margin-left:46px; width:30px" type="checkbox" value="Untuk Direkap" name="disposisi[]"> Untuk Direkap <br> 
+                                  <input style="margin-left:58px; width:30px" type="checkbox" value="Untuk Direkap" name="disposisi[]"> Untuk Direkap <br> 
 
                                   <input style="width:30px"type="checkbox" value="Segera Ditindaklanjuti" name="disposisi[]" >Dikonsultasikan Dengan
-                                  <input style="margin-left: 117px ; width:30px" type="checkbox" value="Untuk Dimonitor" name="disposisi[]" >Untuk Dimonitor <br>
+                                  <input style="margin-left: 120px ; width:30px" type="checkbox" value="Untuk Dimonitor" name="disposisi[]" >Untuk Dimonitor <br>
 
                                   <input style="width:30px" type="checkbox" value="Dibuat Surat Jawaban" name="disposisi[]" >Dibuat Surat Jawaban
-                                  <input style="margin-left:132px ; width:30px" type="checkbox" value="Untuk dijadikan bahan masukan" name="disposisi[]" >Untuk dijadikan bahan masukan <br>
+                                  <input style="margin-left:133px ; width:30px" type="checkbox" value="Untuk dijadikan bahan masukan" name="disposisi[]" >Untuk dijadikan bahan masukan <br>
 
                                    <input style="width:30px"type="checkbox" value="Bahan Monitoring" name="disposisi[]" >Bahan Monitoring
-                                  <input style="margin-left: 164px ; width:30px" type="checkbox" value="Untuk Didiskusikan dengan" name="disposisi[]" >Untuk Didiskusikan dengan <br>
+                                  <input style="margin-left: 162px ; width:30px" type="checkbox" value="Untuk Didiskusikan dengan" name="disposisi[]" >Untuk Didiskusikan dengan <br>
 
                                   <input style="width:30px"type="checkbox" value="Buat Surat Edaran" name="disposisi[]" >Buat Surat Edaran
-                                  <input style="margin-left: 158px ; width:30px" type="checkbox" value="Untuk Dikoordinasikan dengan" name="disposisi[]" >Untuk Dikoordinasikan dengan <br>
+                                  <input style="margin-left: 156px ; width:30px" type="checkbox" value="Untuk Dikoordinasikan dengan" name="disposisi[]" >Untuk Dikoordinasikan dengan <br>
 
                                   <input style="width:30px" type="checkbox" value="Untuk dibuat surat jawaban" name="disposisi[]" >Untuk dibuat surat jawaban
-                                  <input style="margin-left:96px; width:30px" type="checkbox" value="Untuk diarsipkan" name="disposisi[]" >Untuk diarsipkan
+                                  <input style="margin-left:100px; width:30px" type="checkbox" value="Untuk diarsipkan" name="disposisi[]" >Untuk diarsipkan
                                  
                           </tr>  
 
@@ -258,6 +257,7 @@
             </div>
           </div>
       </div>
+
 
                    <?php endforeach; ?>
           </table>

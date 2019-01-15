@@ -53,31 +53,31 @@ $(document).ready(function(){
                           </tr>
 
                            <tr >
-                                <th colspan="4" style="padding-left: 80px;" > Nomor Agenda          :  <?php echo $lihat->no_agenda; ?>   </th> 
+                                <th colspan="4" style="padding-left: 80px;" > Nomor Agenda &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;  <?php echo $lihat->no_agenda; ?>   </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Tingkat Keamanan     : <?php echo $lihat->sifat_surat; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Tingkat Keamanan &nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->sifat_surat; ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Tanggal Penerimaan    : <?php echo tgl_indo($lihat->tgl_terima); ?>  </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Tanggal Penerimaan &nbsp; : &nbsp; <?php echo tgl_indo($lihat->tgl_terima); ?>  </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Nomor Surat         : <?php echo $lihat->no_surat; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Nomor Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->no_surat; ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Tanggal Surat       : <?php echo tgl_indo($lihat->tgl_surat); ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Tanggal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo tgl_indo($lihat->tgl_surat); ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Asal Surat           : <?php echo $lihat->pengirim; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Asal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pengirim; ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Perihal              : <?php echo $lihat->perihal; ?> </> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->perihal; ?> </> </th> 
                           </tr>
 
                           <tr>
@@ -100,7 +100,7 @@ $(document).ready(function(){
 
                             <tr>
                               <td  colspan="4"  align=left valign=top> 
-                                  <input style="margin-left:100px ; width:30px" type="checkbox" value="KBSD" name="disposisi[]" >Tindak Lanjut (v)
+                                  <input style="margin-left:150px ; width:30px" type="checkbox" value="KBSD" name="disposisi[]" >Tindak Lanjut (v)
                                   <input style="margin-left:100px ; width:30px" type="checkbox" value="KBPB" name="disposisi[]" >Diketahui (o)  </td>
                            </tr>
                           <tr>
