@@ -25,6 +25,11 @@ class Model_admin extends CI_Model {
 	{
 		return $this->db->get('tb_jenis_surat')->result();
 	}
+	
+		public function export_buat()
+	{
+		return $this->db->get('buat_surat')->result();
+	}
 
 	public function tampil_manage_user()
 	{

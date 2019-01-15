@@ -1148,7 +1148,7 @@ force_download($db_name, $backup);
 
 
 		// Panggil function view yang ada di SiswaModel untuk menampilkan semua data siswanya
-		$siswa = $this->model_admin->export_jenis();
+		$siswa = $this->model_admin->export_buat();
 
 		$no = 1; // Untuk penomoran tabel, di awal set dengan 1
 		$numrow = 4; // Set baris pertama untuk isi tabel adalah baris ke 4

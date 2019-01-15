@@ -11,7 +11,7 @@
             </h1>
             <ol class="breadcrumb">
               <li><i class="fa fa-dashboard"></i> Home</a></li>
-              <li><a href="<?php echo base_url(); ?>admin/surat_keluar">Buat Surat</a></li>
+              <li><a href="<?php echo base_url(); ?>admin/buat_surat">Buat Surat</a></li>
               <li class="active">Tambah</li>
               <!--
               <li><a href="#">Layout</a></li>
@@ -202,7 +202,14 @@
                       <input type="text" class="form-control" name="lokasi" />
                   </div>
 
-                  
+                   <div class="form-group">
+                       <label for="exampleInputEmail1">Kepala / PLH</label>
+                         <select name="plh" required="required" class="form-control col-md-8">
+                                <option value="Kepala, ">Kepala</option>
+                                <option value="PLH. Kepala,">PLH. Kepala</option>
+                          </select>
+                             
+                  </div> <br> <br>                  
     <head>
                 
                   <script language="javascript" type="text/javascript">
