@@ -1,4 +1,5 @@
 <!-- Content Wrapper. Contains page content -->
+
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -72,7 +73,7 @@
 
                       	<?php  
                         $no = 1; 
-                        foreach ($data as $lihat):
+                        foreach ($cek as $lihat):
                         ?>
                     	<tr>
 
@@ -295,7 +296,7 @@ $koneksi = mysqli_connect($host, $user, $password, $database);
 
 
 <?php
-$query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id DESC");
+$query = mysqli_query($koneksi,"SELECT * FROM tb_surat_masuk ORDER BY surat_id DESC");
 ?>
  <div id="lihatlaporan12" class="modal fade" role="dialog">
      <div class="modal-dialog" style="width: 80%">
@@ -329,8 +330,8 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
           <!--  <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: #ADFF2F; text-align: center;"> Tanggal Diterima </th>
-           <th style="background-color: yellow; text-align: center;"> Kode Arsip (Otomatis) </th>
-            <th style="background-color: yellow; text-align: center;"> Kode Arsip (Manual)</th>
+          
+            <th style="background-color: yellow; text-align: center;"> Kode Arsip </th>
            <th style="background-color: #ADFF2F; text-align: center;"> No Surat </th>
            <th style="background-color: yellow; text-align: center;"> Tanggal Surat </th>
            <th style="background-color: #ADFF2F; text-align: center;"> Pengirim </th>
@@ -339,9 +340,9 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
 
   <?php 
 
-    $data = mysqli_query($koneksi, "SELECT * from tb_jenis_surat");
+    $cek = mysqli_query($koneksi, "SELECT * from tb_surat_masuk");
     $no=1;
-    foreach ($data as $lihat){
+    foreach ($cek as $lihat){
         echo "<tr>
           
            <td > ".$lihat['no_agenda']."</td>

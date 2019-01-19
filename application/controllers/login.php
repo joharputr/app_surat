@@ -17,8 +17,6 @@ class Login extends CI_Controller {
 		$where = array(
 			'username' => $username,
 			'password' => $password,
-			
-
 			);
 		$cek = $this->model_admin->cek_login("login",$where)->num_rows();
 		if($cek > 0){
@@ -42,7 +40,24 @@ class Login extends CI_Controller {
 		}
 
 	}
-	 
+	function tampil_register()
+	{
+		$this->load->view('register');
+	}
+	 function register()
+	 {
+	 	
+	 	$username = $this->input->post('username');
+	 	$nama = $this->input->post('nama');
+		$password= $this->input->post('password');
+$object = array(
+				'username' => $username,
+				'nama' => $nama,
+				'password' => $password);
+	$this->db->insert('login', $object);
+$this->session->set_flashdata("k", "<div id=\"alert\" class=\"alert alert-error\">data berhasil ditambah</div>");
+		redirect('login');
+	 }
 	
 	public function logout()
 	{

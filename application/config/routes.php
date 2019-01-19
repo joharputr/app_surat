@@ -40,7 +40,7 @@
 
 $route['default_controller'] = "admin";
 $route['404_override'] = '';
-
+//$route['my-chart'] = "ChartController";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -40,28 +40,30 @@
         </div>
         
       </div> -->
-      
+        <?php echo $this->session->flashdata("k"); ?>
       <div class="login-box-body">
-        <p class="login-box-msg">Silahkan Login</p>
-       <?php echo $this->session->flashdata("k"); ?>
-        <?php echo form_open('login/do_login'); ?>
+        <p class="login-box-msg">Silahkan Register</p>
+     
+        <?php echo form_open('login/register'); ?>
           <div class="form-group has-feedback">
             <input type="text" name="username" autofocus required="" class="form-control" placeholder="Username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" name="password" required="" class="form-control" placeholder="Password">
+            <input type="password" name="password" required="" class="form-control" placeholder="Password" minlength="6">
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="text" name="nama" autofocus required="" class="form-control" placeholder="nama">
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="row">
             <div class="col-xs-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat"><span class="fa fa-sign-in"></span> Log In</button>
+              <button type="submit" class="btn btn-primary btn-block btn-flat"><span class="fa fa-sign-in"></span> Register</button>
 
             </div><!-- /.col -->
           </div>
         <?php echo form_close(); ?>
-<span> belum ada akun?</span>
-                  <a href="login/tampil_register">register</a>
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
 
