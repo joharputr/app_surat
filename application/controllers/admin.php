@@ -2,7 +2,7 @@
 
 class Admin extends CI_Controller {
 	  private $_table = "tb_surat_keluar";
-	   private $_table2 = "tb_jenis_surat";
+	   private $_table2 = "tb_surat_masuk";
 	    private $_table3 = "buat_surat";
 
              
@@ -13,6 +13,7 @@ class Admin extends CI_Controller {
                $this->load->library('Excel');
 		 $this->load->model('model_admin');
 		 $this->load->model('image_model');
+		 $this->load->model('cart');
 	//	  $this->load->library('upload');
 		 $this->load->library('form_validation');
 	}
@@ -36,19 +37,30 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/index', $a);
 	}
 	function buat_surat(){
+		
 	
  		$a['data']	= $this->model_admin->tampil_buat_surat()->result_object();
 		$a['page']	= "buat_surat";
 			$this->load->view('admin/index', $a);
 	}	
 	function email(){
+		if($this->session->userdata('admin_valid') != TRUE ){
+			redirect("login");
+		}
+		
 	
 		$a['page']	= "email";
 		
 		$this->load->view('admin/index', $a);
 	}
 	function disposisi(){
+		if($this->session->userdata('admin_valid') != TRUE ){
+			redirect("login");
+		}
+		
+
 		$a['data']	= $this->image_model->tampil_disposisi()->result_object();
+
 		$a['page']	= 'disposisi';
 	    $a['gambar'] = $this->image_model->getAll();
 		
@@ -57,11 +69,31 @@ class Admin extends CI_Controller {
 
 	/* Fungsi Jenis Surat */
 	function jenis_surat(){
-		$a['data']	= $this->model_admin->tampil_jenis()->result_object();
+	if($this->session->userdata('admin_valid') != TRUE ){
+			redirect("login");
+		}
+		$a['cek']	= $this->model_admin->tampil_jenis()->result_object();
 		$a['page']	= "jenis_surat";
 
 		$this->load->view('admin/index', $a);
 	}
+	function cart(){
+		if($this->session->userdata('admin_valid') != TRUE ){
+			redirect("login");
+		}
+		
+		$date = date('Y-m');
+		$a['cart'] = $this->cart->cart_surat_keluar($date);
+		$a['cart3'] = $this->cart->cart_surat_masuk($date);
+		$a['page']	= "cart";
+	/*	echo "<pre>";
+		var_dump($a);
+		echo "</pre>";*/
+		
+		$this->load->view('admin/index', $a);
+	}
+
+	
 
 	function tambah_jenis(){
 		$a['page']	= "tambah_jenis_surat";
@@ -74,7 +106,7 @@ class Admin extends CI_Controller {
 		$no_agenda = $this->input->post('no_agenda');
 		$tgl_terima= $this->input->post('tgl_terima');
 		$kode_arsip = $this->input->post('kode_arsip');	
-		$kode_arsip2 = $this->input->post('kode_arsip2');	
+	//	$kode_arsip2 = $this->input->post('kode_arsip2');	
 		$no_surat = $this->input->post('no_surat');
 		$tgl_surat= $this->input->post('tgl_surat');
 		$pengirim = $this->input->post('pengirim');
@@ -89,7 +121,7 @@ class Admin extends CI_Controller {
 		$object = array(
 				'no_agenda' => $no_agenda,
 				'kode_arsip' => $kode_arsip,
-				'kode_arsip2' => $kode_arsip2,
+				//'kode_arsip2' => $kode_arsip2,
 				'tgl_terima' => $tgl_terima,
 				'no_surat' => $no_surat,
 				'tgl_surat' => $tgl_surat,
@@ -102,13 +134,13 @@ class Admin extends CI_Controller {
 				'asli_copy' => $asli_copy,
 				'informasi_disposisi' => $informasi_disposisi
 			);
-		$this->db->insert('tb_jenis_surat', $object);
+		$this->db->insert('tb_surat_masuk', $object);
 
 		redirect('admin/jenis_surat','refresh');
 	}
 
 	function edit_jenis($id){
-		$a['editdata']	= $this->db->get_where('tb_jenis_surat',array('surat_id'=>$id))->result_object();		
+		$a['editdata']	= $this->db->get_where('tb_surat_masuk',array('surat_id'=>$id))->result_object();		
 		$a['page']	= "edit_jenis_surat";
 		
 		$this->load->view('admin/index', $a);
@@ -146,14 +178,14 @@ class Admin extends CI_Controller {
 		// 		'informasi_disposisi' => $informasi_disposisi
 		// 	);
 		// $this->db->where('surat_id', $id);
-		// $this->db->update('tb_jenis_surat', $object); 
+		// $this->db->update('tb_surat_masuk', $object); 
 
 		$post = $this->input->post();
     	     	$this->surat_id = $post["id"];
         		$this->no_agenda = $post["no_agenda"];
         		$this->tgl_terima = $post["tgl_terima"];
         		$this->kode_arsip = $post["kode_arsip"];
-        		$this->kode_arsip2 = $post["kode_arsip2"];
+        	//	$this->kode_arsip2 = $post["kode_arsip2"];
         		$this->no_surat = $post["no_surat"];
         		$this->tgl_surat = $post["tgl_surat"];
         		$this->pengirim = $post["pengirim"];
@@ -165,9 +197,7 @@ class Admin extends CI_Controller {
         		$this->asli_copy = $post["asli_copy"];
         		$this->informasi_disposisi = $post["informasi_disposisi"];
 
-		$this->gambar = $this->_uploadImage2();
-        
-    
+		$this->gambar = $this->_uploadImage3();
         $this->db->update($this->_table2, $this, array('surat_id' => $post['id']));
 
 
@@ -183,6 +213,9 @@ class Admin extends CI_Controller {
 
 	/* Fungsi Surat Keluar */
 	function surat_keluar(){
+		if($this->session->userdata('admin_valid') != TRUE ){
+			redirect("login");
+		}
 		$a['data']	= $this->model_admin->tampil_surat_keluar()->result_object();
 		$a['page']	= "surat_keluar";
 		
@@ -194,13 +227,14 @@ class Admin extends CI_Controller {
 		
 		$this->load->view('admin/index', $a);
 	}
+	
 
 	function insert_surat_keluar(){
 		
 		$no_agenda = $this->input->post('no_agenda');
 		$tgl_surat= $this->input->post('tgl_surat');
 		$kode_arsip = $this->input->post('kode_arsip');	
-		$kode_arsip2 = $this->input->post('kode_arsip2');	
+		//$kode_arsip2 = $this->input->post('kode_arsip2');	
 		$no_surat = $this->input->post('no_surat');
 		$tujuan = $this->input->post('tujuan');
 		$perihal = $this->input->post('perihal');
@@ -209,7 +243,7 @@ class Admin extends CI_Controller {
 		$object = array(
 				'no_agenda' => $no_agenda,
 				'kode_arsip' => $kode_arsip,
-				'kode_arsip2' => $kode_arsip2,
+			//	'kode_arsip2' => $kode_arsip2,
 				'tgl_surat' => $tgl_surat,
 				'no_surat' => $no_surat,
 				'tujuan' => $tujuan,
@@ -217,9 +251,16 @@ class Admin extends CI_Controller {
 				'asli_copy' => $asli_copy,
 				'keterangan' => $keterangan
 			);
-		$this->db->insert('tb_surat_keluar', $object);
+		$test = $this->db->insert('tb_surat_keluar', $object);
+	/*		Echo "<pre>";
+	var_dump($_POST);
+	Echo "</pre>";
+
+		*/
+//untuk cek data masuk atau tidak		
 
 		redirect('admin/surat_keluar','refresh');
+		
 	}
 
 	function edit_surat_keluar($id){
@@ -259,7 +300,7 @@ class Admin extends CI_Controller {
         		$this->no_agenda = $post["no_agenda"];
         		$this->tgl_surat = $post["tgl_surat"];
         		$this->kode_arsip = $post["kode_arsip"];
-        		$this->kode_arsip2 = $post["kode_arsip2"];
+       // 		$this->kode_arsip2 = $post["kode_arsip2"];
         		$this->no_surat = $post["no_surat"];
         		$this->tujuan = $post["tujuan"];
         		$this->perihal = $post["perihal"];
@@ -282,7 +323,7 @@ class Admin extends CI_Controller {
 
     private function _uploadImage()
     {
-    $config['upload_path']          = './upload/files/keluar/';
+    $config['upload_path']          = './upload/files/';
     $config['allowed_types']        = 'gif|jpg|png|pdf';
     $config['file_name']            = $this->surat_id;
     $config['overwrite']            = true;
@@ -302,7 +343,7 @@ class Admin extends CI_Controller {
   
     }
 
-    private function _uploadImage2()
+    private function _uploadImage3()
     {
     $config['upload_path']          = './upload/files/masuk/';
     $config['allowed_types']        = 'gif|jpg|png|pdf';
@@ -323,6 +364,8 @@ class Admin extends CI_Controller {
         
   
     }
+
+    
 	function hapus_surat_keluar($id){
 		
 		$this->model_admin->hapus_surat_keluar($id);
@@ -403,7 +446,7 @@ class Admin extends CI_Controller {
 	function print_disposisi(){
 		if($this->input->get('surat_id')){
 			$id = $this->input->get('surat_id');
-			$data['data'] = $this->model_admin->getWhere('tb_jenis_surat', array('surat_id' => $id));
+			$data['data'] = $this->model_admin->getWhere('tb_surat_masuk', array('surat_id' => $id));
 
 			$this->load->view('admin/print_disposisi', $data);
 		}
@@ -894,7 +937,7 @@ header('Content-Disposition: attachment; filename="Surat Masuk.xlsx"');
 
 $prefs = array(     
     'format'      => 'zip',             
-    'filename'    => 'tb_jenis_surat.sql'
+    'filename'    => 'tb_surat_masuk.sql'
     );
 
 
@@ -914,7 +957,7 @@ force_download($db_name, $backup);
 
 public function delete_all_jenis()
 	{
-	$this->db->empty_table('tb_jenis_surat'); 
+	$this->db->empty_table('tb_surat_masuk'); 
 	redirect('admin/jenis_surat');
      }
 
@@ -1241,5 +1284,8 @@ force_download($db_name, $backup);
 header('Content-Disposition: attachment; filename="pembuatan surat.xlsx"');
 		$write->save('php://output');
 	}
+
+
+
 
 }

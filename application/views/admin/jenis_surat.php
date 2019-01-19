@@ -1,4 +1,5 @@
 <!-- Content Wrapper. Contains page content -->
+
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -23,6 +24,7 @@
                 <div class="box-header">
                   <h3 class="box-title">
                   	<a href="<?php echo base_url(); ?>admin/tambah_jenis" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="<?php echo base_url(); ?>admin/tambah_jenis1" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah(manual)</a>
                      <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan12"><i class="fa fa-eye"></i> Lihat Data</button>
                      <a href="print_surat_masuk" target="_blank">
                      <button class="btn btn-sm btn-success btn-flat" ><i class="fa fa-print"></i> Print</button></a>
@@ -43,8 +45,8 @@
                         <th>No</th>
                         <th>No. Agenda</th>
                         <th>Tanggal Diterima</th>
-                        <th>Kode Arsip (otomatis)</th>
-                         <th>Kode Arsip (Manual)</th>
+                        <th>Kode Arsip </th>
+                  
                         <th>No Surat</th>
                         <th>Tanggal Surat</th>
                         <th>Pengirim</th>
@@ -71,7 +73,7 @@
 
                       	<?php  
                         $no = 1; 
-                        foreach ($data as $lihat):
+                        foreach ($cek as $lihat):
                         ?>
                     	<tr>
 
@@ -79,7 +81,7 @@
                     		<td> <div style="width: 100px;"><?php echo $lihat->no_agenda?></td>
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_terima) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
-                          <td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip2) ?></td> 
+                
                         <td>  <div style="width: 200px;"> <?php echo ucwords($lihat->no_surat) ?></td>
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucfirst($lihat->pengirim) ?></td> 
@@ -90,7 +92,7 @@
                         <td> <div style="width: 200px;"><?php echo ucfirst($lihat->disposisi) ?></td> </div>
                         <td> <div style="width: 130px;"><?php echo ucwords($lihat->asli_copy) ?></td>  
                         <td> <div style="width: 350px;"> <?php echo ucwords($lihat->informasi_disposisi) ?></td> </div>
-                        <td>  <a href="<?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?> </a> </td> </div>
+                        <td>  <a href="<?php echo base_url('upload/files/masuk/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/'.$lihat->gambar) ?> </a> </td> </div>
                        
                      
                         <td align="center">
@@ -294,7 +296,7 @@ $koneksi = mysqli_connect($host, $user, $password, $database);
 
 
 <?php
-$query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id DESC");
+$query = mysqli_query($koneksi,"SELECT * FROM tb_surat_masuk ORDER BY surat_id DESC");
 ?>
  <div id="lihatlaporan12" class="modal fade" role="dialog">
      <div class="modal-dialog" style="width: 80%">
@@ -328,8 +330,8 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
           <!--  <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: #ADFF2F; text-align: center;"> Tanggal Diterima </th>
-           <th style="background-color: yellow; text-align: center;"> Kode Arsip (Otomatis) </th>
-            <th style="background-color: yellow; text-align: center;"> Kode Arsip (Manual)</th>
+          
+            <th style="background-color: yellow; text-align: center;"> Kode Arsip </th>
            <th style="background-color: #ADFF2F; text-align: center;"> No Surat </th>
            <th style="background-color: yellow; text-align: center;"> Tanggal Surat </th>
            <th style="background-color: #ADFF2F; text-align: center;"> Pengirim </th>
@@ -338,15 +340,15 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
 
   <?php 
 
-    $data = mysqli_query($koneksi, "SELECT * from tb_jenis_surat");
+    $cek = mysqli_query($koneksi, "SELECT * from tb_surat_masuk");
     $no=1;
-    foreach ($data as $lihat){
+    foreach ($cek as $lihat){
         echo "<tr>
           
            <td > ".$lihat['no_agenda']."</td>
            <td> ".tgl_indo($lihat['tgl_terima'])." </td>
            <td > ".$lihat['kode_arsip']." </td>
-           <td > ".$lihat['kode_arsip2']." </td>
+      
            <td >".$lihat['no_surat']."</td> 
            <td> ".tgl_indo($lihat['tgl_surat'])."  </td>
            <td>".$lihat['pengirim']." </td> 

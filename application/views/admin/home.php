@@ -13,10 +13,8 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
-          
-          <!-- Small boxes (Stat box) -->
-         
+        <section class="content" style="background-image: url(../logo_BMKG.png);  background-repeat: no-repeat; background-position: center;background-attachment: fixed; padding-bottom: 500px;">
+      
             
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
@@ -32,7 +30,7 @@
               </div>
             </div><!-- ./col -->
 
-             <div class="row">
+            
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-maroon">
@@ -50,7 +48,7 @@
 
           <div class="col-lg-3 col-xs-6">
               <!-- small box -->
-              <div class="small-box bg-green"  style="margin-left: 14px;">
+              <div class="small-box bg-green"  >
                 <div class="inner">
                   <h3><?php echo $manage_user; ?></h3>
                   <p>User</p>
@@ -62,7 +60,7 @@
               </div>
             </div><!-- ./col -->
 
-            </div><!-- ./col -->
+         
                  <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-blue">
@@ -103,6 +101,21 @@
               </div>
 
 
+
+            </div><!-- ./col -->
+             <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+                <div class="small-box bg-purple" style="height: 130px; margin-right: -10px;">
+                  <div class="inner">
+                  <p> Cart </p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-pencil"></i>
+                </div>
+                <a href="<?php echo base_url(); ?>admin/cart" class="small-box-footer" style="margin-top: 52px;">More info <i class="fa fa-arrow-circle-right" ></i></a>
+              </div>
+
+   </div><!-- ./col -->
 
             </div><!-- ./col -->
         </section><!-- /.content -->

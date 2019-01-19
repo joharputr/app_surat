@@ -15,12 +15,12 @@
         <!-- Main content -->
         <section class="content">
           
-          <div class="row">          	
-          	<div class="col-xs-12">
-          		<div class="box">
+          <div class="row">           
+            <div class="col-xs-12">
+              <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">
-                  	<a href="<?php echo base_url(); ?>admin/tambah_buat" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="<?php echo base_url(); ?>admin/tambah_buat" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
                    
                     <a href="export_buat_surat" target="_blank">
                      <button class="btn btn-sm btn-info btn-flat" ><i class="fa fa-print"></i> Export to Excel</button></a>
@@ -60,15 +60,15 @@
 
                     <tbody>
 
-                      	<?php  
+                        <?php  
                         $no = 1; 
                         foreach ($data as $lihat):
                         ?>
-                    	<tr>
+                      <tr>
 
                         <td><?php echo $no++ ?></td>
                         <td> <div style="width: 200px;"><?php echo $lihat->no_surat?></td>
-                    		<td> <div style="width: 200px;"><?php echo $lihat->nama1?></td>
+                        <td> <div style="width: 200px;"><?php echo $lihat->nama1?></td>
                         <td>  <div style="width: 200px;"> <?php echo ucwords($lihat->nip1) ?></td>
                         <td> <div style="width: 200px;"><?php echo ucfirst($lihat->pangkat1) ?></td> 
                         <td> <div style="width: 200px;"><?php echo ucfirst($lihat->jabatan1) ?></td> 

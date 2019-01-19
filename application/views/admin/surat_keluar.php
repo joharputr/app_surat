@@ -22,6 +22,7 @@
                 <div class="box-header">
                   <h3 class="box-title">
                   	<a href="<?php echo base_url(); ?>admin/tambah_surat_keluar" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="<?php echo base_url(); ?>admin/tambah_surat_keluar2" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah(manual)</a>
                     <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
                  
                    <a href="print_surat_keluar" target="_blank">
@@ -52,8 +53,8 @@
                         <th>No</th>
                         <th>No. Agenda</th>
                         <th>Tanggal Surat</th>
-                          <th>Kode Arsip (otomatis)</th>
-                         <th>Kode Arsip (Manual)</th>
+                          <th>Kode Arsip </th>
+                        
                         <th>No Surat</th>
                         <th>Tujuan</th>
                         <th>Perihal</th>
@@ -72,13 +73,13 @@
                     	<td><div style="width: 100px;"><?php echo $lihat->no_agenda?></td>
                       <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
                     	<td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
-                        <td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip2) ?></td> 
+                  
                       <td><div style="width: 150px;"><?php echo ucwords($lihat->no_surat) ?></td> 
                       <td> <div style="width: 100px;">  <?php echo ucfirst($lihat->tujuan) ?></td> 
                       <td> <div style="width: 400px;"><?php echo ucfirst($lihat->perihal) ?></td> </div>
                       <td><div style="width: 150px;"><?php echo ucwords($lihat->asli_copy) ?></td>  
                       <td> <div style="width: 350px;"> <?php echo ucwords($lihat->keterangan) ?></td>  </div>
-                      <td>  <a href="<?php echo base_url('upload/files/keluar/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/keluar/'.$lihat->gambar) ?> </a> </td> </div>
+                        <td>  <a href="<?php echo base_url('upload/files/'.$lihat->gambar) ?>" width="64" > <?php echo base_url('upload/files/'.$lihat->gambar) ?> </a> </td>  </div>
                         <td  align="center">
                           <div class="btn-group" role="group" style="width: 200px;">
                             <a href="<?php echo base_url(); ?>admin/edit_surat_keluar/<?php echo $lihat->surat_id ?>" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-edit"></i> Edit</a>
@@ -174,7 +175,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_surat_keluar ORDER BY surat_id 
            <td width=30px>".$lihat['no_agenda']."</td>
            <td > ".tgl_indo($lihat['tgl_surat'])."  </td>
            <td > ".$lihat['kode_arsip']."  </td>
-           <td > ".$lihat['kode_arsip2']."  </td>
+         
            <td >".$lihat['no_surat']."</td> 
            <td >".$lihat['tujuan']." </td> 
            <td > ".$lihat['perihal']."  </td>

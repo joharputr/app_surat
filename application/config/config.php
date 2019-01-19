@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = "http://".$_SERVER['SERVER_NAME']."/app_surat/";
+$config['base_url'] = "http://".$_SERVER['HTTP_HOST']."/app_surat/";
 
 /*
 |--------------------------------------------------------------------------

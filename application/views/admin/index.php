@@ -22,7 +22,21 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
     <!-- Date Picker -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/plugins/datepicker/datepicker3.css">
+  
     
+
+<!-- Content Wrapper. Contains page content -->  <script type="text/javascript" src="assets/highcart/highcart.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+   <script type="text/javascript" src="assets/highcart/highcart-3d.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container"></div>
+
+  
+  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -106,6 +120,12 @@
                 <i class="fa fa-pencil"></i> <span>Buat Surat</span> 
               </a>
             </li>
+            
+             <li class="<?php if($page == 'cart'){echo 'active';} ?>">
+              <a href="<?php echo base_url(); ?>admin/cart">
+                <i class="glyphicon glyphicon-stats"></i> <span>Cart</span> 
+              </a>
+            </li>
            
            
           </ul>
@@ -117,11 +137,11 @@
     </div><!-- ./wrapper -->
 
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   
+    
+     <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
 
-      
-    <!-- jQuery 2.1.4 -->
-    <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
       $(function () {
         $("#example1").DataTable({          
