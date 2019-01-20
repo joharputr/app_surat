@@ -68,7 +68,7 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_jenis_surat ORDER BY surat_id D
 
   <?php 
 
-    $data = mysqli_query($koneksi, "SELECT * from tb_jenis_surat");
+    $data = mysqli_query($koneksi, "SELECT * from tb_surat_masuk");
     $no=1;
     foreach ($data as $lihat){
         echo "<tr>

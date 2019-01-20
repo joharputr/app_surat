@@ -28,7 +28,7 @@
               <div class="box-body">
                 <!-- form start -->
 
-              <?php echo form_open('admin/insert_jenis'); ?>
+              <?php echo form_open('admin/insert_surat_masuk'); ?>
 
               <div class="form-group">
                     <label for="exampleInputEmail1">No Agenda</label>
@@ -597,10 +597,7 @@ $cat.on("change",function(){
 });
 </script>
 
-                    <div class="form-group">
-                    <label for="exampleInputEmail1">Kode Arsip (Manual) </label>
-                      <input type="text" class="form-control" name="kode_arsip2" placeholder="Kode Arsip (Manual)"/>
-                  </div>
+              
                   <div class="form-group">
                     <label for="exampleInputEmail1">No Surat</label>
                       <input type="text" class="form-control" name="no_surat" placeholder="No Surat"/>
@@ -680,7 +677,7 @@ $cat.on("change",function(){
                     <label for="exampleInputEmail1">Informasi Disposisi</label>
                     <textarea name="informasi_disposisi" class="form-control" cols="30" rows="10"></textarea>
                   </div>
-                  <a href="<?php echo base_url(); ?>admin/jenis_surat" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
+                  <a href="<?php echo base_url(); ?>admin/surat_masuk" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
                   <button type="submit" name="simpan" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
                 <?php echo form_close(); ?>
                 

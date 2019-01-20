@@ -28,7 +28,7 @@
               <div class="box-body">
                 <!-- form start -->
 
-              <?php echo form_open('admin/insert_jenis'); ?>
+              <?php echo form_open('admin/insert_surat_masuk'); ?>
 
               <div class="form-group">
                     <label for="exampleInputEmail1">No Agenda</label>
@@ -41,7 +41,7 @@
                  
             
                   <div class="form-group">
-                    <label for="exampleInputEmail1">kode arsip</label>
+                    <label for="exampleInputEmail1">Kode Arsip</label>
                       <input type="text" class="form-control" name="kode_arsip" placeholder="No Agenda"/>
                   </div
               
