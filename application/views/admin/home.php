@@ -20,13 +20,13 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3><?php echo $jenis; ?></h3>
+                  <h3><?php echo $surat_masuk; ?></h3>
                   <p>Surat Masuk</p>
                 </div>
                 <div class="icon">
                   <i class="fa fa-inbox"></i>
                 </div>
-                <a href="<?php echo base_url(); ?>admin/jenis_surat" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?php echo base_url(); ?>admin/surat_masuk" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
 

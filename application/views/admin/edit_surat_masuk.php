@@ -28,7 +28,7 @@
               </div>
               <div class="box-body">
                 <!-- form start -->
-                <?php echo form_open_multipart('admin/update_jenis'); ?>
+                <?php echo form_open_multipart('admin/update_surat_masuk'); ?>
                 <?php  
                 foreach ($editdata as $data):
                 ?>
@@ -160,7 +160,7 @@
 
 
                   <input type="hidden" name="id" value="<?php echo $data->surat_id ?>">
-                  <a href="<?php echo base_url(); ?>admin/jenis_surat" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
+                  <a href="<?php echo base_url(); ?>admin/surat_masuk" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
                   <button type="submit" name="simpan" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
                 <?php endforeach ?>
                 <?php echo form_close(); ?>

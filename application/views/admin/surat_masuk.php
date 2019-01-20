@@ -23,16 +23,16 @@
           		<div class="box">
                 <div class="box-header">
                   <h3 class="box-title">
-                  	<a href="<?php echo base_url(); ?>admin/tambah_jenis" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
-                    <a href="<?php echo base_url(); ?>admin/tambah_jenis1" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah(manual)</a>
+                  	<a href="<?php echo base_url(); ?>admin/tambah_surat_masuk" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="<?php echo base_url(); ?>admin/tambah_surat_masuk2" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah(manual)</a>
                      <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan12"><i class="fa fa-eye"></i> Lihat Data</button>
                      <a href="print_surat_masuk" target="_blank">
                      <button class="btn btn-sm btn-success btn-flat" ><i class="fa fa-print"></i> Print</button></a>
-                     <a href="export_jenis_surat" target="_blank">
+                     <a href="export_surat_masuk" target="_blank">
                      <button class="btn btn-sm btn-info btn-flat" ><i class="fa fa-print"></i> Export to Excel</button></a>
-                     <a href="export_sql_jenis" target="_blank">
+                     <a href="export_sql_surat_masuk" target="_blank">
                      <button class="btn btn-sm btn-warning btn-flat" ><i class="fa fa-print"></i> Backup SQL</button></a>
-                      <a href="delete_all_jenis" onclick="javascript: return confirm('Anda yakin akan menghapus semua data surat masuk ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus Semua Data </a>
+                      <a href="delete_all_surat_masuk" onclick="javascript: return confirm('Anda yakin akan menghapus semua data surat masuk ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus Semua Data </a>
                   </h3>
 
 
@@ -97,8 +97,8 @@
                      
                         <td align="center">
                           <div class="btn-group" role="group" style="width: 350px;">
-                            <a href="<?php echo base_url(); ?>admin/edit_jenis/<?php echo $lihat->surat_id ?>" class="btn btn-sm btn-success btn-flat"><i class="fa fa-edit"></i> Edit</a>
-                            <a href="<?php echo base_url(); ?>admin/hapus_jenis/<?php echo $lihat->surat_id ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
+                            <a href="<?php echo base_url(); ?>admin/edit_surat_masuk/<?php echo $lihat->surat_id ?>" class="btn btn-sm btn-success btn-flat"><i class="fa fa-edit"></i> Edit</a>
+                            <a href="<?php echo base_url(); ?>admin/hapus_surat_masuk/<?php echo $lihat->surat_id ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
                             <button class="btn btn-sm btn-primary btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan<?php echo $lihat->surat_id ?>"><i class="fa fa-eye"></i> Lihat Disposisi </button>
                             <a href="print_disposisi?surat_id=<?php  echo $lihat->surat_id; ?>" target="_blank">
                                 <button class="btn btn-sm btn-light btn-flat" ><i class="fa fa-print"></i> Print</button></a>

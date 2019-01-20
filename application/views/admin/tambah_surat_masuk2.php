@@ -124,7 +124,7 @@
                     <label for="exampleInputEmail1">Informasi Disposisi</label>
                     <textarea name="informasi_disposisi" class="form-control" cols="30" rows="10"></textarea>
                   </div>
-                  <a href="<?php echo base_url(); ?>admin/jenis_surat" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
+                  <a href="<?php echo base_url(); ?>admin/surat_masuk" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Batal</a>
                   <button type="submit" name="simpan" class="btn btn-success"><i class="fa fa-save"></i> Simpan</button>
                 <?php echo form_close(); ?>
                 

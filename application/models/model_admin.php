@@ -3,7 +3,7 @@
 class Model_admin extends CI_Model {
 
 	
-	public function tampil_jenis()
+	public function tampil_surat_masuk()
 	{
 		return $this->db->get('tb_surat_masuk');
 	}
@@ -21,7 +21,7 @@ class Model_admin extends CI_Model {
 	{
 		return $this->db->get("tb_surat_keluar")->result();
 	}
-	public function export_jenis()
+	public function export_surat_masuk()
 	{
 		return $this->db->get('tb_surat_masuk')->result();
 	}
@@ -36,12 +36,12 @@ class Model_admin extends CI_Model {
 		return $this->db->get("login");
 	}
 
-	public function edit_jenis($id)
+	public function edit_surat_masuk($id)
 	{
 		return $this->db->get_where('tb_surat_masuk',array('surat_id'=>$id));
 	}
 
-	public function hapus_jenis($id)
+	public function hapus_surat_masuk($id)
 	{
 		return $this->db->delete('tb_surat_masuk', array('surat_id' => $id));
 	}

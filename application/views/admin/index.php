@@ -88,7 +88,7 @@
               </a>
             </li>            
             <li class="<?php if($page == 'jenis_surat'){echo 'active';} ?>">
-              <a href="<?php echo base_url(); ?>admin/jenis_surat">
+              <a href="<?php echo base_url(); ?>admin/surat_masuk">
                 <i class="fa fa-inbox"></i> <span>Surat Masuk</span>
               </a>
             </li>           

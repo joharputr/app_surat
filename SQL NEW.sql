@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Jan 2019 pada 13.49
--- Versi server: 10.1.30-MariaDB
--- Versi PHP: 7.2.2
+-- Generation Time: Jan 19, 2019 at 02:32 PM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `buat_surat`
+-- Table structure for table `buat_surat`
 --
 
 CREATE TABLE `buat_surat` (
@@ -49,7 +49,7 @@ CREATE TABLE `buat_surat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `buat_surat`
+-- Dumping data for table `buat_surat`
 --
 
 INSERT INTO `buat_surat` (`id`, `no_surat`, `nama1`, `nama2`, `nip1`, `nip2`, `pangkat1`, `jabatan1`, `pangkat2`, `jabatan2`, `tugas`, `unit`, `waktu`, `lokasi`, `tanggal`, `plh`, `keterangan`) VALUES
@@ -62,7 +62,7 @@ INSERT INTO `buat_surat` (`id`, `no_surat`, `nama1`, `nama2`, `nip1`, `nip2`, `p
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gambar`
+-- Table structure for table `gambar`
 --
 
 CREATE TABLE `gambar` (
@@ -74,18 +74,16 @@ CREATE TABLE `gambar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `gambar`
+-- Dumping data for table `gambar`
 --
 
 INSERT INTO `gambar` (`id_gambar`, `gambar`, `surat_id`, `nama`, `tgl_surat`) VALUES
-(1, '1.jpg', 0, 'Celanamu', '2019-01-05'),
-(2, '2.gif', 1, 'Hayabusa', '2019-01-11'),
-(3, 'Anitoki_Gamers__06_720p_2F55F0B4_0.mkv_snapshot_23_.47_2017_.08_.20_09_.20_.04_.jpg', 1, '', '0000-00-00');
+(1, '1.jpg', 1, '', '0000-00-00');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -96,51 +94,17 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id_user`, `username`, `password`, `nama`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator'),
-(15, 'bmkg', 'bmkg', 'bmkg'),
-(16, 'haya', '12345', 'Hayabusa');
+(15, 'bmkg', '123', 'bmkg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jenis_surat`
---
-
-CREATE TABLE `tb_jenis_surat` (
-  `surat_id` int(11) NOT NULL,
-  `no_agenda` varchar(255) NOT NULL,
-  `tgl_terima` date NOT NULL,
-  `kode_arsip` varchar(255) NOT NULL,
-  `kode_arsip2` varchar(255) NOT NULL,
-  `no_surat` varchar(255) NOT NULL,
-  `tgl_surat` date NOT NULL,
-  `pengirim` varchar(25) NOT NULL,
-  `perihal` text NOT NULL,
-  `lampiran` varchar(255) NOT NULL,
-  `sifat_surat` varchar(255) NOT NULL,
-  `penjabat_disposisi` varchar(255) NOT NULL,
-  `disposisi` varchar(255) NOT NULL,
-  `asli_copy` varchar(255) NOT NULL,
-  `informasi_disposisi` text NOT NULL,
-  `gambar` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data untuk tabel `tb_jenis_surat`
---
-
-INSERT INTO `tb_jenis_surat` (`surat_id`, `no_agenda`, `tgl_terima`, `kode_arsip`, `kode_arsip2`, `no_surat`, `tgl_surat`, `pengirim`, `perihal`, `lampiran`, `sifat_surat`, `penjabat_disposisi`, `disposisi`, `asli_copy`, `informasi_disposisi`, `gambar`) VALUES
-(1, '001', '2019-01-07', '', 'p001', 'PMSC-KSO-API-NYIA-MTG-0467', '2019-01-23', 'PMSC NYIA', 'Undangan Rapat Navigasi Penerbangan', '-', 'Penting', 'Kasklim Mlati', 'Tata Usaha', 'surat asli', '  ', 'default.jpg'),
-(2, '001', '2019-01-07', 'UM.202', '', '005/001', '2019-01-08', 'johar', 'Undangan Rapat Navigasi Penerbangan', '-', 'Biasa', 'Kasklim Mlati', 'Tata Usaha, Kapok Datin, Kapok Obs', 'surat asli', '', '2.pdf');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tb_surat_keluar`
+-- Table structure for table `tb_surat_keluar`
 --
 
 CREATE TABLE `tb_surat_keluar` (
@@ -158,80 +122,138 @@ CREATE TABLE `tb_surat_keluar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_surat_keluar`
+-- Dumping data for table `tb_surat_keluar`
 --
 
 INSERT INTO `tb_surat_keluar` (`surat_id`, `no_agenda`, `kode_arsip`, `kode_arsip2`, `tgl_surat`, `no_surat`, `tujuan`, `perihal`, `asli_copy`, `keterangan`, `gambar`) VALUES
-(1, '001', 'KP.003', '', '2019-01-17', 'KP.003/939/SMN/XII/2018', 'Anang Ariane', 'bimbingan', 'surat asli', '  ', 'default.jpg'),
-(2, '001', 'PR.202', '', '2019-01-11', 'KP.003/939/SMN/XII/2018', 'Anang Ariane', 'bimbingan', 'surat copy', '  ', '2.pdf');
+(6, '', '', '', '0000-00-00', '', '', '', 'surat asli', '    ', '6.jpg'),
+(7, '', '', '', '2019-01-11', '', '', '', 'surat asli', '  ', '7.png'),
+(8, '', '', '', '2019-01-05', '', '', '', 'surat asli', '', ''),
+(9, '', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(10, '', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(11, '1', 'PL.203', '', '2019-01-11', '100', 'yoguakarta', 'bimbingan', 'surat asli', 'www', ''),
+(12, '', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(13, '', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(14, '001', 'KP.019', '', '2019-01-12', '1234567', 'yoguakarta', 'bimbingan', 'surat asli', 'ssss', ''),
+(15, 'w', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(16, 'w', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(17, '', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(18, '', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(19, '', '', '', '2019-01-03', '', '', '', 'surat asli', '', ''),
+(20, '', '', '', '2019-01-03', '', '', '', 'surat asli', '', ''),
+(21, '', '', '', '0000-00-00', '', '', '', 'surat asli', '', ''),
+(22, '11', 'KU.105', '', '2019-01-10', '', '', '', 'surat asli', '', ''),
+(23, '', '', '', '2019-01-27', '', '', '', 'surat asli', '', ''),
+(24, '', '', '', '2019-01-03', '', '', '', 'surat asli', '', ''),
+(25, '', '', '', '2019-02-05', '', '', '', 'surat asli', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_surat_masuk`
+--
+
+CREATE TABLE `tb_surat_masuk` (
+  `surat_id` int(11) NOT NULL,
+  `no_agenda` varchar(255) NOT NULL,
+  `tgl_terima` date NOT NULL,
+  `kode_arsip` varchar(255) NOT NULL,
+  `no_surat` varchar(255) NOT NULL,
+  `tgl_surat` date NOT NULL,
+  `pengirim` varchar(25) NOT NULL,
+  `perihal` text NOT NULL,
+  `lampiran` varchar(255) NOT NULL,
+  `sifat_surat` varchar(255) NOT NULL,
+  `penjabat_disposisi` varchar(255) NOT NULL,
+  `disposisi` varchar(255) NOT NULL,
+  `asli_copy` varchar(255) NOT NULL,
+  `informasi_disposisi` text NOT NULL,
+  `gambar` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_surat_masuk`
+--
+
+INSERT INTO `tb_surat_masuk` (`surat_id`, `no_agenda`, `tgl_terima`, `kode_arsip`, `no_surat`, `tgl_surat`, `pengirim`, `perihal`, `lampiran`, `sifat_surat`, `penjabat_disposisi`, `disposisi`, `asli_copy`, `informasi_disposisi`, `gambar`) VALUES
+(14, '', '2019-01-05', 'KP.013', '', '0000-00-00', '', '', '', 'Biasa', '', '', 'surat asli', '  ', '14.png'),
+(15, '', '2019-01-03', 'KU.106', '', '0000-00-00', '', '', '', 'Biasa', '', '', 'surat asli', '  ', '15.JPG'),
+(16, '', '2019-01-19', '', '', '0000-00-00', '', '', '', 'Penting', '', '0', 'surat asli', '', ''),
+(17, '', '0000-00-00', '', '', '0000-00-00', '', 'dd', '', 'Biasa', '', '0', 'surat asli', '', ''),
+(18, '001', '2019-01-03', 'PR.203', '100', '2019-01-18', 'Johar', 'bimbingan', 'satu bendel', 'Biasa', 'dekan', '0', 'surat asli', 'ee', ''),
+(19, '', '2019-03-04', '', '', '0000-00-00', '', '', '', 'Biasa', '', '0', 'surat asli', '', ''),
+(20, '', '2019-02-25', '', '', '0000-00-00', '', '', '', 'Biasa', '', '0', 'surat asli', '', ''),
+(21, '', '2019-01-03', '', '', '0000-00-00', '', '', '', 'Biasa', '', '0', 'surat asli', '', ''),
+(22, '', '2019-04-04', '', '', '0000-00-00', '', '', '', 'Biasa', '', '0', 'surat asli', '', ''),
+(23, '', '2019-04-04', '', '', '0000-00-00', '', '', '', 'Biasa', '', '0', 'surat asli', '', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `buat_surat`
+-- Indexes for table `buat_surat`
 --
 ALTER TABLE `buat_surat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `gambar`
+-- Indexes for table `gambar`
 --
 ALTER TABLE `gambar`
   ADD PRIMARY KEY (`id_gambar`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indeks untuk tabel `tb_jenis_surat`
---
-ALTER TABLE `tb_jenis_surat`
-  ADD PRIMARY KEY (`surat_id`);
-
---
--- Indeks untuk tabel `tb_surat_keluar`
+-- Indexes for table `tb_surat_keluar`
 --
 ALTER TABLE `tb_surat_keluar`
   ADD PRIMARY KEY (`surat_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- Indexes for table `tb_surat_masuk`
+--
+ALTER TABLE `tb_surat_masuk`
+  ADD PRIMARY KEY (`surat_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `buat_surat`
+-- AUTO_INCREMENT for table `buat_surat`
 --
 ALTER TABLE `buat_surat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `gambar`
+-- AUTO_INCREMENT for table `gambar`
 --
 ALTER TABLE `gambar`
-  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_gambar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jenis_surat`
---
-ALTER TABLE `tb_jenis_surat`
-  MODIFY `surat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `tb_surat_keluar`
+-- AUTO_INCREMENT for table `tb_surat_keluar`
 --
 ALTER TABLE `tb_surat_keluar`
-  MODIFY `surat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `surat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `tb_surat_masuk`
+--
+ALTER TABLE `tb_surat_masuk`
+  MODIFY `surat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
