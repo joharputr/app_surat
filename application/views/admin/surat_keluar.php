@@ -158,8 +158,8 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_surat_keluar ORDER BY surat_id 
          <!--   <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: yellow; text-align: center;"> Tanggal Surat </th>
-           <th style="background-color: yellow; text-align: center;"> Kode Arsip (Otomatis) </th>
-            <th style="background-color: yellow; text-align: center;"> Kode Arsip (Manual )</th>
+           <th style="background-color: yellow; text-align: center;"> Kode Arsip  </th>
+         
            <th style="background-color: yellow; text-align: center;"> No Surat </th>
            <th style="background-color: yellow; text-align: center;"> Tujuan </th>
            <th style="background-color: yellow; text-align: center;">Perihal  </th>

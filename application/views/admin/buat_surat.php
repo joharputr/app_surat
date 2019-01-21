@@ -36,7 +36,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>No surat</th>
+                        <th>No Surat</th>
                         <th>Nama Penanda Tangan  </th>
                         <th>NIP Penanda Tangan  </th>
                         <th>Pangkat / Golongan.ruang Penanda Tangan </th>

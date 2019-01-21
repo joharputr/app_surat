@@ -31,7 +31,12 @@
                 <?php echo form_open('admin/insert_buat_surat'); ?>
                   <body>
 
-                 <div class="" id="">  <label for="exampleInputEmail1">nama pengirim</label>
+                      <div class="form-group">
+                    <label for="exampleInputEmail1">No Surat</label>
+                      <input type="text" class="form-control" name="no_surat" placeholder="No Surat"/>
+                  </div>
+
+                 <div class="" id="">  <label for="exampleInputEmail1">Nama Pengirim</label>
                   <br>
             <select name="nama1" class="form-control" id="nama1" onchange="javascript: dynamicdropdown1(this.options[this.selectedIndex].value);">
                 <option value="">pilih nama</option>
@@ -71,7 +76,7 @@
         </div>
         <br>
                   <div class="" id=""> 
-                    <label for="exampleInputEmail1">nip Pengirim</label>
+                    <label for="exampleInputEmail1">NIP Pengirim</label>
                     <br>
             <script type="text/javascript" language="JavaScript">
                 document.write('<select name="nip1" id="nip1" class="form-control" onchange="javascript: dynamicdropdownone1(this.options[this.selectedIndex].value);"><option value="">Pilih NIP</option></select>')
@@ -79,14 +84,14 @@
             
         </div>
         <br>
-                  <div class="" id=""> <label for="exampleInputEmail1">pangkat golongan pengirim</label><br>
+                  <div class="" id=""> <label for="exampleInputEmail1">Pangkat Golongan Pengirim</label><br>
             <script type="text/javascript" language="JavaScript">
                 document.write('<select name="pangkat1" class="form-control" onchange="javascript: this.options[this.selectedIndex].value;" id="pangkat1"><option value="">Pilih  Pangkat </option></select>')
             </script>
           
         </div>
         <br>
-                     <div class="" id=""> <label for="exampleInputEmail1">jabatan pengirim</label><br>
+                     <div class="" id=""> <label for="exampleInputEmail1">Jabatan Pengirim</label><br>
          <!--    <script type="text/javascript" language="JavaScript">
                 document.write('<select name="jabatan1" class="form-control" onchange="javascript: this.options[this.selectedIndex].value;" id="jabatan1"><option value="">Pilih Jabatan </option></select>')
             </script> -->
@@ -110,7 +115,7 @@
                   </div>
 
 
-                    <div class="category_div" id="category_div">  <label for="exampleInputEmail1">nama penerima</label>
+                    <div class="category_div" id="category_div">  <label for="exampleInputEmail1">Nama Penerima</label>
                   <br>
             <select name="nama2" class="form-control" id="nama2" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
                 <option value="">pilih nama</option>
@@ -150,7 +155,7 @@
         </div>
         <br>
                   <div class="sub_category_div" id="sub_category_div"> 
-                    <label for="exampleInputEmail1">nip Pengirim</label>
+                    <label for="exampleInputEmail1">NIP Pengirim</label>
                     <br>
             <script type="text/javascript" language="JavaScript">
                 document.write('<select name="nip2" id="nip2" class="form-control" onchange="javascript: dynamicdropdownone(this.options[this.selectedIndex].value);"><option value="">Pilih NIP</option></select>')
@@ -158,14 +163,14 @@
             
         </div>
         <br>
-                  <div class="pangkat1_div" id="pangkat1_div"> <label for="exampleInputEmail1">pangkat golongan pengirim</label><br>
+                  <div class="pangkat1_div" id="pangkat1_div"> <label for="exampleInputEmail1">Pangkat Golongan Pengirim</label><br>
             <script type="text/javascript" language="JavaScript">
                 document.write('<select name="pangkat2" class="form-control" onchange="javascript: this.options[this.selectedIndex].value;" id="pangkat2"><option value="">Pilih  Pangkat </option></select>')
             </script>
           
         </div>
         <br>
-                     <div class="jabatan1_div" id="jabatan1_div"> <label for="exampleInputEmail1">jabatan pengirim</label><br>
+                     <div class="jabatan1_div" id="jabatan1_div"> <label for="exampleInputEmail1">Jabatan Pengirim</label><br>
          <!--    <script type="text/javascript" language="JavaScript">
                 document.write('<select name="jabatan1" class="form-control" onchange="javascript: this.options[this.selectedIndex].value;" id="jabatan1"><option value="">Pilih Jabatan </option></select>')
             </script> -->

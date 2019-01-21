@@ -36,7 +36,7 @@
                       <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" placeholder="Tanggal Surat"/>
                   </div>
                   <div class="form-group">
-             <label for="exampleInputEmail1">Kode Arsip (Otomatis)</label>
+             <label for="exampleInputEmail1">Kode Arsip </label>
             
 
 <form id="formname" name="formname" method="post" action="submitform.asp" >
