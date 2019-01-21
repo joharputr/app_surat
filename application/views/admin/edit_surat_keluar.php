@@ -34,10 +34,7 @@
                 ?>
                
 
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">No Agenda</label>
-                      <input type="text" class="form-control" name="no_agenda" value="<?php echo $data->no_agenda ?>" />
-                  </div>
+              
                   <div class="form-group">
                     <label for="exampleInputEmail1">Tanggal Surat</label>
                       <input type="text" class="form-control" name="tgl_surat" id="tgl_surat" data-date-format="yyyy-mm-dd" value="<?php echo $data->tgl_surat ?>"/>

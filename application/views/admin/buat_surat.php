@@ -65,7 +65,7 @@
                         foreach ($data as $lihat):
                         ?>
                       <tr>
-
+                          
                         <td><?php echo $no++ ?></td>
                         <td> <div style="width: 200px;"><?php echo $lihat->no_surat?></td>
                         <td> <div style="width: 200px;"><?php echo $lihat->nama1?></td>

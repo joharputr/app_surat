@@ -69,8 +69,8 @@
                       	foreach ($data as $lihat):
                       	?>
                     	<tr>
-                      <td><?php echo $no++ ?></td>
-                    	<td><div style="width: 100px;"><?php echo $lihat->no_agenda?></td>
+                      <td><?php echo $no ?></td>
+                    	<td><div style="width: 100px;"><?php echo  '00'.$no++?></td>
                       <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
                     	<td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
                   

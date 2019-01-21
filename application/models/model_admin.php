@@ -44,10 +44,12 @@ class Model_admin extends CI_Model {
 	public function hapus_surat_masuk($id)
 	{
 		return $this->db->delete('tb_surat_masuk', array('surat_id' => $id));
+
 	}
 		public function hapus_buat($id)
 	{
 		return $this->db->delete('buat_surat', array('id' => $id));
+		
 	}
 
 	public function hapus_surat_keluar($id)
