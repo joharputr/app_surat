@@ -94,7 +94,7 @@
                     <label for="exampleInputEmail1">Kepala / PLH</label>
                       <select name="plh" required="required" class="form-control">
                           
-                          <?php if($data->plh == 'Kepala'): ?>
+                          <?php if($data->plh == 'Kepala,'): ?>
                              <option value="Kepala,">Kepala</option>
                              <option value="PLH. Kepala,">PLH. Kepala</option>
                           <?php endif ?>

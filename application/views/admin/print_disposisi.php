@@ -85,11 +85,24 @@ $(document).ready(function(){
                           </tr>
                           
                           <tr>
-                              <td height="50" colspan="4"  align=left valign=top> 
-                                  <br> <input style="width:30px" type="checkbox" value="KBSD" name="disposisi[]" >KBSD
-                                  <input style="margin-left:130px; width:30px" type="checkbox" value="KBKU" name="disposisi[]"  >KBKU
-                                  <input style="margin-left:100px ; width:30px" type="checkbox" value="KBPB" name="disposisi[]" >KBPB 
-                                  <input style=" margin-left:100px ; width:30px" type="checkbox" value="....." name="disposisi[]"> .....
+                            
+                                   <td height="50" colspan="4"  align=left valign=top> 
+                                  <input style="width:30px" type="checkbox" value="Tata Usaha" name="disposisi[]" >Tata Usaha
+                                  <input style="margin-left:130px; width:30px" type="checkbox" value="Kapok Datin" name="disposisi[]"  >Kapok Datin
+                                  <input style="margin-left:100px ; width:30px" type="checkbox" value="Kapok Obs" name="disposisi[]" >Kapok Obs <br> <br>
+
+                                  <input style="width:30px" type="checkbox" value="Kapok Forcaster" name="disposisi[]">Kapok Forcaster
+                                  <input style="margin-left:94px; width:30px"type="checkbox" value="Kapok Teknisi" name="disposisi[]" >Kapok Teknisi
+                                  <input style="margin-left: 89px ; width:30px" type="checkbox" value="PPK" name="disposisi[]" >PPK <br> <br>
+
+                                  <input style="width:30px" type="checkbox" value="Bendahara Penerimaan" name="disposisi[]" >Bendahara Penerimaan
+                                  <input style="margin-left:42px; width:30px" type="checkbox" value="Bendahara Pengeluaran" name="disposisi[]" >Bendahara Pengeluaran
+                                  <input style="margin-left:14px; width:30px" type="checkbox" value="Pejabat ULP" name="disposisi[]" >Pejabat ULP <br> <br>
+
+                                  <input style="width:30px" type="checkbox" value="PPABP" name="disposisi[]">PPABP
+                                  <input style="margin-left:158px; width:30px" type="checkbox" value="Petugas SAIBA" name="disposisi[]" >Petugas SAIBA
+                                  <input style="margin-left:79px; width:30px" type="checkbox" value="Petugas BMN" name="disposisi[]" >Petugas BMN
+                              </td>
                                
                               </td>
                             </tr>

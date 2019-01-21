@@ -35,36 +35,36 @@
                   <br>
             <select name="nama1" class="form-control" id="nama1" onchange="javascript: dynamicdropdown1(this.options[this.selectedIndex].value);">
                 <option value="">pilih nama</option>
-                <option value="AGUS SUDARYATNO, S.Kom, MM">AGUS SUDARYATNO, S.Kom, MM</option>
-                   <option value="SUTAMSI, SP">SUTAMSI, SP</option>
-                  <option value="ANDRIYAS ARYO PRABOWO, M.Si">ANDRIYAS ARYO PRABOWO, M.Si</option>
-                  <option value="SIGIT HADI PRAKOSA, S.P.,M.Si">SIGIT HADI PRAKOSA, S.P.,M.Si</option>
-                  <option value="DJOKO BUDIYONO, SP,S.Si M.Si">DJOKO BUDIYONO, SP,S.Si</option>
-                 <option value="ETIK SETYANINGRUM, S,Si.,M.Si">ETIK SETYANINGRUM, S,Si.,M.Si</option>
-                   <option value="SUBANDI, SP">SUBANDI, SP</option>
-                 <option value="ROMADI, S.Si">ROMADI, S.Si, S.Si</option>
-                   <option value="AGUSTA KURNIAWAN,S.Si"> KURNIAWAN,S.Si </option>
-                  <option value="ELVERA L">ELVERA L</option>
-                   <option value="SUCIYATI RUBIKAYATUN">SUCIYATI RUBIKAYATUN</option>
-                 <option value="NUGROHO PURWANTORO, SH">NUGROHO PURWANTORO, SH</option>
-                  <option value="ELIYAH ULFAH ROHMAWATI, SP">ELIYAH ULFAH ROHMAWATI, SP</option>
-                  <option value="GIYARTO, ST">GIYARTO, ST</option>
-                   <option value="INDAH RETNO WULAN, SP">INDAH RETNO WULAN, SP</option>
-                  <option value="FITRIANI, S.Si">FITRIANI, S.Si</option>
-                   <option value="HARYATI, S.P, M.Sc">HARYATI, S.P, M.Si</option>
-                 <option value="ENDAH KURNIASIH, S.P., M.Si">ENDAH KURNIASIH, S.P., M.Si</option>
-                   <option value="ANUR FAJAR ASTUTI">ANUR FAJAR ASTUTI</option>
-                 <option value="MUHAMMAD ROMLI">MUHAMMAD ROMLI</option>
-                   <option value="YUDHA TINTANA MARGANISWATI">YUDHA TINTANA MARGANISWATI</option>
-                  <option value="INTAN WILUJENG FAJARIANTY, S.Si, M.Sc">INTAN WILUJENG FAJARIANTY, S.Si, M.Sc</option>
-                    <option value="FERDINANDUS EDWIN PENALUN, ST">FERDINANDUS EDWIN PENALUN, ST</option>
-                  <option value="ARI RISNANTO, S.Kom">ARI RISNANTO, S.Kom</option>
-                 <option value="EMMY PURNASHOLIHA, SST">EMMY PURNASHOLIHA, SST</option>
-                   <option value="ANANG ARIANE, S,Si, M.Sc">ANANG ARIANE, S,Si, M.Sc</option>
-                 <option value="ITTAKA ALDINI T., S.Tr">ITTAKA ALDINI T., S.Tr</option>
-                   <option value="ISTI WAHYUNINGSIH, SE">ISTI WAHYUNINGSIH, SE</option>
-                  <option value="DESY RUMAYANTI SETYO">DESY RUMAYANTI SETYO</option>
-                    <option value="LISA AGUSTINA, A.P">LISA AGUSTINA, A.P</option>
+                <option value="Agus Sudaryatno, S.Kom, MM">Agus Sudaryatno, S.Kom, MM</option>
+                   <option value="Sutamsi, SP">Sutamsi, SP</option>
+                  <option value="Andriyas Aryo Prabowo, M.Si">Andriyas Aryo Prabowo, M.Si</option>
+                  <option value="Sigit Hadi Prakosa, S.P.,M.Si">Sigit Hadi Prakosa, S.P.,M.Si</option>
+                  <option value="Djoko Budiyono, SP,S.Si M.Si">Djoko Budiyono, SP,S.Si</option>
+                 <option value="Etik Setyaningrum, S,Si.,M.Si">Etik Setyaningrum, S,Si.,M.Si</option>
+                   <option value="Subandi, SP">Subandi, SP</option>
+                 <option value="Romadi, S.Si">Romadi, S.Si, S.Si</option>
+                   <option value="Agusta Kurniawan,S.Si"> Kurniawan,S.Si </option>
+                  <option value="Elvera L">Elvera L</option>
+                   <option value="Suciyati Rubikayatun">Suciyati Rubikayatun</option>
+                 <option value="Nugroho Purwantoro, SH">Nugroho Purwantoro, SH</option>
+                  <option value="Eliyah Ulfah Rohmawati, SP">Eliyah Ulfah Rohmawati, SP</option>
+                  <option value="Giyarto, ST">Giyarto, ST</option>
+                   <option value="Indah Retno Wulan, SP">Indah Retno Wulan, SP</option>
+                  <option value="Fitriani, S.Si">Fitriani, S.Si</option>
+                   <option value="Haryati, S.P, M.Sc">Haryati, S.P, M.Si</option>
+                 <option value="Endah Kurniasih, S.P., M.Si">Endah Kurniasih, S.P., M.Si</option>
+                   <option value="Aanur Fajar Astuti">Aanur Fajar Astuti</option>
+                 <option value="Muhammad Romli">Muhammad Romli</option>
+                   <option value="Yudha Tintana Marganiswati">Yudha Tintana Marganiswati</option>
+                  <option value="Intan Wilujeng Fajarianty, S.Si, M.Sc">Intan Wilujeng Fajarianty, S.Si, M.Sc</option>
+                    <option value="Ferdinandus Edwin Penalun, ST">Ferdinandus Edwin Penalun, ST</option>
+                  <option value="Ari Risnanto, S.Kom">Ari Risnanto, S.Kom</option>
+                 <option value="Emmy Purnasholiha, SST">Emmy Purnasholiha, SST</option>
+                   <option value="Anang Ariane, S,Si, M.Sc">Anang Ariane, S,Si, M.Sc</option>
+                 <option value="Ittaka Aldini T., S.Tr">Ittaka Aldini T., S.Tr</option>
+                   <option value="Isti Wahyuningsih, SE">Isti Wahyuningsih, SE</option>
+                  <option value="Desy Rumayanti Setyo">Desy Rumayanti Setyo</option>
+                    <option value="Lisa Agustina, A.P">Lisa Agustina, A.P</option>
 
               
             </select>
@@ -114,36 +114,36 @@
                   <br>
             <select name="nama2" class="form-control" id="nama2" onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
                 <option value="">pilih nama</option>
-                <option value="AGUS SUDARYATNO, S.Kom, MM">AGUS SUDARYATNO, S.Kom, MM</option>
-                   <option value="SUTAMSI, SP">SUTAMSI, SP</option>
-                  <option value="ANDRIYAS ARYO PRABOWO, M.Si">ANDRIYAS ARYO PRABOWO, M.Si</option>
-                  <option value="SIGIT HADI PRAKOSA, S.P.,M.Si">SIGIT HADI PRAKOSA, S.P.,M.Si</option>
-                  <option value="DJOKO BUDIYONO, SP,S.Si M.Si">DJOKO BUDIYONO, SP,S.Si</option>
-                 <option value="ETIK SETYANINGRUM, S,Si.,M.Si">ETIK SETYANINGRUM, S,Si.,M.Si</option>
-                   <option value="SUBANDI, SP">SUBANDI, SP</option>
-                 <option value="ROMADI, S.Si">ROMADI, S.Si, S.Si</option>
-                   <option value="AGUSTA KURNIAWAN,S.Si"> KURNIAWAN,S.Si </option>
-                  <option value="ELVERA L">ELVERA L</option>
-                   <option value="SUCIYATI RUBIKAYATUN">SUCIYATI RUBIKAYATUN</option>
-                 <option value="NUGROHO PURWANTORO, SH">NUGROHO PURWANTORO, SH</option>
-                  <option value="ELIYAH ULFAH ROHMAWATI, SP">ELIYAH ULFAH ROHMAWATI, SP</option>
-                  <option value="GIYARTO, ST">GIYARTO, ST</option>
-                   <option value="INDAH RETNO WULAN, SP">INDAH RETNO WULAN, SP</option>
-                  <option value="FITRIANI, S.Si">FITRIANI, S.Si</option>
-                   <option value="HARYATI, S.P, M.Sc">HARYATI, S.P, M.Si</option>
-                 <option value="ENDAH KURNIASIH, S.P., M.Si">ENDAH KURNIASIH, S.P., M.Si</option>
-                   <option value="ANUR FAJAR ASTUTI">ANUR FAJAR ASTUTI</option>
-                 <option value="MUHAMMAD ROMLI">MUHAMMAD ROMLI</option>
-                   <option value="YUDHA TINTANA MARGANISWATI">YUDHA TINTANA MARGANISWATI</option>
-                  <option value="INTAN WILUJENG FAJARIANTY, S.Si, M.Sc">INTAN WILUJENG FAJARIANTY, S.Si, M.Sc</option>
-                    <option value="FERDINANDUS EDWIN PENALUN, ST">FERDINANDUS EDWIN PENALUN, ST</option>
-                  <option value="ARI RISNANTO, S.Kom">ARI RISNANTO, S.Kom</option>
-                 <option value="EMMY PURNASHOLIHA, SST">EMMY PURNASHOLIHA, SST</option>
-                   <option value="ANANG ARIANE, S,Si, M.Sc">ANANG ARIANE, S,Si, M.Sc</option>
-                 <option value="ITTAKA ALDINI T., S.Tr">ITTAKA ALDINI T., S.Tr</option>
-                   <option value="ISTI WAHYUNINGSIH, SE">ISTI WAHYUNINGSIH, SE</option>
-                  <option value="DESY RUMAYANTI SETYO">DESY RUMAYANTI SETYO</option>
-                    <option value="LISA AGUSTINA, A.P">LISA AGUSTINA, A.P</option>
+                <option value="Agus Sudaryatno, S.Kom, MM">Agus Sudaryatno, S.Kom, MM</option>
+                   <option value="Sutamsi, SP">Sutamsi, SP</option>
+                  <option value="Andriyas Aryo Prabowo, M.Si">Andriyas Aryo Prabowo, M.Si</option>
+                  <option value="Sigit Hadi Prakosa, S.P.,M.Si">Sigit Hadi Prakosa, S.P.,M.Si</option>
+                  <option value="Djoko Budiyono, SP,S.Si M.Si">Djoko Budiyono, SP,S.Si</option>
+                 <option value="Etik Setyaningrum, S,Si.,M.Si">Etik Setyaningrum, S,Si.,M.Si</option>
+                   <option value="Subandi, SP">Subandi, SP</option>
+                 <option value="Romadi, S.Si">Romadi, S.Si, S.Si</option>
+                   <option value="Agusta Kurniawan,S.Si"> Kurniawan,S.Si </option>
+                  <option value="Elvera L">Elvera L</option>
+                   <option value="Suciyati Rubikayatun">Suciyati Rubikayatun</option>
+                 <option value="Nugroho Purwantoro, SH">Nugroho Purwantoro, SH</option>
+                  <option value="Eliyah Ulfah Rohmawati, SP">Eliyah Ulfah Rohmawati, SP</option>
+                  <option value="Giyarto, ST">Giyarto, ST</option>
+                   <option value="Indah Retno Wulan, SP">Indah Retno Wulan, SP</option>
+                  <option value="Fitriani, S.Si">Fitriani, S.Si</option>
+                   <option value="Haryati, S.P, M.Sc">Haryati, S.P, M.Si</option>
+                 <option value="Endah Kurniasih, S.P., M.Si">Endah Kurniasih, S.P., M.Si</option>
+                   <option value="Aanur Fajar Astuti">Aanur Fajar Astuti</option>
+                 <option value="Muhammad Romli">Muhammad Romli</option>
+                   <option value="Yudha Tintana Marganiswati">Yudha Tintana Marganiswati</option>
+                  <option value="Intan Wilujeng Fajarianty, S.Si, M.Sc">Intan Wilujeng Fajarianty, S.Si, M.Sc</option>
+                    <option value="Ferdinandus Edwin Penalun, ST">Ferdinandus Edwin Penalun, ST</option>
+                  <option value="Ari Risnanto, S.Kom">Ari Risnanto, S.Kom</option>
+                 <option value="Emmy Purnasholiha, SST">Emmy Purnasholiha, SST</option>
+                   <option value="Anang Ariane, S,Si, M.Sc">Anang Ariane, S,Si, M.Sc</option>
+                 <option value="Ittaka Aldini T., S.Tr">Ittaka Aldini T., S.Tr</option>
+                   <option value="Isti Wahyuningsih, SE">Isti Wahyuningsih, SE</option>
+                  <option value="Desy Rumayanti Setyo">Desy Rumayanti Setyo</option>
+                    <option value="Lisa Agustina, A.P">Lisa Agustina, A.P</option>
 
               
             </select>
@@ -205,7 +205,7 @@
                    <div class="form-group">
                        <label for="exampleInputEmail1">Kepala / PLH</label>
                          <select name="plh" required="required" class="form-control col-md-8">
-                                <option value="Kepala, ">Kepala</option>
+                                <option value="Kepala,">Kepala</option>
                                 <option value="PLH. Kepala,">PLH. Kepala</option>
                           </select>
                              
@@ -219,124 +219,124 @@
               
                 switch (listindex1)
                 {
-                    case "AGUS SUDARYATNO, S.Kom, MM" :
+                    case "Agus Sudaryatno, S.Kom, MM" :
                         
                         document.getElementById("nip1").options[1]=new Option("196101201980031001","196101201980031001"); //kiri = value , kanan = yg ditampilkan
                         break;
 
-                        case "SUTAMSI, SP" :
+                        case "Sutamsi, SP" :
                         document.getElementById("nip1").options[1]=new Option("196702171991021001","196702171991021001");
                         break;
                     
-                     case "ANDRIYAS ARYO PRABOWO, M.Si" :
+                     case "Andriyas Aryo Prabowo, M.Si" :
                         document.getElementById("nip1").options[1]=new Option("197906102001121001","197906102001121001");
                         break;
 
-                    case "SIGIT HADI PRAKOSA, S.P.,M.Si" :
+                    case "Sigit Hadi Prakosa, S.P.,M.Si" :
                      document.getElementById("nip1").options[1]=new Option("197705252000121001","197705252000121001");
                         break;
 
-                        case "DJOKO BUDIYONO, SP,S.Si M.Si" :
+                        case "Djoko Budiyono, SP,S.Si M.Si" :
                      document.getElementById("nip1").options[1]=new Option("197106211995031001","197106211995031001");
                         break;
 
-                           case "ETIK SETYANINGRUM, S,Si.,M.Si" :
+                           case "Etik Setyaningrum, S,Si.,M.Si" :
                      document.getElementById("nip1").options[1]=new Option("197610091999032001","197610091999032001");
                         break;
 
-                         case "SUBANDI, SP" :
+                         case "Subandi, SP" :
                      document.getElementById("nip1").options[1]=new Option("197603242000121001","197603242000121001");
                         break; 
 
-                           case "ROMADI, S.Si" :
+                           case "Romadi, S.Si" :
                      document.getElementById("nip1").options[1]=new Option("197509011999031001","197509011999031001");
                         break; 
 
-                        case "AGUSTA KURNIAWAN,S.Si" :
+                        case "Agusta Kurniawan,S.Si" :
                      document.getElementById("nip1").options[1]=new Option("197908202008011018","197908202008011018");
                         break; 
 
-                         case "ELVERA L" :
+                         case "Elvera L" :
                      document.getElementById("nip1").options[1]=new Option("196112131981032004","196112131981032004");
                         break; 
 
-                        case "SUCIYATI RUBIKAYATUN" :
+                        case "Suciyati Rubikayatun" :
                      document.getElementById("nip1").options[1]=new Option("197409181997032001","197409181997032001");
                         break; 
 
-                        case "NUGROHO PURWANTORO, SH" :
+                        case "Nugroho Purwantoro, SH" :
                      document.getElementById("nip1").options[1]=new Option("197411201996031001","197411201996031001");
                         break; 
 
-                        case "ELIYAH ULFAH ROHMAWATI, SP" :
+                        case "Eliyah Ulfah Rohmawati, SP" :
                      document.getElementById("nip1").options[1]=new Option("198402142008012010","198402142008012010");
                         break; 
 
-                        case "GIYARTO, ST" :
+                        case "Giyarto, ST" :
                      document.getElementById("nip1").options[1]=new Option("197606101998031001","197606101998031001");
                         break;
 
-                        case "INDAH RETNO WULAN, SP" :
+                        case "Indah Retno Wulan, SP" :
                      document.getElementById("nip1").options[1]=new Option("198003152008012028","198003152008012028");
                         break;
 
-                         case "FITRIANI, S.Si" :
+                         case "Fitriani, S.Si" :
                      document.getElementById("nip1").options[1]=new Option("198307072004122002","198307072004122002");
                         break;
 
-                        case "HARYATI, S.P, M.Sc" :
+                        case "Haryati, S.P, M.Sc" :
                      document.getElementById("nip1").options[1]=new Option("198104102004122001","198104102004122001");
                         break;
 
-                        case "ENDAH KURNIASIH, S.P., M.Si" :
+                        case "Endah Kurniasih, S.P., M.Si" :
                      document.getElementById("nip1").options[1]=new Option("197902222008012019","197902222008012019");
                         break;
 
-                        case "ANUR FAJAR ASTUTI" :
+                        case "Aanur Fajar Astuti" :
                      document.getElementById("nip1").options[1]=new Option("197808162000122001","197808162000122001");
                         break;
 
-                        case "MUHAMMAD ROMLI" :
+                        case "Muhammad Romli" :
                      document.getElementById("nip1").options[1]=new Option("197103151993011001","197103151993011001");
                         break;
 
-                         case "YUDHA TINTANA MARGANISWATI" :
+                         case "Yudha Tintana Marganiswati" :
                      document.getElementById("nip1").options[1]=new Option("198310292004122001","198310292004122001");
                         break;
 
-                        case "INTAN WILUJENG FAJARIANTY, S.Si, M.Sc" :
+                        case "Intan Wilujeng Fajarianty, S.Si, M.Sc" :
                      document.getElementById("nip1").options[1]=new Option("198603312008012005","198603312008012005");
                         break;
 
-                        case "FERDINANDUS EDWIN PENALUN, ST" :
+                        case "Ferdinandus Edwin Penalun, ST" :
                      document.getElementById("nip1").options[1]=new Option("198708152009111001","198708152009111001");
                         break;
 
-                        case "ARI RISNANTO, S.Kom" :
+                        case "Ari Risnanto, S.Kom" :
                      document.getElementById("nip1").options[1]=new Option("198411282008011005","198411282008011005");
                         break;
 
-                        case "EMMY PURNASHOLIHA, SST" :
+                        case "Emmy Purnasholiha, SST" :
                      document.getElementById("nip1").options[1]=new Option("198707302009112001","198707302009112001");
                         break;
 
-                        case "ANANG ARIANE, S.Si, M.Sc" :
+                        case "Anang Ariane, S.Si, M.Sc" :
                      document.getElementById("nip1").options[1]=new Option("198706112008121001","198706112008121001");
                         break;
 
-                        case "ITTAKA ALDINI T., S.Tr" :
+                        case "Ittaka Aldini T., S.Tr" :
                      document.getElementById("nip1").options[1]=new Option("199010212012102001","199010212012102001");
                         break;
 
-                        case "ISTI WAHYUNINGSIH, SE" :
+                        case "Isti Wahyuningsih, SE" :
                      document.getElementById("nip1").options[1]=new Option("198406132009112001","198406132009112001");
                         break;
 
-                        case "DESY RUMAYANTI SETYO" :
+                        case "Desy Rumayanti Setyo" :
                      document.getElementById("nip1").options[1]=new Option("198312142008122001","198312142008122001");
                         break;
 
-                        case "LISA AGUSTINA, A.P" :
+                        case "Lisa Agustina, A.P" :
                      document.getElementById("nip1").options[1]=new Option("199608212016012001","199608212016012001");
                         break;
 
@@ -361,7 +361,7 @@
                     case "197906102001121001" :
                         document.getElementById("pangkat1").options[1]=new Option("Pembina/IV.a","Pembina/IV.ab");
                         break;
-                    case "197705252000121001" : //SIGIT HADI PRAKOSA, S.P.,M.Si
+                    case "197705252000121001" : //Sigit Hadi Prakosa, S.P.,M.Si
                         document.getElementById("pangkat1").options[1]=new Option("Pembina/IV.a(1)","Pembina/IV.a");
                         break;
                     case "197106211995031001" :
@@ -370,7 +370,7 @@
                     case "197610091999032001" :
                         document.getElementById("pangkat1").options[1]=new Option("Penata Tk.I   III / d","Penata Tk.I   III / d");
                         break;
-                    case "197603242000121001" : //SUBANDI, S
+                    case "197603242000121001" : //Subandi, S
                         document.getElementById("pangkat1").options[1]=new Option("Penata Tk.I   III / d","Penata Tk.I   III / d");
                         break;
                     case "197509011999031001" : 
@@ -400,7 +400,7 @@
                     case "198307072004122002" :
                         document.getElementById("pangkat1").options[1]=new Option("Penata, III / c","Penata, III / c");
                         break;
-                    case "198104102004122001" : //haryati
+                    case "198104102004122001" : //Haryati
                         document.getElementById("pangkat1").options[1]=new Option("Penata, III / c","Penata, III / c");
                         break;
                     case "197902222008012019" :
@@ -424,7 +424,7 @@
                     case "198411282008011005" :  
                         document.getElementById("pangkat1").options[1]=new Option("Penata Muda Tk.I, III/b","Penata Muda Tk.I, III/b");
                         break;
-                    case "198707302009112001" : //EMMY PURNASHOLIHA, SST 
+                    case "198707302009112001" : //Emmy Purnasholiha, SST 
                         document.getElementById("pangkat1").options[1]=new Option("Penata Muda Tk.I, III/b","Penata Muda Tk.I, III/b");
                         break;
                     case "198706112008121001" :  
@@ -504,124 +504,124 @@
               
                 switch (listindex)
                 {
-                    case "AGUS SUDARYATNO, S.Kom, MM" :
+                    case "Agus Sudaryatno, S.Kom, MM" :
                         
                         document.getElementById("nip2").options[1]=new Option("196101201980031001","196101201980031001"); //kiri = value , kanan = yg ditampilkan
                         break;
 
-                        case "SUTAMSI, SP" :
+                        case "Sutamsi, SP" :
                         document.getElementById("nip2").options[1]=new Option("196702171991021001","196702171991021001");
                         break;
                     
-                     case "ANDRIYAS ARYO PRABOWO, M.Si" :
+                     case "Andriyas Aryo Prabowo, M.Si" :
                         document.getElementById("nip2").options[1]=new Option("197906102001121001","197906102001121001");
                         break;
 
-                    case "SIGIT HADI PRAKOSA, S.P.,M.Si" :
+                    case "Sigit Hadi Prakosa, S.P.,M.Si" :
                      document.getElementById("nip2").options[1]=new Option("197705252000121001","197705252000121001");
                         break;
 
-                        case "DJOKO BUDIYONO, SP,S.Si M.Si" :
+                        case "Djoko Budiyono, SP,S.Si M.Si" :
                      document.getElementById("nip2").options[1]=new Option("197106211995031001","197106211995031001");
                         break;
 
-                           case "ETIK SETYANINGRUM, S,Si.,M.Si" :
+                           case "Etik Setyaningrum, S,Si.,M.Si" :
                      document.getElementById("nip2").options[1]=new Option("197610091999032001","197610091999032001");
                         break;
 
-                         case "SUBANDI, SP" :
+                         case "Subandi, SP" :
                      document.getElementById("nip2").options[1]=new Option("197603242000121001","197603242000121001");
                         break; 
 
-                           case "ROMADI, S.Si" :
+                           case "Romadi, S.Si" :
                      document.getElementById("nip2").options[1]=new Option("197509011999031001","197509011999031001");
                         break; 
 
-                        case "AGUSTA KURNIAWAN,S.Si" :
+                        case "Agusta Kurniawan,S.Si" :
                      document.getElementById("nip2").options[1]=new Option("197908202008011018","197908202008011018");
                         break; 
 
-                         case "ELVERA L" :
+                         case "Elvera L" :
                      document.getElementById("nip2").options[1]=new Option("196112131981032004","196112131981032004");
                         break; 
 
-                        case "SUCIYATI RUBIKAYATUN" :
+                        case "Suciyati Rubikayatun" :
                      document.getElementById("nip2").options[1]=new Option("197409181997032001","197409181997032001");
                         break; 
 
-                        case "NUGROHO PURWANTORO, SH" :
+                        case "Nugroho Purwantoro, SH" :
                      document.getElementById("nip2").options[1]=new Option("197411201996031001","197411201996031001");
                         break; 
 
-                        case "ELIYAH ULFAH ROHMAWATI, SP" :
+                        case "Eliyah Ulfah Rohmawati, SP" :
                      document.getElementById("nip2").options[1]=new Option("198402142008012010","198402142008012010");
                         break; 
 
-                        case "GIYARTO, ST" :
+                        case "Giyarto, ST" :
                      document.getElementById("nip2").options[1]=new Option("197606101998031001","197606101998031001");
                         break;
 
-                        case "INDAH RETNO WULAN, SP" :
+                        case "Indah Retno Wulan, SP" :
                      document.getElementById("nip2").options[1]=new Option("198003152008012028","198003152008012028");
                         break;
 
-                         case "FITRIANI, S.Si" :
+                         case "Fitriani, S.Si" :
                      document.getElementById("nip2").options[1]=new Option("198307072004122002","198307072004122002");
                         break;
 
-                        case "HARYATI, S.P, M.Sc" :
+                        case "Haryati, S.P, M.Sc" :
                      document.getElementById("nip2").options[1]=new Option("198104102004122001","198104102004122001");
                         break;
 
-                        case "ENDAH KURNIASIH, S.P., M.Si" :
+                        case "Endah Kurniasih, S.P., M.Si" :
                      document.getElementById("nip2").options[1]=new Option("197902222008012019","197902222008012019");
                         break;
 
-                        case "ANUR FAJAR ASTUTI" :
+                        case "Aanur Fajar Astuti" :
                      document.getElementById("nip2").options[1]=new Option("197808162000122001","197808162000122001");
                         break;
 
-                        case "MUHAMMAD ROMLI" :
+                        case "Muhammad Romli" :
                      document.getElementById("nip2").options[1]=new Option("197103151993011001","197103151993011001");
                         break;
 
-                         case "YUDHA TINTANA MARGANISWATI" :
+                         case "Yudha Tintana Marganiswati" :
                      document.getElementById("nip2").options[1]=new Option("198310292004122001","198310292004122001");
                         break;
 
-                        case "INTAN WILUJENG FAJARIANTY, S.Si, M.Sc" :
+                        case "Intan Wilujeng Fajarianty, S.Si, M.Sc" :
                      document.getElementById("nip2").options[1]=new Option("198603312008012005","198603312008012005");
                         break;
 
-                        case "FERDINANDUS EDWIN PENALUN, ST" :
+                        case "Ferdinandus Edwin Penalun, ST" :
                      document.getElementById("nip2").options[1]=new Option("198708152009111001","198708152009111001");
                         break;
 
-                        case "ARI RISNANTO, S.Kom" :
+                        case "Ari Risnanto, S.Kom" :
                      document.getElementById("nip2").options[1]=new Option("198411282008011005","198411282008011005");
                         break;
 
-                        case "EMMY PURNASHOLIHA, SST" :
+                        case "Emmy Purnasholiha, SST" :
                      document.getElementById("nip2").options[1]=new Option("198707302009112001","198707302009112001");
                         break;
 
-                        case "ANANG ARIANE, S.Si, M.Sc" :
+                        case "Anang Ariane, S.Si, M.Sc" :
                      document.getElementById("nip2").options[1]=new Option("198706112008121001","198706112008121001");
                         break;
 
-                        case "ITTAKA ALDINI T., S.Tr" :
+                        case "Ittaka Aldini T., S.Tr" :
                      document.getElementById("nip2").options[1]=new Option("199010212012102001","199010212012102001");
                         break;
 
-                        case "ISTI WAHYUNINGSIH, SE" :
+                        case "Isti Wahyuningsih, SE" :
                      document.getElementById("nip2").options[1]=new Option("198406132009112001","198406132009112001");
                         break;
 
-                        case "DESY RUMAYANTI SETYO" :
+                        case "Desy Rumayanti Setyo" :
                      document.getElementById("nip2").options[1]=new Option("198312142008122001","198312142008122001");
                         break;
 
-                        case "LISA AGUSTINA, A.P" :
+                        case "Lisa Agustina, A.P" :
                      document.getElementById("nip2").options[1]=new Option("199608212016012001","199608212016012001");
                         break;
 
@@ -646,7 +646,7 @@
                     case "197906102001121001" :
                         document.getElementById("pangkat2").options[1]=new Option("Pembina/IV.a","Pembina/IV.ab");
                         break;
-                    case "197705252000121001" : //SIGIT HADI PRAKOSA, S.P.,M.Si
+                    case "197705252000121001" : //Sigit Hadi Prakosa, S.P.,M.Si
                         document.getElementById("pangkat2").options[1]=new Option("Pembina/IV.a(1)","Pembina/IV.a");
                         break;
                     case "197106211995031001" :
@@ -655,7 +655,7 @@
                     case "197610091999032001" :
                         document.getElementById("pangkat2").options[1]=new Option("Penata Tk.I   III / d","Penata Tk.I   III / d");
                         break;
-                    case "197603242000121001" : //SUBANDI, S
+                    case "197603242000121001" : //Subandi, S
                         document.getElementById("pangkat2").options[1]=new Option("Penata Tk.I   III / d","Penata Tk.I   III / d");
                         break;
                     case "197509011999031001" : 
@@ -685,7 +685,7 @@
                     case "198307072004122002" :
                         document.getElementById("pangkat2").options[1]=new Option("Penata, III / c","Penata, III / c");
                         break;
-                    case "198104102004122001" : //haryati
+                    case "198104102004122001" : //Haryati
                         document.getElementById("pangkat2").options[1]=new Option("Penata, III / c","Penata, III / c");
                         break;
                     case "197902222008012019" :
@@ -709,7 +709,7 @@
                     case "198411282008011005" :  
                         document.getElementById("pangkat2").options[1]=new Option("Penata Muda Tk.I, III/b","Penata Muda Tk.I, III/b");
                         break;
-                    case "198707302009112001" : //EMMY PURNASHOLIHA, SST 
+                    case "198707302009112001" : //Emmy Purnasholiha, SST 
                         document.getElementById("pangkat2").options[1]=new Option("Penata Muda Tk.I, III/b","Penata Muda Tk.I, III/b");
                         break;
                     case "198706112008121001" :  

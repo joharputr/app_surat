@@ -20,31 +20,33 @@ $(document).ready(function(){
               <div class="modal-body" style="font-family: arial, sans-serif;"> 
                     <div class="row">
                       <div class="col-lg-12" style="padding-left: 5%; padding-right: 5%">
-                        <div class="row">
+                        <div class="row" style="background-color: blue;">
+                          
                           <div class="col-lg-2 col-sm-2 col-md-2 col-xs-2 col-xl-2" style="text-align: center;">
-                      <img src="<?php echo base_url() ?>logo_BMKG.png "
-                            style="width: 80%; height: auto;">
-                      </div>
+                             <img src="<?php echo base_url() ?>logo_BMKG.png "
+                             style="width: 80%; height: auto;">
+                          </div>
                       
                           <div class="col-sm-10" style="text-align: center;">
-                            BADAN METEOROLOGI KLIMATOLOGI DAN GEOFISIKA <br>
-                            <strong style="font-size: 150%">STASIUN KLIMATOLOGI MLATI YOGYAKARTA</strong><br>
+                           <strong style="font-size: 16px;"> BADAN METEOROLOGI KLIMATOLOGI DAN GEOFISIKA <br>
+                            STASIUN KLIMATOLOGI MLATI YOGYAKARTA</strong><br>
                             Jl. Kabupaten Km. 5,5 Duwet Sendangadi, Mlati, Sleman, D.I. Yogyakarta<br>
                             Telp : (0274) 2880152 ; Fax: (0247) 2880151 ; email: staklim.yogya@gmail.com
                             <br>
                             <hr width="100%" noshade style="border-top: 2px solid #000;">
                           </div>
                         </div> 
+             
                       
-                        <div class="row" style="text-align: center;  "> 
-                          <h3>SURAT PERINTAH TUGAS  </h3>
-                         <div style="margin-top: -15px;"><h3 >Nomor : <?php echo $lihat->no_surat; ?>  </h3> 
+                        <div class="row" style="text-align: center; font-size: 16px; "> 
+                         SURAT PERINTAH TUGAS 
+                         <div style="margin-top: -5px;">Nomor : <?php echo $lihat->no_surat; ?> 
                           <br></div>
                         </div>
 
                         <div class="row">
 
-                           <div style="font-family:  arial, sans-serif; padding-left: 100px; font-size: 16px; text-align:justify;">
+                           <div style="font-family:  arial, sans-serif; padding-left: 100px; font-size: 12px; text-align:justify;">
                             <br>
                             Yang bertanda tangan di bawah ini : <br>
                             Nama&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->nama1; ?><br>
