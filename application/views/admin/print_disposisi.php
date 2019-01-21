@@ -77,8 +77,9 @@ $(document).ready(function(){
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->perihal; ?> </> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;<div style="margin-left: 180px; margin-top: -18px;"> <?php echo  $lihat->perihal; ?> </div> </th> 
                           </tr>
+                          </script>
 
                           <tr>
                               <th colspan="4" style="text-align: center"> Diteruskan Kepada Yth : </th> 

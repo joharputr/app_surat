@@ -594,10 +594,6 @@ $cat.on("change",function(){
 });
 </script>
 
-                     <div class="form-group">
-                    <label for="exampleInputEmail1">Kode Arsip (Manual) </label>
-                      <input type="text" class="form-control" name="kode_arsip2" placeholder="Kode Arsip (Manual)"/>
-                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">No Surat</label>
                       <input type="text" class="form-control" name="no_surat" placeholder="No Surat"/>
