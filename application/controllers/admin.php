@@ -622,8 +622,8 @@ $email_config = Array(
             'protocol'  => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
             'smtp_port' => '465',
-            'smtp_user' => 'joharputraadek@gmail.com',
-            'smtp_pass' => 'adekjelek1',
+            'smtp_user' => 'tatausahamlati@gmail.com',
+            'smtp_pass' => 'tatausaha2017',
             'mailtype'  => 'html',
             'starttls'  => true,
             'newline'   => "\r\n"
@@ -631,7 +631,7 @@ $email_config = Array(
  		
         $this->load->library('email', $email_config);
 
-        $this->email->from('joharputraadek@gmail.com', 'invoice');
+        $this->email->from('tatausahamlati@gmail.com', 'Tata Usaha Mlati');
    		$this->email->to($this->input->post('email_id')); // change 
        $this->email->subject($this->input->post('subject'));
        $this->email->message($this->input->post('body'));
