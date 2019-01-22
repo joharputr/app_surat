@@ -408,7 +408,7 @@ class Admin extends CI_Controller {
 
     private function _uploadImage()
     {
-    $config['upload_path']          = './upload/files/Keluar';
+    $config['upload_path']          = './upload/files/keluar';
     $config['allowed_types']        = 'gif|jpg|png|pdf';
     $config['file_name']            = $this->surat_id;
     $config['overwrite']            = true;

@@ -18,12 +18,12 @@
         <!-- Main content -->
         <section class="content">
           
-          <div class="row">          	
-          	<div class="col-xs-12">
-          		<div class="box">
+          <div class="row">           
+            <div class="col-xs-12">
+              <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">
-                  	<a href="<?php echo base_url(); ?>admin/tambah_surat_masuk" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="<?php echo base_url(); ?>admin/tambah_surat_masuk" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah</a>
                     <a href="<?php echo base_url(); ?>admin/tambah_surat_masuk2" class="btn btn-sm btn-primary btn-flat" data-target = "#example1"><i class="fa fa-plus"></i> Tambah(manual)</a>
                      <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan12"><i class="fa fa-eye"></i> Lihat Data</button>
                      <a href="print_surat_masuk" target="_blank">
@@ -71,14 +71,19 @@
                       
                     <tbody>
 
-                      	<?php  
+                        <?php  
                         $no = 1; 
+                        $id = 1;
                         foreach ($cek as $lihat):
                         ?>
-                    	<tr>
+                      <tr>
 
-                        <td><?php echo $no ?></td>
-                    		<td> <div style="width: 100px;"><?php echo '00'.$no++?></td>
+                        <td><?php echo $no++?></td>
+                        <td> <div style="width: 100px;"><?php if ($id <= 9)
+                            echo '00'.$id++;
+                          else if($no > 9)
+                            echo '0'.$id++;?></td> 
+
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_terima) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
                 
@@ -177,7 +182,7 @@
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <div style="margin-left: 180px; margin-top: -18px;"> <?php echo $lihat->perihal; ?> </div></th> 
+                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->perihal; ?> </th> 
                           </tr>
 
                           <tr>

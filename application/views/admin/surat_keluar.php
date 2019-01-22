@@ -16,12 +16,12 @@
         <!-- Main content -->
         <section class="content">
 
-        	<div class="row">          	
-          	<div class="col-xs-12">
-          		<div class="box">
+          <div class="row">           
+            <div class="col-xs-12">
+              <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">
-                  	<a href="<?php echo base_url(); ?>admin/tambah_surat_keluar" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah</a>
+                    <a href="<?php echo base_url(); ?>admin/tambah_surat_keluar" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah</a>
                     <a href="<?php echo base_url(); ?>admin/tambah_surat_keluar2" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-plus"></i> Tambah(manual)</a>
                     <button class="btn btn-sm btn-light btn-flat" title="view" data-toggle="modal" data-target="#lihatlaporan2"><i class="fa fa-eye"></i> Lihat Data</button>
                  
@@ -64,15 +64,20 @@
                         <th>Aksi</th>
                     </thead>
                     <tbody>
-                      	<?php  
-                      	$no = 1;
-                      	foreach ($data as $lihat):
-                      	?>
-                    	<tr>
-                      <td><?php echo $no ?></td>
-                    	<td><div style="width: 100px;"><?php echo  '00'.$no++?></td>
+                        <?php  
+                        $no = 1; 
+                        $id = 1;
+                        foreach ($data as $lihat):
+                        ?>
+                      <tr>
+
+                        <td><?php echo $no++?></td>
+                        <td> <div style="width: 100px;"><?php if ($id <= 9)
+                            echo '00'.$id++;
+                          else if($no > 9)
+                            echo '0'.$id++;?></td> 
                       <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
-                    	<td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
+                      <td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
                   
                       <td><div style="width: 150px;"><?php echo ucwords($lihat->no_surat) ?></td> 
                       <td> <div style="width: 100px;">  <?php echo ucfirst($lihat->tujuan) ?></td> 
@@ -85,9 +90,9 @@
                             <a href="<?php echo base_url(); ?>admin/edit_surat_keluar/<?php echo $lihat->surat_id ?>" class="btn btn-sm btn-primary btn-flat"><i class="fa fa-edit"></i> Edit</a>
                             <a href="<?php echo base_url(); ?>admin/hapus_surat_keluar/<?php echo $lihat->surat_id ?>" onclick="javascript: return confirm('Anda yakin akan menghapus data ini ?')" class="btn btn-sm btn-danger btn-flat"><i class="fa fa-trash"></i> Hapus</a>
                             
-                        </td>                  		
-                    	</tr>
-                    	<?php endforeach ?>
+                        </td>                     
+                      </tr>
+                      <?php endforeach ?>
                     </tbody>
                   </table>
                   
@@ -158,8 +163,8 @@ $query = mysqli_query($koneksi,"SELECT * FROM tb_surat_keluar ORDER BY surat_id 
          <!--   <th style="background-color: yellow; text-align: center;" > No  </th> -->
            <th style="background-color: yellow; text-align: center;" > No Agenda  </th>
            <th style="background-color: yellow; text-align: center;"> Tanggal Surat </th>
-           <th style="background-color: yellow; text-align: center;"> Kode Arsip  </th>
-         
+           <th style="background-color: yellow; text-align: center;"> Kode Arsip (Otomatis) </th>
+            <th style="background-color: yellow; text-align: center;"> Kode Arsip (Manual )</th>
            <th style="background-color: yellow; text-align: center;"> No Surat </th>
            <th style="background-color: yellow; text-align: center;"> Tujuan </th>
            <th style="background-color: yellow; text-align: center;">Perihal  </th>

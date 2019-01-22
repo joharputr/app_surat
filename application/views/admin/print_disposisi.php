@@ -73,7 +73,7 @@ $(document).ready(function(){
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Asal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pengirim; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Asal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <div style="margin-left: 180px; margin-top: -18px;"> <?php echo $lihat->pengirim; ?> </div></th> 
                           </tr>
 
                           <tr>
