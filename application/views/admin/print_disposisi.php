@@ -52,6 +52,10 @@ $(document).ready(function(){
                                 <th colspan="4" style="text-align: center">LEMBAR DISPOSISI </th> 
                           </tr>
 
+                          <tr >
+                                <th colspan="4" style="padding-left: 80px;" > Kode Arsip &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : &nbsp;  <?php echo $lihat->kode_arsip; ?>   </th> 
+                          </tr>
+
                            <tr >
                                 <th colspan="4" style="padding-left: 80px;" > Nomor Agenda &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;  <?php echo $lihat->no_agenda; ?>   </th> 
                           </tr>

@@ -81,8 +81,10 @@
                         <td><?php echo $no++?></td>
                         <td> <div style="width: 100px;"><?php if ($id <= 9)
                             echo '00'.$id++;
-                          else if($no > 9)
-                            echo '0'.$id++;?></td> 
+                          else if($id > 9 && $id <= 99)
+                            echo '0'.$id++;
+                          else if ($id > 99)
+                            echo $id++;?></td> 
 
                         <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_terima) ?></td> </div>
                         <td> <div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
@@ -157,6 +159,11 @@
                                 <th colspan="4" style="text-align: center">LEMBAR DISPOSISI </th> 
                           </tr>
 
+
+                          <tr >
+                                <th colspan="4" style="padding-left: 80px;" > Kode Arsip &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  : &nbsp;  <?php echo $lihat->kode_arsip; ?>   </th> 
+                          </tr>
+
                            <tr >
                                 <th colspan="4" style="padding-left: 80px;" > Nomor Agenda &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;  <?php echo $lihat->no_agenda; ?>   </th> 
                           </tr>
@@ -178,11 +185,11 @@
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Asal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->pengirim; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Asal Surat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <div style="margin-left: 180px; margin-top: -18px;"> <?php echo $lihat->pengirim; ?> </th> 
                           </tr>
 
                           <tr>
-                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <?php echo $lihat->perihal; ?> </th> 
+                                <th colspan="4" style="padding-left: 80px;"> Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <div style="margin-left: 180px; margin-top: -18px;"> <?php echo $lihat->perihal; ?> </th> 
                           </tr>
 
                           <tr>

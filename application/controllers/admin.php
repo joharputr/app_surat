@@ -412,7 +412,7 @@ class Admin extends CI_Controller {
     $config['allowed_types']        = 'gif|jpg|png|pdf';
     $config['file_name']            = $this->surat_id;
     $config['overwrite']            = true;
-    $config['max_size']             = 8192; // 1MB
+    $config['max_size']             = 25600; // 1MB
     // $config['max_width']            = 1024;
     // $config['max_height']           = 768;
     $this->load->library('upload', $config);
@@ -434,7 +434,7 @@ class Admin extends CI_Controller {
     $config['allowed_types']        = 'gif|jpg|png|pdf';
     $config['file_name']            = $this->surat_id;
     $config['overwrite']            = true;
-    $config['max_size']             = 8192; // 1MB
+    $config['max_size']             = 25600; // 1MB
     // $config['max_width']            = 1024;
     // $config['max_height']           = 768;
     $this->load->library('upload', $config);

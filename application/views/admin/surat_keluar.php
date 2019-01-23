@@ -64,18 +64,23 @@
                         <th>Aksi</th>
                     </thead>
                     <tbody>
-                        <?php  
+
+                          <?php  
                         $no = 1; 
                         $id = 1;
-                        foreach ($data as $lihat):
+                        foreach ($cek as $lihat):
                         ?>
                       <tr>
 
                         <td><?php echo $no++?></td>
                         <td> <div style="width: 100px;"><?php if ($id <= 9)
                             echo '00'.$id++;
-                          else if($no > 9)
-                            echo '0'.$id++;?></td> 
+                          else if($id > 9 && $id <= 99)
+                            echo '0'.$id++;
+                          else if ($id > 99)
+                            echo $id++;?></td> 
+                            
+
                       <td>  <div style="width: 150px;"> <?php echo tgl_indo($lihat->tgl_surat) ?></td> </div>
                       <td><div style="width: 100px;"><?php echo ucwords($lihat->kode_arsip) ?></td> 
                   
