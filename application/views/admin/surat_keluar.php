@@ -68,7 +68,7 @@
                           <?php  
                         $no = 1; 
                         $id = 1;
-                        foreach ($cek as $lihat):
+                        foreach ($data as $lihat):
                         ?>
                       <tr>
 
